@@ -1,0 +1,1650 @@
+18:33:01.939513 set_robust_list(0x7f1bc9a679e0, 24) = 0
+18:33:01.939569 dup2(4, 1)              = 1
+18:33:01.939622 execve("/bin/sh", ["sh", "-c", "pkill -9 vmx-*"], 0x7ffd66212468 /* 22 vars */) = 0
+18:33:01.939883 brk(NULL)               = 0xa27000
+18:33:01.940033 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+18:33:01.940175 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.940324 fstat(3, {st_mode=S_IFREG|0644, st_size=44585, ...}) = 0
+18:33:01.940363 mmap(NULL, 44585, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f85d33db000
+18:33:01.940477 close(3)                = 0
+18:33:01.940524 openat(AT_FDCWD, "/lib64/libtinfo.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.940570 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@\340\0\0\0\0\0\0@\0\0\0\0\0\0\0\320\265\2\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\250f\2\0\0\0\0\0\250f\2\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\220m\2\0\0\0\0\0\220m\"\0\0\0\0\0\220m\"\0\0\0\0\0\304:\0\0\0\0\0\0\320@\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0(\235\2\0\0\0\0\0(\235\"\0\0\0\0\0(\235\"\0\0\0\0\0\320\1\0\0\0\0\0\0\320\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.940611 fstat(3, {st_mode=S_IFREG|0755, st_size=179344, ...}) = 0
+18:33:01.940691 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85d33d9000
+18:33:01.940734 mmap(NULL, 2272864, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f85d2f98000
+18:33:01.940783 mprotect(0x7f85d2fbf000, 2093056, PROT_NONE) = 0
+18:33:01.940830 mmap(0x7f85d31be000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x26000) = 0x7f85d31be000
+18:33:01.942053 close(3)                = 0
+18:33:01.942101 openat(AT_FDCWD, "/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.942150 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\16\0\0\0\0\0\0@\0\0\0\0\0\0\0HC\0\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\37\0\36\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\314 \0\0\0\0\0\0\314 \0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0H-\0\0\0\0\0\0H- \0\0\0\0\0H- \0\0\0\0\0`\3\0\0\0\0\0\0\350\3\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0p-\0\0\0\0\0\0p- \0\0\0\0\0p- \0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.942202 fstat(3, {st_mode=S_IFREG|0755, st_size=19208, ...}) = 0
+18:33:01.942275 mmap(NULL, 2109744, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f85d2d94000
+18:33:01.942358 mprotect(0x7f85d2d97000, 2093056, PROT_NONE) = 0
+18:33:01.942440 mmap(0x7f85d2f96000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f85d2f96000
+18:33:01.942560 close(3)                = 0
+18:33:01.942752 openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.942818 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\22\2\0\0\0\0\0@\0\0\0\0\0\0\0 \347\36\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0K\0J\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|4\32\0\0\0\0\0|4\32\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0p7\32\0\0\0\0\0p7:\0\0\0\0\0"..., 832) = 832
+18:33:01.942888 fstat(3, {st_mode=S_IFREG|0755, st_size=2030048, ...}) = 0
+18:33:01.942942 mmap(NULL, 3852960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f85d29e7000
+18:33:01.942994 mprotect(0x7f85d2b8b000, 2093056, PROT_NONE) = 0
+18:33:01.943048 mmap(0x7f85d2d8a000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a3000) = 0x7f85d2d8a000
+18:33:01.943105 mmap(0x7f85d2d90000, 15008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f85d2d90000
+18:33:01.943160 close(3)                = 0
+18:33:01.943220 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f85d33d6000
+18:33:01.943277 arch_prctl(ARCH_SET_FS, 0x7f85d33d6740) = 0
+18:33:01.943361 mprotect(0x7f85d2d8a000, 16384, PROT_READ) = 0
+18:33:01.943421 mprotect(0x7f85d2f96000, 4096, PROT_READ) = 0
+18:33:01.943484 mprotect(0x7f85d31be000, 16384, PROT_READ) = 0
+18:33:01.943540 mprotect(0x6d6000, 4096, PROT_READ) = 0
+18:33:01.943593 mprotect(0x7f85d33e6000, 4096, PROT_READ) = 0
+18:33:01.943648 munmap(0x7f85d33db000, 44585) = 0
+18:33:01.943733 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.943789 openat(AT_FDCWD, "/dev/tty", O_RDWR|O_NONBLOCK) = 3
+18:33:01.943846 close(3)                = 0
+18:33:01.943909 open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.943961 fstat(3, {st_mode=S_IFREG|0644, st_size=113049440, ...}) = 0
+18:33:01.944013 mmap(NULL, 113049440, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f85cbe17000
+18:33:01.944067 close(3)                = 0
+18:33:01.944145 brk(NULL)               = 0xa27000
+18:33:01.944196 brk(0xa48000)           = 0xa48000
+18:33:01.944260 brk(NULL)               = 0xa48000
+18:33:01.944331 brk(NULL)               = 0xa48000
+18:33:01.944404 getuid()                = 1000
+18:33:01.944443 getgid()                = 1000
+18:33:01.944515 geteuid()               = 1000
+18:33:01.944562 getegid()               = 1000
+18:33:01.944692 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.944844 sysinfo({uptime=2610, loads=[0, 64, 0], totalram=33345327104, freeram=32634925056, sharedram=5742592, bufferram=2138112, totalswap=0, freeswap=0, procs=276, totalhigh=0, freehigh=0, mem_unit=1}) = 0
+18:33:01.944979 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.945036 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.945081 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.945145 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.945199 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.945251 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.945302 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.945371 rt_sigaction(SIGQUIT, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.945414 uname({sysname="Linux", nodename="ip-172-31-64-80.ec2.internal", ...}) = 0
+18:33:01.945510 stat("/home/ec2-user", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+18:33:01.945567 stat(".", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+18:33:01.945622 getpid()                = 6044
+18:33:01.945675 open("/usr/lib64/gconv/gconv-modules.cache", O_RDONLY) = 3
+18:33:01.945988 fstat(3, {st_mode=S_IFREG|0644, st_size=26370, ...}) = 0
+18:33:01.946472 mmap(NULL, 26370, PROT_READ, MAP_SHARED, 3, 0) = 0x7f85d33df000
+18:33:01.946525 close(3)                = 0
+18:33:01.946600 getppid()               = 6036
+18:33:01.946661 stat(".", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+18:33:01.946743 stat("/usr/local/bin/sh", 0x7ffd551ebd00) = -1 ENOENT (No such file or directory)
+18:33:01.946834 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.946885 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.946956 geteuid()               = 1000
+18:33:01.947015 getegid()               = 1000
+18:33:01.947089 getuid()                = 1000
+18:33:01.947148 getgid()                = 1000
+18:33:01.947189 access("/usr/bin/sh", X_OK) = 0
+18:33:01.947230 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.947289 geteuid()               = 1000
+18:33:01.947341 getegid()               = 1000
+18:33:01.947393 getuid()                = 1000
+18:33:01.947445 getgid()                = 1000
+18:33:01.947497 access("/usr/bin/sh", R_OK) = 0
+18:33:01.947539 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.947583 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.947632 geteuid()               = 1000
+18:33:01.947695 getegid()               = 1000
+18:33:01.947746 getuid()                = 1000
+18:33:01.947797 getgid()                = 1000
+18:33:01.947847 access("/usr/bin/sh", X_OK) = 0
+18:33:01.947888 stat("/usr/bin/sh", {st_mode=S_IFREG|0755, st_size=935976, ...}) = 0
+18:33:01.947942 geteuid()               = 1000
+18:33:01.947994 getegid()               = 1000
+18:33:01.948044 getuid()                = 1000
+18:33:01.948095 getgid()                = 1000
+18:33:01.948146 access("/usr/bin/sh", R_OK) = 0
+18:33:01.948223 getpid()                = 6044
+18:33:01.948279 getpgrp()               = 6033
+18:33:01.948333 rt_sigaction(SIGCHLD, {sa_handler=0x4404b0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.948388 prlimit64(0, RLIMIT_NPROC, NULL, {rlim_cur=RLIM64_INFINITY, rlim_max=RLIM64_INFINITY}) = 0
+18:33:01.948586 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.948656 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.948718 rt_sigprocmask(SIG_BLOCK, NULL, [], 8) = 0
+18:33:01.948774 open(".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+18:33:01.948822 fstat(3, {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+18:33:01.948870 getdents(3, /* 30 entries */, 32768) = 1280
+18:33:01.948937 getdents(3, /* 0 entries */, 32768) = 0
+18:33:01.948981 close(3)                = 0
+18:33:01.949028 stat(".", {st_mode=S_IFDIR|0700, st_size=4096, ...}) = 0
+18:33:01.949076 stat("/usr/local/bin/pkill", 0x7ffd551ebcc0) = -1 ENOENT (No such file or directory)
+18:33:01.949125 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.949172 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.949219 geteuid()               = 1000
+18:33:01.949262 getegid()               = 1000
+18:33:01.949304 getuid()                = 1000
+18:33:01.949348 getgid()                = 1000
+18:33:01.949392 access("/usr/bin/pkill", X_OK) = 0
+18:33:01.949439 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.949485 geteuid()               = 1000
+18:33:01.949528 getegid()               = 1000
+18:33:01.949570 getuid()                = 1000
+18:33:01.949618 getgid()                = 1000
+18:33:01.949660 access("/usr/bin/pkill", R_OK) = 0
+18:33:01.949705 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.949751 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.949798 geteuid()               = 1000
+18:33:01.949841 getegid()               = 1000
+18:33:01.949884 getuid()                = 1000
+18:33:01.949926 getgid()                = 1000
+18:33:01.949970 access("/usr/bin/pkill", X_OK) = 0
+18:33:01.950015 stat("/usr/bin/pkill", {st_mode=S_IFREG|0755, st_size=28240, ...}) = 0
+18:33:01.950063 geteuid()               = 1000
+18:33:01.950106 getegid()               = 1000
+18:33:01.950148 getuid()                = 1000
+18:33:01.950191 getgid()                = 1000
+18:33:01.950233 access("/usr/bin/pkill", R_OK) = 0
+18:33:01.950280 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.950328 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.950377 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, {sa_handler=0x4404b0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7f85d2a1ad10}, 8) = 0
+18:33:01.950426 execve("/usr/bin/pkill", ["pkill", "-9", "vmx-*"], 0xa2d600 /* 21 vars */) = 0
+18:33:01.950612 brk(NULL)               = 0x1183000
+18:33:01.950675 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+18:33:01.950725 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.950772 fstat(3, {st_mode=S_IFREG|0644, st_size=44585, ...}) = 0
+18:33:01.950818 mmap(NULL, 44585, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1b0b6cd000
+18:33:01.950864 close(3)                = 0
+18:33:01.950910 openat(AT_FDCWD, "/lib64/libprocps.so.4", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.950958 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200F\0\0\0\0\0\0@\0\0\0\0\0\0\0@,\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\34\0\33\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0T\v\1\0\0\0\0\0T\v\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0h\21\1\0\0\0\0\0h\21!\0\0\0\0\0h\21!\0\0\0\0\0`\22\0\0\0\0\0\0XS\1\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0000\35\1\0\0\0\0\0000\35!\0\0\0\0\0000\35!\0\0\0\0\0\20\2\0\0\0\0\0\0\20\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.951006 fstat(3, {st_mode=S_IFREG|0755, st_size=78656, ...}) = 0
+18:33:01.951051 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6cb000
+18:33:01.951097 mmap(NULL, 2254016, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0b28e000
+18:33:01.951142 mprotect(0x7f1b0b29f000, 2097152, PROT_NONE) = 0
+18:33:01.951188 mmap(0x7f1b0b49f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x11000) = 0x7f1b0b49f000
+18:33:01.951238 mmap(0x7f1b0b4a1000, 79040, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b4a1000
+18:33:01.951285 close(3)                = 0
+18:33:01.951334 openat(AT_FDCWD, "/lib64/libsystemd.so.0", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.951382 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\300N\0\0\0\0\0\0@\0\0\0\0\0\0\0\340\323\2\0\0\0\0\0\0\0\0\0@\08\0\10\0@\0\35\0\34\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\373\264\2\0\0\0\0\0\373\264\2\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\260\266\2\0\0\0\0\0\260\266\"\0\0\0\0\0\260\266\"\0\0\0\0\0\310\t\0\0\0\0\0\0000\24\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0H\270\2\0\0\0\0\0H\270\"\0\0\0\0\0H\270\"\0\0\0\0\0\360\2\0\0\0\0\0\0\360\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0"..., 832) = 832
+18:33:01.951430 fstat(3, {st_mode=S_IFREG|0755, st_size=187168, ...}) = 0
+18:33:01.951475 mmap(NULL, 2280160, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0b061000
+18:33:01.951521 mprotect(0x7f1b0b08d000, 2093056, PROT_NONE) = 0
+18:33:01.951568 mmap(0x7f1b0b28c000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2b000) = 0x7f1b0b28c000
+18:33:01.951623 close(3)                = 0
+18:33:01.951675 openat(AT_FDCWD, "/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.951725 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340\16\0\0\0\0\0\0@\0\0\0\0\0\0\0HC\0\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\37\0\36\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\314 \0\0\0\0\0\0\314 \0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0H-\0\0\0\0\0\0H- \0\0\0\0\0H- \0\0\0\0\0`\3\0\0\0\0\0\0\350\3\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0p-\0\0\0\0\0\0p- \0\0\0\0\0p- \0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.951772 fstat(3, {st_mode=S_IFREG|0755, st_size=19208, ...}) = 0
+18:33:01.951817 mmap(NULL, 2109744, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0ae5d000
+18:33:01.951863 mprotect(0x7f1b0ae60000, 2093056, PROT_NONE) = 0
+18:33:01.951909 mmap(0x7f1b0b05f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f1b0b05f000
+18:33:01.951964 close(3)                = 0
+18:33:01.952010 openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.952059 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\22\2\0\0\0\0\0@\0\0\0\0\0\0\0 \347\36\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0K\0J\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|4\32\0\0\0\0\0|4\32\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0p7\32\0\0\0\0\0p7:\0\0\0\0\0"..., 832) = 832
+18:33:01.952107 fstat(3, {st_mode=S_IFREG|0755, st_size=2030048, ...}) = 0
+18:33:01.952153 mmap(NULL, 3852960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0aab0000
+18:33:01.952199 mprotect(0x7f1b0ac54000, 2093056, PROT_NONE) = 0
+18:33:01.952243 mmap(0x7f1b0ae53000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a3000) = 0x7f1b0ae53000
+18:33:01.952291 mmap(0x7f1b0ae59000, 15008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b0ae59000
+18:33:01.952339 close(3)                = 0
+18:33:01.952387 openat(AT_FDCWD, "/lib64/libcap.so.2", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.952435 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0 W\0\0\0\0\0\0@\0\0\0\0\0\0\0\0\211\0\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0\34\0\33\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\370\1\0\0\0\0\0\0\370\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0p]\0\0\0\0\0\0p]\0\0\0\0\0\0p]\0\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\370m\0\0\0\0\0\0\370m\0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\210|\0\0\0\0\0\0\210| \0\0\0\0\0"..., 832) = 832
+18:33:01.952482 fstat(3, {st_mode=S_IFREG|0755, st_size=36864, ...}) = 0
+18:33:01.952528 mmap(NULL, 2130536, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0a8a7000
+18:33:01.952575 mprotect(0x7f1b0a8ae000, 2097152, PROT_NONE) = 0
+18:33:01.952627 mmap(0x7f1b0aaae000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x7000) = 0x7f1b0aaae000
+18:33:01.952717 close(3)                = 0
+18:33:01.952765 openat(AT_FDCWD, "/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.952814 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0x\0\0\0\0\0\0@\0\0\0\0\0\0\0\310\215\25\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\"\0!\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0H\353\23\0\0\0\0\0H\353\23\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0`\355\23\0\0\0\0\0`\3553\0\0\0\0\0`\3553\0\0\0\0\0\240\5\0\0\0\0\0\0\250\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0x\355\23\0\0\0\0\0x\3553\0\0\0\0\0x\3553\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.952862 fstat(3, {st_mode=S_IFREG|0755, st_size=1414728, ...}) = 0
+18:33:01.952909 mmap(NULL, 3404552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0a567000
+18:33:01.952955 mprotect(0x7f1b0a6a6000, 2093056, PROT_NONE) = 0
+18:33:01.953000 mmap(0x7f1b0a8a5000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13e000) = 0x7f1b0a8a5000
+18:33:01.953051 close(3)                = 0
+18:33:01.953098 openat(AT_FDCWD, "/lib64/librt.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.953147 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\"\0\0\0\0\0\0@\0\0\0\0\0\0\0 \242\0\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0#\0\"\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\254e\0\0\0\0\0\0\254e\0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0Xm\0\0\0\0\0\0Xm \0\0\0\0\0Xm \0\0\0\0\0\364\4\0\0\0\0\0\0h\16\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0xm\0\0\0\0\0\0xm \0\0\0\0\0xm \0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.953194 fstat(3, {st_mode=S_IFREG|0755, st_size=43744, ...}) = 0
+18:33:01.953244 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6c9000
+18:33:01.953291 mmap(NULL, 2128832, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0a35f000
+18:33:01.953337 mprotect(0x7f1b0a366000, 2093056, PROT_NONE) = 0
+18:33:01.953383 mmap(0x7f1b0a565000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7f1b0a565000
+18:33:01.953433 close(3)                = 0
+18:33:01.953480 openat(AT_FDCWD, "/lib64/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.953530 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20j\0\0\0\0\0\0@\0\0\0\0\0\0\0\340X\2\0\0\0\0\0\0\0\0\0@\08\0\10\0@\0\35\0\34\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0@3\2\0\0\0\0\0@3\2\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\270<\2\0\0\0\0\0\270<\"\0\0\0\0\0\270<\"\0\0\0\0\0\220\t\0\0\0\0\0\0\270,\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0h=\2\0\0\0\0\0h=\"\0\0\0\0\0h=\"\0\0\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0"..., 832) = 832
+18:33:01.953583 fstat(3, {st_mode=S_IFREG|0755, st_size=155680, ...}) = 0
+18:33:01.953629 mmap(NULL, 2255216, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0a138000
+18:33:01.953675 mprotect(0x7f1b0a15c000, 2093056, PROT_NONE) = 0
+18:33:01.953721 mmap(0x7f1b0a35b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x23000) = 0x7f1b0a35b000
+18:33:01.953770 mmap(0x7f1b0a35d000, 6512, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b0a35d000
+18:33:01.953818 close(3)                = 0
+18:33:01.953866 openat(AT_FDCWD, "/lib64/liblzma.so.5", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.953913 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\360/\0\0\0\0\0\0@\0\0\0\0\0\0\0\340O\2\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0(4\2\0\0\0\0\0(4\2\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\220:\2\0\0\0\0\0\220:\"\0\0\0\0\0\220:\"\0\0\0\0\0\350\7\0\0\0\0\0\0\360\7\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\340=\2\0\0\0\0\0\340=\"\0\0\0\0\0\340=\"\0\0\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.953960 fstat(3, {st_mode=S_IFREG|0755, st_size=153248, ...}) = 0
+18:33:01.954006 mmap(NULL, 2245248, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09f13000
+18:33:01.954052 mprotect(0x7f1b09f37000, 2093056, PROT_NONE) = 0
+18:33:01.954099 mmap(0x7f1b0a136000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x23000) = 0x7f1b0a136000
+18:33:01.954149 close(3)                = 0
+18:33:01.954196 openat(AT_FDCWD, "/lib64/liblz4.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.954245 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\200$\0\0\0\0\0\0@\0\0\0\0\0\0\0x8\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\32\0\31\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0x%\1\0\0\0\0\0x%\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0000-\1\0\0\0\0\0000-!\0\0\0\0\0000-!\0\0\0\0\0\10\4\0\0\0\0\0\0\20\4\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\0.\1\0\0\0\0\0\0.!\0\0\0\0\0\0.!\0\0\0\0\0\320\1\0\0\0\0\0\0\320\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.954292 fstat(3, {st_mode=S_IFREG|0755, st_size=81656, ...}) = 0
+18:33:01.954339 mmap(NULL, 2175296, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09cff000
+18:33:01.954386 mprotect(0x7f1b09d12000, 2093056, PROT_NONE) = 0
+18:33:01.954433 mmap(0x7f1b09f11000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7f1b09f11000
+18:33:01.954485 close(3)                = 0
+18:33:01.954531 openat(AT_FDCWD, "/lib64/libgcrypt.so.11", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.954580 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0u\0\0\0\0\0\0@\0\0\0\0\0\0\0\370\360\7\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\34\0\33\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0P\227\7\0\0\0\0\0P\227\7\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0h\230\7\0\0\0\0\0h\230'\0\0\0\0\0h\230'\0\0\0\0\0\3732\0\0\0\0\0\0H8\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\300\235\7\0\0\0\0\0\300\235'\0\0\0\0\0\300\235'\0\0\0\0\0\20\2\0\0\0\0\0\0\20\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.954636 fstat(3, {st_mode=S_IFREG|0755, st_size=522232, ...}) = 0
+18:33:01.954683 mmap(NULL, 2609328, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09a81000
+18:33:01.954729 mprotect(0x7f1b09afb000, 2093056, PROT_NONE) = 0
+18:33:01.954774 mmap(0x7f1b09cfa000, 16384, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x79000) = 0x7f1b09cfa000
+18:33:01.954825 mmap(0x7f1b09cfe000, 176, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b09cfe000
+18:33:01.954873 close(3)                = 0
+18:33:01.954920 openat(AT_FDCWD, "/lib64/libgpg-error.so.0", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.954969 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\240\t\0\0\0\0\0\0@\0\0\0\0\0\0\0\340D\0\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\32\0\31\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\\0\0\0\0\0\0\0\\0\0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\360=\0\0\0\0\0\0\360= \0\0\0\0\0\360= \0\0\0\0\0x\2\0\0\0\0\0\0\200\2\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\20>\0\0\0\0\0\0\20> \0\0\0\0\0\20> \0\0\0\0\0\320\1\0\0\0\0\0\0\320\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.955017 fstat(3, {st_mode=S_IFREG|0755, st_size=19296, ...}) = 0
+18:33:01.955063 mmap(NULL, 2113648, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b0987c000
+18:33:01.955110 mprotect(0x7f1b09880000, 2093056, PROT_NONE) = 0
+18:33:01.955156 mmap(0x7f1b09a7f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3000) = 0x7f1b09a7f000
+18:33:01.955207 close(3)                = 0
+18:33:01.955253 openat(AT_FDCWD, "/lib64/libresolv.so.2", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.955301 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\3408\0\0\0\0\0\0@\0\0\0\0\0\0\0\370g\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0 \0\37\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\214#\1\0\0\0\0\0\214#\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\320%\1\0\0\0\0\0\320%!\0\0\0\0\0\320%!\0\0\0\0\0\260\f\0\0\0\0\0\0\2604\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\210-\1\0\0\0\0\0\210-!\0\0\0\0\0\210-!\0\0\0\0\0 \2\0\0\0\0\0\0 \2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.955349 fstat(3, {st_mode=S_IFREG|0755, st_size=94200, ...}) = 0
+18:33:01.955394 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6c7000
+18:33:01.955440 mmap(NULL, 2185856, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09666000
+18:33:01.955486 mprotect(0x7f1b09679000, 2093056, PROT_NONE) = 0
+18:33:01.955533 mmap(0x7f1b09878000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x12000) = 0x7f1b09878000
+18:33:01.955584 mmap(0x7f1b0987a000, 6784, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b0987a000
+18:33:01.955634 close(3)                = 0
+18:33:01.955690 openat(AT_FDCWD, "/lib64/libdw.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.955739 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\236\0\0\0\0\0\0@\0\0\0\0\0\0\08\3\5\0\0\0\0\0\0\0\0\0@\08\0\10\0@\0\35\0\34\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0 \271\4\0\0\0\0\0 \271\4\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0h\304\4\0\0\0\0\0h\304$\0\0\0\0\0h\304$\0\0\0\0\0\230!\0\0\0\0\0\0\310$\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0@\335\4\0\0\0\0\0@\335$\0\0\0\0\0@\335$\0\0\0\0\0`\2\0\0\0\0\0\0`\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0"..., 832) = 832
+18:33:01.955787 fstat(3, {st_mode=S_IFREG|0755, st_size=330360, ...}) = 0
+18:33:01.955833 mmap(NULL, 2418992, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09417000
+18:33:01.955880 mprotect(0x7f1b09463000, 2097152, PROT_NONE) = 0
+18:33:01.955929 mmap(0x7f1b09663000, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4c000) = 0x7f1b09663000
+18:33:01.955980 close(3)                = 0
+18:33:01.956026 openat(AT_FDCWD, "/lib64/libgcc_s.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.956074 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320*\0\0\0\0\0\0@\0\0\0\0\0\0\0\0S\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\35\0\34\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\344H\1\0\0\0\0\0\344H\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\300M\1\0\0\0\0\0\300M!\0\0\0\0\0\300M!\0\0\0\0\0\270\3\0\0\0\0\0\0p\6\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\340M\1\0\0\0\0\0\340M!\0\0\0\0\0\340M!\0\0\0\0\0\360\1\0\0\0\0\0\0\360\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.956121 fstat(3, {st_mode=S_IFREG|0755, st_size=88640, ...}) = 0
+18:33:01.956166 mmap(NULL, 2184240, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b09201000
+18:33:01.956211 mprotect(0x7f1b09216000, 2093056, PROT_NONE) = 0
+18:33:01.956257 mmap(0x7f1b09415000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x14000) = 0x7f1b09415000
+18:33:01.956307 close(3)                = 0
+18:33:01.956353 openat(AT_FDCWD, "/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.956401 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260a\0\0\0\0\0\0@\0\0\0\0\0\0\0\250=\2\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0(\0'\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\370\1\0\0\0\0\0\0\370\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|\177\1\0\0\0\0\0|\177\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\200\213\1\0\0\0\0\0\200\213!\0\0\0\0\0"..., 832) = 832
+18:33:01.956448 fstat(3, {st_mode=S_IFREG|0755, st_size=149416, ...}) = 0
+18:33:01.956494 mmap(NULL, 2217064, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b08fe3000
+18:33:01.956539 mprotect(0x7f1b08ffb000, 2097152, PROT_NONE) = 0
+18:33:01.956584 mmap(0x7f1b091fb000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18000) = 0x7f1b091fb000
+18:33:01.956656 mmap(0x7f1b091fd000, 13416, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1b091fd000
+18:33:01.956716 close(3)                = 0
+18:33:01.956769 openat(AT_FDCWD, "/lib64/libpcre.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.956820 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0p\25\0\0\0\0\0\0@\0\0\0\0\0\0\0x\34\6\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|\4\6\0\0\0\0\0|\4\6\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\220\f\6\0\0\0\0\0\220\f&\0\0\0\0\0\220\f&\0\0\0\0\0\200\4\0\0\0\0\0\0X\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\320\r\6\0\0\0\0\0\320\r&\0\0\0\0\0\320\r&\0\0\0\0\0\340\1\0\0\0\0\0\0\340\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.956868 fstat(3, {st_mode=S_IFREG|0755, st_size=402232, ...}) = 0
+18:33:01.956914 mmap(NULL, 2494952, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b08d81000
+18:33:01.956960 mprotect(0x7f1b08de2000, 2093056, PROT_NONE) = 0
+18:33:01.957007 mmap(0x7f1b08fe1000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x60000) = 0x7f1b08fe1000
+18:33:01.957059 close(3)                = 0
+18:33:01.957109 openat(AT_FDCWD, "/usr/lib64/elfutils/tls/x86_64/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957159 stat("/usr/lib64/elfutils/tls/x86_64/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957205 openat(AT_FDCWD, "/usr/lib64/elfutils/tls/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957252 stat("/usr/lib64/elfutils/tls/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957299 openat(AT_FDCWD, "/usr/lib64/elfutils/tls/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957349 stat("/usr/lib64/elfutils/tls/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957397 openat(AT_FDCWD, "/usr/lib64/elfutils/tls/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957444 stat("/usr/lib64/elfutils/tls", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957491 openat(AT_FDCWD, "/usr/lib64/elfutils/x86_64/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957537 stat("/usr/lib64/elfutils/x86_64/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957583 openat(AT_FDCWD, "/usr/lib64/elfutils/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957630 stat("/usr/lib64/elfutils/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957676 openat(AT_FDCWD, "/usr/lib64/elfutils/x86_64/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957724 stat("/usr/lib64/elfutils/x86_64", 0x7ffc46858c30) = -1 ENOENT (No such file or directory)
+18:33:01.957770 openat(AT_FDCWD, "/usr/lib64/elfutils/libelf.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.957817 stat("/usr/lib64/elfutils", {st_mode=S_IFDIR|0755, st_size=4096, ...}) = 0
+18:33:01.957865 openat(AT_FDCWD, "/lib64/libelf.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.957912 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220/\0\0\0\0\0\0@\0\0\0\0\0\0\0\310n\1\0\0\0\0\0\0\0\0\0@\08\0\10\0@\0\35\0\34\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\274X\1\0\0\0\0\0\274X\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\320[\1\0\0\0\0\0\320[!\0\0\0\0\0\320[!\0\0\0\0\0\344\5\0\0\0\0\0\0\360\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\260]\1\0\0\0\0\0\260]!\0\0\0\0\0\260]!\0\0\0\0\0\20\2\0\0\0\0\0\0\20\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\0\2\0\0\0\0\0\0\0\2\0\0\0\0\0\0"..., 832) = 832
+18:33:01.957959 fstat(3, {st_mode=S_IFREG|0755, st_size=95752, ...}) = 0
+18:33:01.958005 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6c5000
+18:33:01.958052 mmap(NULL, 2187712, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b08b6a000
+18:33:01.958098 mprotect(0x7f1b08b80000, 2093056, PROT_NONE) = 0
+18:33:01.958143 mmap(0x7f1b08d7f000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x15000) = 0x7f1b08d7f000
+18:33:01.958194 close(3)                = 0
+18:33:01.958240 openat(AT_FDCWD, "/usr/lib64/elfutils/libz.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.958289 openat(AT_FDCWD, "/lib64/libz.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.958337 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\340 \0\0\0\0\0\0@\0\0\0\0\0\0\0\30I\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\2505\1\0\0\0\0\0\2505\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0000;\1\0\0\0\0\0000;!\0\0\0\0\0000;!\0\0\0\0\0000\5\0\0\0\0\0\08\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0P<\1\0\0\0\0\0P<!\0\0\0\0\0P<!\0\0\0\0\0\20\2\0\0\0\0\0\0\20\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.958385 fstat(3, {st_mode=S_IFREG|0755, st_size=85976, ...}) = 0
+18:33:01.958429 mmap(NULL, 2179176, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b08955000
+18:33:01.958474 mprotect(0x7f1b08969000, 2093056, PROT_NONE) = 0
+18:33:01.958520 mmap(0x7f1b08b68000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13000) = 0x7f1b08b68000
+18:33:01.958572 close(3)                = 0
+18:33:01.958619 openat(AT_FDCWD, "/usr/lib64/elfutils/libbz2.so.1", O_RDONLY|O_CLOEXEC) = -1 ENOENT (No such file or directory)
+18:33:01.958667 openat(AT_FDCWD, "/lib64/libbz2.so.1", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.958715 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\320\26\0\0\0\0\0\0@\0\0\0\0\0\0\0`\3\1\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\33\0\32\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\210\344\0\0\0\0\0\0\210\344\0\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0000\355\0\0\0\0\0\0000\355 \0\0\0\0\0000\355 \0\0\0\0\0000\20\0\0\0\0\0\08\20\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0\340\355\0\0\0\0\0\0\340\355 \0\0\0\0\0\340\355 \0\0\0\0\0\320\1\0\0\0\0\0\0\320\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.958766 fstat(3, {st_mode=S_IFREG|0755, st_size=68128, ...}) = 0
+18:33:01.958813 mmap(NULL, 2162024, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1b08745000
+18:33:01.958859 mprotect(0x7f1b08754000, 2093056, PROT_NONE) = 0
+18:33:01.958905 mmap(0x7f1b08953000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xe000) = 0x7f1b08953000
+18:33:01.958956 close(3)                = 0
+18:33:01.959020 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6c3000
+18:33:01.959075 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b6c0000
+18:33:01.959121 arch_prctl(ARCH_SET_FS, 0x7f1b0b6c0840) = 0
+18:33:01.959192 mprotect(0x7f1b0ae53000, 16384, PROT_READ) = 0
+18:33:01.959242 mprotect(0x7f1b08953000, 4096, PROT_READ) = 0
+18:33:01.959299 mprotect(0x7f1b08b68000, 4096, PROT_READ) = 0
+18:33:01.959346 mprotect(0x7f1b08d7f000, 4096, PROT_READ) = 0
+18:33:01.959409 mprotect(0x7f1b091fb000, 4096, PROT_READ) = 0
+18:33:01.959457 mprotect(0x7f1b08fe1000, 4096, PROT_READ) = 0
+18:33:01.959502 mprotect(0x7f1b09415000, 4096, PROT_READ) = 0
+18:33:01.959554 mprotect(0x7f1b0b05f000, 4096, PROT_READ) = 0
+18:33:01.959600 mprotect(0x7f1b0a136000, 4096, PROT_READ) = 0
+18:33:01.959651 mprotect(0x7f1b09663000, 8192, PROT_READ) = 0
+18:33:01.959718 mprotect(0x7f1b09878000, 4096, PROT_READ) = 0
+18:33:01.959764 mprotect(0x7f1b09a7f000, 4096, PROT_READ) = 0
+18:33:01.959814 mprotect(0x7f1b09cfa000, 4096, PROT_READ) = 0
+18:33:01.959862 mprotect(0x7f1b09f11000, 4096, PROT_READ) = 0
+18:33:01.959914 mprotect(0x7f1b0a35b000, 4096, PROT_READ) = 0
+18:33:01.959977 mprotect(0x7f1b0a565000, 4096, PROT_READ) = 0
+18:33:01.960032 mprotect(0x7f1b0a8a5000, 4096, PROT_READ) = 0
+18:33:01.960078 mprotect(0x7f1b0aaae000, 4096, PROT_READ) = 0
+18:33:01.960155 mprotect(0x7f1b0b28c000, 4096, PROT_READ) = 0
+18:33:01.960206 mprotect(0x7f1b0b49f000, 4096, PROT_READ) = 0
+18:33:01.960253 mprotect(0x605000, 4096, PROT_READ) = 0
+18:33:01.960300 mprotect(0x7f1b0b6d8000, 4096, PROT_READ) = 0
+18:33:01.960344 munmap(0x7f1b0b6cd000, 44585) = 0
+18:33:01.960393 set_tid_address(0x7f1b0b6c0b10) = 6044
+18:33:01.960437 set_robust_list(0x7f1b0b6c0b20, 24) = 0
+18:33:01.960483 rt_sigaction(SIGRTMIN, {sa_handler=0x7f1b08fe8c70, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f1b08ff48e0}, NULL, 8) = 0
+18:33:01.960530 rt_sigaction(SIGRT_1, {sa_handler=0x7f1b08fe8cf0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f1b08ff48e0}, NULL, 8) = 0
+18:33:01.960576 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+18:33:01.960623 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=10240*1024, rlim_max=10240*1024}) = 0
+18:33:01.960746 brk(NULL)               = 0x1183000
+18:33:01.960791 brk(0x11a4000)          = 0x11a4000
+18:33:01.960840 access("/etc/system-fips", F_OK) = -1 ENOENT (No such file or directory)
+18:33:01.960896 statfs("/sys/fs/selinux", 0x7ffc46859cb0) = -1 ENOENT (No such file or directory)
+18:33:01.960952 statfs("/selinux", 0x7ffc46859cb0) = -1 ENOENT (No such file or directory)
+18:33:01.961002 openat(AT_FDCWD, "/proc/filesystems", O_RDONLY) = 3
+18:33:01.961055 fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+18:33:01.961101 read(3, "nodev\tsysfs\nnodev\trootfs\nnodev\tramfs\nnodev\tbdev\nnodev\tproc\nnodev\tcpuset\nnodev\tcgroup\nnodev\tcgroup2\nnodev\ttmpfs\nnodev\tdevtmpfs\nnodev\tdebugfs\nnodev\ttracefs\nnodev\tsecurityfs\nnodev\tsockfs\nnodev\tbpf\nnodev\tpipefs\nnodev\thugetlbfs\nnodev\tdevpts\n\txfs\nnodev\tpstore\nno"..., 1024) = 341
+18:33:01.961160 read(3, "", 1024)       = 0
+18:33:01.961206 close(3)                = 0
+18:33:01.961253 access("/etc/selinux/config", F_OK) = 0
+18:33:01.961307 prctl(PR_CAPBSET_READ, CAP_MAC_OVERRIDE) = 1
+18:33:01.961353 prctl(PR_CAPBSET_READ, 0x30 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+18:33:01.961398 prctl(PR_CAPBSET_READ, 0x28 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+18:33:01.961442 prctl(PR_CAPBSET_READ, CAP_BLOCK_SUSPEND) = 1
+18:33:01.961483 prctl(PR_CAPBSET_READ, 0x26 /* CAP_??? */) = -1 EINVAL (Invalid argument)
+18:33:01.961527 prctl(PR_CAPBSET_READ, CAP_AUDIT_READ) = 1
+18:33:01.961573 openat(AT_FDCWD, "/proc/self/auxv", O_RDONLY) = 3
+18:33:01.961631 fstat(3, {st_mode=S_IFREG|0400, st_size=0, ...}) = 0
+18:33:01.961677 read(3, "!\0\0\0\0\0\0\0\0P\206F\374\177\0\0\20\0\0\0\0\0\0\0\377\373\213\27\0\0\0\0\6\0\0\0\0\0\0\0\0\20\0\0\0\0\0\0\21\0\0\0\0\0\0\0d\0\0\0\0\0\0\0\3\0\0\0\0\0\0\0@\0@\0\0\0\0\0\4\0\0\0\0\0\0\08\0\0\0\0\0\0\0\5\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0\7\0\0\0\0\0\0\0\0PK\v\33\177\0\0\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0@!@\0\0\0\0\0\v\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\f\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\r\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\16\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\27\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\31\0\0\0\0\0\0\0I\240\205F\374\177\0\0"..., 1024) = 320
+18:33:01.961725 close(3)                = 0
+18:33:01.961773 uname({sysname="Linux", nodename="ip-172-31-64-80.ec2.internal", ...}) = 0
+18:33:01.961825 open("/sys/devices/system/cpu/online", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.961878 read(3, "0-7\n", 8192)  = 4
+18:33:01.961926 close(3)                = 0
+18:33:01.961971 openat(AT_FDCWD, "/proc/self/auxv", O_RDONLY) = 3
+18:33:01.962020 fstat(3, {st_mode=S_IFREG|0400, st_size=0, ...}) = 0
+18:33:01.962066 read(3, "!\0\0\0\0\0\0\0\0P\206F\374\177\0\0\20\0\0\0\0\0\0\0\377\373\213\27\0\0\0\0\6\0\0\0\0\0\0\0\0\20\0\0\0\0\0\0\21\0\0\0\0\0\0\0d\0\0\0\0\0\0\0\3\0\0\0\0\0\0\0@\0@\0\0\0\0\0\4\0\0\0\0\0\0\08\0\0\0\0\0\0\0\5\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0\7\0\0\0\0\0\0\0\0PK\v\33\177\0\0\10\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\t\0\0\0\0\0\0\0@!@\0\0\0\0\0\v\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\f\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\r\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\16\0\0\0\0\0\0\0\350\3\0\0\0\0\0\0\27\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\31\0\0\0\0\0\0\0I\240\205F\374\177\0\0"..., 1024) = 320
+18:33:01.962113 close(3)                = 0
+18:33:01.962159 open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.962206 fstat(3, {st_mode=S_IFREG|0644, st_size=113049440, ...}) = 0
+18:33:01.962251 mmap(NULL, 113049440, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1b01b75000
+18:33:01.962299 close(3)                = 0
+18:33:01.962366 getpid()                = 6044
+18:33:01.962410 stat("/proc/self/task", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.962462 open("/proc", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+18:33:01.962508 fstat(3, {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.962555 mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b69f000
+18:33:01.962603 mmap(NULL, 135168, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1b0b67e000
+18:33:01.962657 open("/usr/lib64/gconv/gconv-modules.cache", O_RDONLY) = 4
+18:33:01.962703 fstat(4, {st_mode=S_IFREG|0644, st_size=26370, ...}) = 0
+18:33:01.962749 mmap(NULL, 26370, PROT_READ, MAP_SHARED, 4, 0) = 0x7f1b0b6d1000
+18:33:01.962794 close(4)                = 0
+18:33:01.962838 futex(0x7f1b0ae58a08, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+18:33:01.962894 getdents(3, /* 237 entries */, 32768) = 6048
+18:33:01.963124 stat("/proc/1", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.963178 openat(AT_FDCWD, "/proc/1/status", O_RDONLY) = 4
+18:33:01.963225 read(4, "Name:\tsystemd\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t1\nNgid:\t0\nPid:\t1\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t128\nGroups:\t \nNStgid:\t1\nNSpid:\t1\nNSpgid:\t1\nNSsid:\t1\nVmPeak:\t  254624 kB\nVmSize:\t  189088 kB\nVmLck:\t       0 kB\nVmPin:\t       0 kB\nVm"..., 1024) = 1024
+18:33:01.963283 read(4, "00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000000,00000001\nMems_allowed_list:\t0\nvoluntary_ctxt_switches:\t1934\nnonvoluntary_ctxt_switche"..., 1024) = 263
+18:33:01.963334 close(4)                = 0
+18:33:01.963385 openat(AT_FDCWD, "/proc/1/cmdline", O_RDONLY) = 4
+18:33:01.963432 read(4, "/usr/lib/systemd/systemd\0--switched-root\0--system\0--deserialize\00021\0", 2047) = 67
+18:33:01.963479 close(4)                = 0
+18:33:01.963528 stat("/proc/2", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.963576 openat(AT_FDCWD, "/proc/2/status", O_RDONLY) = 4
+18:33:01.963623 read(4, "Name:\tkthreadd\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t2\nNgid:\t0\nPid:\t2\nPPid:\t0\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2\nNSpid:\t2\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigB"..., 2048) = 943
+18:33:01.963682 close(4)                = 0
+18:33:01.963729 openat(AT_FDCWD, "/proc/2/cmdline", O_RDONLY) = 4
+18:33:01.963776 read(4, "", 2047)       = 0
+18:33:01.963820 close(4)                = 0
+18:33:01.963864 stat("/proc/4", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.963913 openat(AT_FDCWD, "/proc/4/status", O_RDONLY) = 4
+18:33:01.963960 read(4, "Name:\tkworker/0:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t4\nNgid:\t0\nPid:\t4\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t4\nNSpid:\t4\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigB"..., 2048) = 939
+18:33:01.964010 close(4)                = 0
+18:33:01.964056 openat(AT_FDCWD, "/proc/4/cmdline", O_RDONLY) = 4
+18:33:01.964103 read(4, "", 2047)       = 0
+18:33:01.964146 close(4)                = 0
+18:33:01.964191 stat("/proc/6", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.964239 openat(AT_FDCWD, "/proc/6/status", O_RDONLY) = 4
+18:33:01.964285 read(4, "Name:\tmm_percpu_wq\nUmask:\t0000\nState:\tI (idle)\nTgid:\t6\nNgid:\t0\nPid:\t6\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t6\nNSpid:\t6\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigB"..., 2048) = 941
+18:33:01.964336 close(4)                = 0
+18:33:01.964382 openat(AT_FDCWD, "/proc/6/cmdline", O_RDONLY) = 4
+18:33:01.964431 read(4, "", 2047)       = 0
+18:33:01.964474 close(4)                = 0
+18:33:01.964518 stat("/proc/7", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.964567 openat(AT_FDCWD, "/proc/7/status", O_RDONLY) = 4
+18:33:01.964614 read(4, "Name:\tksoftirqd/0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t7\nNgid:\t0\nPid:\t7\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t7\nNSpid:\t7\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.964692 close(4)                = 0
+18:33:01.964740 openat(AT_FDCWD, "/proc/7/cmdline", O_RDONLY) = 4
+18:33:01.964788 read(4, "", 2047)       = 0
+18:33:01.964832 close(4)                = 0
+18:33:01.964877 stat("/proc/8", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.964925 openat(AT_FDCWD, "/proc/8/status", O_RDONLY) = 4
+18:33:01.964972 read(4, "Name:\trcu_sched\nUmask:\t0000\nState:\tI (idle)\nTgid:\t8\nNgid:\t0\nPid:\t8\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t8\nNSpid:\t8\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:"..., 2048) = 941
+18:33:01.965022 close(4)                = 0
+18:33:01.965067 openat(AT_FDCWD, "/proc/8/cmdline", O_RDONLY) = 4
+18:33:01.965115 read(4, "", 2047)       = 0
+18:33:01.965159 close(4)                = 0
+18:33:01.965203 stat("/proc/9", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.965251 openat(AT_FDCWD, "/proc/9/status", O_RDONLY) = 4
+18:33:01.965298 read(4, "Name:\trcu_bh\nUmask:\t0000\nState:\tI (idle)\nTgid:\t9\nNgid:\t0\nPid:\t9\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t9\nNSpid:\t9\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:\t00"..., 2048) = 935
+18:33:01.965354 close(4)                = 0
+18:33:01.965400 openat(AT_FDCWD, "/proc/9/cmdline", O_RDONLY) = 4
+18:33:01.965448 read(4, "", 2047)       = 0
+18:33:01.965492 close(4)                = 0
+18:33:01.965537 stat("/proc/10", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.965585 openat(AT_FDCWD, "/proc/10/status", O_RDONLY) = 4
+18:33:01.965631 read(4, "Name:\tmigration/0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t10\nNgid:\t0\nPid:\t10\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t10\nNSpid:\t10\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.965683 close(4)                = 0
+18:33:01.965728 openat(AT_FDCWD, "/proc/10/cmdline", O_RDONLY) = 4
+18:33:01.965774 read(4, "", 2047)       = 0
+18:33:01.965818 close(4)                = 0
+18:33:01.965863 stat("/proc/11", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.965912 openat(AT_FDCWD, "/proc/11/status", O_RDONLY) = 4
+18:33:01.965958 read(4, "Name:\twatchdog/0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t11\nNgid:\t0\nPid:\t11\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t11\nNSpid:\t11\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.966009 close(4)                = 0
+18:33:01.966055 openat(AT_FDCWD, "/proc/11/cmdline", O_RDONLY) = 4
+18:33:01.966102 read(4, "", 2047)       = 0
+18:33:01.966145 close(4)                = 0
+18:33:01.966189 stat("/proc/12", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.966237 openat(AT_FDCWD, "/proc/12/status", O_RDONLY) = 4
+18:33:01.966284 read(4, "Name:\tcpuhp/0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t12\nNgid:\t0\nPid:\t12\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t12\nNSpid:\t12\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.966334 close(4)                = 0
+18:33:01.966380 openat(AT_FDCWD, "/proc/12/cmdline", O_RDONLY) = 4
+18:33:01.966426 read(4, "", 2047)       = 0
+18:33:01.966471 close(4)                = 0
+18:33:01.966515 stat("/proc/13", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.966564 openat(AT_FDCWD, "/proc/13/status", O_RDONLY) = 4
+18:33:01.966610 read(4, "Name:\tcpuhp/1\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t13\nNgid:\t0\nPid:\t13\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t13\nNSpid:\t13\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.966662 close(4)                = 0
+18:33:01.966707 openat(AT_FDCWD, "/proc/13/cmdline", O_RDONLY) = 4
+18:33:01.966754 read(4, "", 2047)       = 0
+18:33:01.966798 close(4)                = 0
+18:33:01.966843 stat("/proc/14", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.966891 openat(AT_FDCWD, "/proc/14/status", O_RDONLY) = 4
+18:33:01.966939 read(4, "Name:\twatchdog/1\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t14\nNgid:\t0\nPid:\t14\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t14\nNSpid:\t14\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.966989 close(4)                = 0
+18:33:01.967034 openat(AT_FDCWD, "/proc/14/cmdline", O_RDONLY) = 4
+18:33:01.967082 read(4, "", 2047)       = 0
+18:33:01.967125 close(4)                = 0
+18:33:01.967169 stat("/proc/15", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.967217 openat(AT_FDCWD, "/proc/15/status", O_RDONLY) = 4
+18:33:01.967264 read(4, "Name:\tmigration/1\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t15\nNgid:\t0\nPid:\t15\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t15\nNSpid:\t15\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.967318 close(4)                = 0
+18:33:01.967364 openat(AT_FDCWD, "/proc/15/cmdline", O_RDONLY) = 4
+18:33:01.967412 read(4, "", 2047)       = 0
+18:33:01.967456 close(4)                = 0
+18:33:01.967500 stat("/proc/16", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.967548 openat(AT_FDCWD, "/proc/16/status", O_RDONLY) = 4
+18:33:01.967595 read(4, "Name:\tksoftirqd/1\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t16\nNgid:\t0\nPid:\t16\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t16\nNSpid:\t16\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 948
+18:33:01.967645 close(4)                = 0
+18:33:01.967698 openat(AT_FDCWD, "/proc/16/cmdline", O_RDONLY) = 4
+18:33:01.967746 read(4, "", 2047)       = 0
+18:33:01.967791 close(4)                = 0
+18:33:01.967836 stat("/proc/18", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.967883 openat(AT_FDCWD, "/proc/18/status", O_RDONLY) = 4
+18:33:01.967930 read(4, "Name:\tkworker/1:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t18\nNgid:\t0\nPid:\t18\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t18\nNSpid:\t18\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.967982 close(4)                = 0
+18:33:01.968027 openat(AT_FDCWD, "/proc/18/cmdline", O_RDONLY) = 4
+18:33:01.968074 read(4, "", 2047)       = 0
+18:33:01.968118 close(4)                = 0
+18:33:01.968162 stat("/proc/19", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.968210 openat(AT_FDCWD, "/proc/19/status", O_RDONLY) = 4
+18:33:01.968257 read(4, "Name:\tcpuhp/2\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t19\nNgid:\t0\nPid:\t19\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t19\nNSpid:\t19\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.968309 close(4)                = 0
+18:33:01.968357 openat(AT_FDCWD, "/proc/19/cmdline", O_RDONLY) = 4
+18:33:01.968403 read(4, "", 2047)       = 0
+18:33:01.968446 close(4)                = 0
+18:33:01.968490 stat("/proc/20", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.968539 openat(AT_FDCWD, "/proc/20/status", O_RDONLY) = 4
+18:33:01.968586 read(4, "Name:\twatchdog/2\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t20\nNgid:\t0\nPid:\t20\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t20\nNSpid:\t20\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.968655 close(4)                = 0
+18:33:01.968710 openat(AT_FDCWD, "/proc/20/cmdline", O_RDONLY) = 4
+18:33:01.968759 read(4, "", 2047)       = 0
+18:33:01.968803 close(4)                = 0
+18:33:01.968848 stat("/proc/21", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.968896 openat(AT_FDCWD, "/proc/21/status", O_RDONLY) = 4
+18:33:01.968942 read(4, "Name:\tmigration/2\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t21\nNgid:\t0\nPid:\t21\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t21\nNSpid:\t21\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.968993 close(4)                = 0
+18:33:01.969038 openat(AT_FDCWD, "/proc/21/cmdline", O_RDONLY) = 4
+18:33:01.969085 read(4, "", 2047)       = 0
+18:33:01.969129 close(4)                = 0
+18:33:01.969174 stat("/proc/22", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.969221 openat(AT_FDCWD, "/proc/22/status", O_RDONLY) = 4
+18:33:01.969268 read(4, "Name:\tksoftirqd/2\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t22\nNgid:\t0\nPid:\t22\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t22\nNSpid:\t22\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.969325 close(4)                = 0
+18:33:01.969370 openat(AT_FDCWD, "/proc/22/cmdline", O_RDONLY) = 4
+18:33:01.969418 read(4, "", 2047)       = 0
+18:33:01.969462 close(4)                = 0
+18:33:01.969507 stat("/proc/24", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.969556 openat(AT_FDCWD, "/proc/24/status", O_RDONLY) = 4
+18:33:01.969605 read(4, "Name:\tkworker/2:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t24\nNgid:\t0\nPid:\t24\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t24\nNSpid:\t24\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.969659 close(4)                = 0
+18:33:01.969704 openat(AT_FDCWD, "/proc/24/cmdline", O_RDONLY) = 4
+18:33:01.969751 read(4, "", 2047)       = 0
+18:33:01.969794 close(4)                = 0
+18:33:01.969839 stat("/proc/25", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.969887 openat(AT_FDCWD, "/proc/25/status", O_RDONLY) = 4
+18:33:01.969933 read(4, "Name:\tcpuhp/3\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t25\nNgid:\t0\nPid:\t25\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t25\nNSpid:\t25\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.969984 close(4)                = 0
+18:33:01.970029 openat(AT_FDCWD, "/proc/25/cmdline", O_RDONLY) = 4
+18:33:01.970076 read(4, "", 2047)       = 0
+18:33:01.970119 close(4)                = 0
+18:33:01.970163 stat("/proc/26", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.970211 openat(AT_FDCWD, "/proc/26/status", O_RDONLY) = 4
+18:33:01.970258 read(4, "Name:\twatchdog/3\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t26\nNgid:\t0\nPid:\t26\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t26\nNSpid:\t26\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.970310 close(4)                = 0
+18:33:01.970356 openat(AT_FDCWD, "/proc/26/cmdline", O_RDONLY) = 4
+18:33:01.970402 read(4, "", 2047)       = 0
+18:33:01.970446 close(4)                = 0
+18:33:01.970491 stat("/proc/27", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.970538 openat(AT_FDCWD, "/proc/27/status", O_RDONLY) = 4
+18:33:01.970586 read(4, "Name:\tmigration/3\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t27\nNgid:\t0\nPid:\t27\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t27\nNSpid:\t27\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.970642 close(4)                = 0
+18:33:01.970687 openat(AT_FDCWD, "/proc/27/cmdline", O_RDONLY) = 4
+18:33:01.970734 read(4, "", 2047)       = 0
+18:33:01.970777 close(4)                = 0
+18:33:01.970823 stat("/proc/28", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.970870 openat(AT_FDCWD, "/proc/28/status", O_RDONLY) = 4
+18:33:01.970917 read(4, "Name:\tksoftirqd/3\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t28\nNgid:\t0\nPid:\t28\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t28\nNSpid:\t28\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.970969 close(4)                = 0
+18:33:01.971014 openat(AT_FDCWD, "/proc/28/cmdline", O_RDONLY) = 4
+18:33:01.971061 read(4, "", 2047)       = 0
+18:33:01.971106 close(4)                = 0
+18:33:01.971151 stat("/proc/30", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.971198 openat(AT_FDCWD, "/proc/30/status", O_RDONLY) = 4
+18:33:01.971245 read(4, "Name:\tkworker/3:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t30\nNgid:\t0\nPid:\t30\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t30\nNSpid:\t30\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.971299 close(4)                = 0
+18:33:01.971345 openat(AT_FDCWD, "/proc/30/cmdline", O_RDONLY) = 4
+18:33:01.971393 read(4, "", 2047)       = 0
+18:33:01.971438 close(4)                = 0
+18:33:01.971482 stat("/proc/31", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.971530 openat(AT_FDCWD, "/proc/31/status", O_RDONLY) = 4
+18:33:01.971577 read(4, "Name:\tcpuhp/4\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t31\nNgid:\t0\nPid:\t31\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t31\nNSpid:\t31\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.971629 close(4)                = 0
+18:33:01.971682 openat(AT_FDCWD, "/proc/31/cmdline", O_RDONLY) = 4
+18:33:01.971731 read(4, "", 2047)       = 0
+18:33:01.971775 close(4)                = 0
+18:33:01.971820 stat("/proc/32", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.971869 openat(AT_FDCWD, "/proc/32/status", O_RDONLY) = 4
+18:33:01.971914 read(4, "Name:\twatchdog/4\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t32\nNgid:\t0\nPid:\t32\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t32\nNSpid:\t32\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.971965 close(4)                = 0
+18:33:01.972011 openat(AT_FDCWD, "/proc/32/cmdline", O_RDONLY) = 4
+18:33:01.972057 read(4, "", 2047)       = 0
+18:33:01.972101 close(4)                = 0
+18:33:01.972147 stat("/proc/33", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.972195 openat(AT_FDCWD, "/proc/33/status", O_RDONLY) = 4
+18:33:01.972243 read(4, "Name:\tmigration/4\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t33\nNgid:\t0\nPid:\t33\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t33\nNSpid:\t33\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.972294 close(4)                = 0
+18:33:01.972340 openat(AT_FDCWD, "/proc/33/cmdline", O_RDONLY) = 4
+18:33:01.972388 read(4, "", 2047)       = 0
+18:33:01.972432 close(4)                = 0
+18:33:01.972477 stat("/proc/34", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.972525 openat(AT_FDCWD, "/proc/34/status", O_RDONLY) = 4
+18:33:01.972571 read(4, "Name:\tksoftirqd/4\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t34\nNgid:\t0\nPid:\t34\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t34\nNSpid:\t34\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.972636 close(4)                = 0
+18:33:01.972689 openat(AT_FDCWD, "/proc/34/cmdline", O_RDONLY) = 4
+18:33:01.972737 read(4, "", 2047)       = 0
+18:33:01.972782 close(4)                = 0
+18:33:01.972826 stat("/proc/36", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.972874 openat(AT_FDCWD, "/proc/36/status", O_RDONLY) = 4
+18:33:01.972920 read(4, "Name:\tkworker/4:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t36\nNgid:\t0\nPid:\t36\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t36\nNSpid:\t36\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.972971 close(4)                = 0
+18:33:01.973016 openat(AT_FDCWD, "/proc/36/cmdline", O_RDONLY) = 4
+18:33:01.973063 read(4, "", 2047)       = 0
+18:33:01.973107 close(4)                = 0
+18:33:01.973151 stat("/proc/37", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.973199 openat(AT_FDCWD, "/proc/37/status", O_RDONLY) = 4
+18:33:01.973246 read(4, "Name:\tcpuhp/5\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t37\nNgid:\t0\nPid:\t37\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t37\nNSpid:\t37\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.973300 close(4)                = 0
+18:33:01.973346 openat(AT_FDCWD, "/proc/37/cmdline", O_RDONLY) = 4
+18:33:01.973394 read(4, "", 2047)       = 0
+18:33:01.973438 close(4)                = 0
+18:33:01.973483 stat("/proc/38", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.973532 openat(AT_FDCWD, "/proc/38/status", O_RDONLY) = 4
+18:33:01.973583 read(4, "Name:\twatchdog/5\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t38\nNgid:\t0\nPid:\t38\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t38\nNSpid:\t38\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.973634 close(4)                = 0
+18:33:01.973680 openat(AT_FDCWD, "/proc/38/cmdline", O_RDONLY) = 4
+18:33:01.973727 read(4, "", 2047)       = 0
+18:33:01.973771 close(4)                = 0
+18:33:01.973815 stat("/proc/39", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.973863 openat(AT_FDCWD, "/proc/39/status", O_RDONLY) = 4
+18:33:01.973908 read(4, "Name:\tmigration/5\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t39\nNgid:\t0\nPid:\t39\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t39\nNSpid:\t39\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.973960 close(4)                = 0
+18:33:01.974006 openat(AT_FDCWD, "/proc/39/cmdline", O_RDONLY) = 4
+18:33:01.974053 read(4, "", 2047)       = 0
+18:33:01.974096 close(4)                = 0
+18:33:01.974141 stat("/proc/40", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.974188 openat(AT_FDCWD, "/proc/40/status", O_RDONLY) = 4
+18:33:01.974235 read(4, "Name:\tksoftirqd/5\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t40\nNgid:\t0\nPid:\t40\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t40\nNSpid:\t40\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.974286 close(4)                = 0
+18:33:01.974331 openat(AT_FDCWD, "/proc/40/cmdline", O_RDONLY) = 4
+18:33:01.974379 read(4, "", 2047)       = 0
+18:33:01.974423 close(4)                = 0
+18:33:01.974468 stat("/proc/42", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.974516 openat(AT_FDCWD, "/proc/42/status", O_RDONLY) = 4
+18:33:01.974567 read(4, "Name:\tkworker/5:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t42\nNgid:\t0\nPid:\t42\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t42\nNSpid:\t42\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.974618 close(4)                = 0
+18:33:01.974664 openat(AT_FDCWD, "/proc/42/cmdline", O_RDONLY) = 4
+18:33:01.974710 read(4, "", 2047)       = 0
+18:33:01.974755 close(4)                = 0
+18:33:01.974799 stat("/proc/43", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.974847 openat(AT_FDCWD, "/proc/43/status", O_RDONLY) = 4
+18:33:01.974894 read(4, "Name:\tcpuhp/6\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t43\nNgid:\t0\nPid:\t43\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t43\nNSpid:\t43\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.974945 close(4)                = 0
+18:33:01.974991 openat(AT_FDCWD, "/proc/43/cmdline", O_RDONLY) = 4
+18:33:01.975037 read(4, "", 2047)       = 0
+18:33:01.975082 close(4)                = 0
+18:33:01.975125 stat("/proc/44", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.975174 openat(AT_FDCWD, "/proc/44/status", O_RDONLY) = 4
+18:33:01.975220 read(4, "Name:\twatchdog/6\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t44\nNgid:\t0\nPid:\t44\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t44\nNSpid:\t44\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.975274 close(4)                = 0
+18:33:01.975320 openat(AT_FDCWD, "/proc/44/cmdline", O_RDONLY) = 4
+18:33:01.975367 read(4, "", 2047)       = 0
+18:33:01.975413 close(4)                = 0
+18:33:01.975458 stat("/proc/45", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.975507 openat(AT_FDCWD, "/proc/45/status", O_RDONLY) = 4
+18:33:01.975554 read(4, "Name:\tmigration/6\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t45\nNgid:\t0\nPid:\t45\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t45\nNSpid:\t45\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.975607 close(4)                = 0
+18:33:01.975661 openat(AT_FDCWD, "/proc/45/cmdline", O_RDONLY) = 4
+18:33:01.975711 read(4, "", 2047)       = 0
+18:33:01.975755 close(4)                = 0
+18:33:01.975800 stat("/proc/46", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.975848 openat(AT_FDCWD, "/proc/46/status", O_RDONLY) = 4
+18:33:01.975895 read(4, "Name:\tksoftirqd/6\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t46\nNgid:\t0\nPid:\t46\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t46\nNSpid:\t46\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.975946 close(4)                = 0
+18:33:01.975992 openat(AT_FDCWD, "/proc/46/cmdline", O_RDONLY) = 4
+18:33:01.976040 read(4, "", 2047)       = 0
+18:33:01.976084 close(4)                = 0
+18:33:01.976129 stat("/proc/48", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.976178 openat(AT_FDCWD, "/proc/48/status", O_RDONLY) = 4
+18:33:01.976225 read(4, "Name:\tkworker/6:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t48\nNgid:\t0\nPid:\t48\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t48\nNSpid:\t48\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.976277 close(4)                = 0
+18:33:01.976321 openat(AT_FDCWD, "/proc/48/cmdline", O_RDONLY) = 4
+18:33:01.976368 read(4, "", 2047)       = 0
+18:33:01.976412 close(4)                = 0
+18:33:01.976456 stat("/proc/49", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.976505 openat(AT_FDCWD, "/proc/49/status", O_RDONLY) = 4
+18:33:01.976551 read(4, "Name:\tcpuhp/7\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t49\nNgid:\t0\nPid:\t49\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t49\nNSpid:\t49\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 943
+18:33:01.976607 close(4)                = 0
+18:33:01.976681 openat(AT_FDCWD, "/proc/49/cmdline", O_RDONLY) = 4
+18:33:01.976737 read(4, "", 2047)       = 0
+18:33:01.976776 close(4)                = 0
+18:33:01.976815 stat("/proc/50", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.976857 openat(AT_FDCWD, "/proc/50/status", O_RDONLY) = 4
+18:33:01.976896 read(4, "Name:\twatchdog/7\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t50\nNgid:\t0\nPid:\t50\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t50\nNSpid:\t50\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.976954 close(4)                = 0
+18:33:01.976993 openat(AT_FDCWD, "/proc/50/cmdline", O_RDONLY) = 4
+18:33:01.977034 read(4, "", 2047)       = 0
+18:33:01.977073 close(4)                = 0
+18:33:01.977111 stat("/proc/51", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.977153 openat(AT_FDCWD, "/proc/51/status", O_RDONLY) = 4
+18:33:01.977192 read(4, "Name:\tmigration/7\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t51\nNgid:\t0\nPid:\t51\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t51\nNSpid:\t51\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.977252 close(4)                = 0
+18:33:01.977291 openat(AT_FDCWD, "/proc/51/cmdline", O_RDONLY) = 4
+18:33:01.977331 read(4, "", 2047)       = 0
+18:33:01.977370 close(4)                = 0
+18:33:01.977408 stat("/proc/52", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.977450 openat(AT_FDCWD, "/proc/52/status", O_RDONLY) = 4
+18:33:01.977490 read(4, "Name:\tksoftirqd/7\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t52\nNgid:\t0\nPid:\t52\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t52\nNSpid:\t52\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 947
+18:33:01.977547 close(4)                = 0
+18:33:01.977588 openat(AT_FDCWD, "/proc/52/cmdline", O_RDONLY) = 4
+18:33:01.977628 read(4, "", 2047)       = 0
+18:33:01.977667 close(4)                = 0
+18:33:01.977705 stat("/proc/54", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.977746 openat(AT_FDCWD, "/proc/54/status", O_RDONLY) = 4
+18:33:01.977785 read(4, "Name:\tkworker/7:0H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t54\nNgid:\t0\nPid:\t54\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t54\nNSpid:\t54\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 943
+18:33:01.977840 close(4)                = 0
+18:33:01.977880 openat(AT_FDCWD, "/proc/54/cmdline", O_RDONLY) = 4
+18:33:01.977920 read(4, "", 2047)       = 0
+18:33:01.977959 close(4)                = 0
+18:33:01.977998 stat("/proc/56", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.978039 openat(AT_FDCWD, "/proc/56/status", O_RDONLY) = 4
+18:33:01.978079 read(4, "Name:\tkdevtmpfs\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t56\nNgid:\t0\nPid:\t56\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t56\nNSpid:\t56\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000"..., 2048) = 948
+18:33:01.978135 close(4)                = 0
+18:33:01.978174 openat(AT_FDCWD, "/proc/56/cmdline", O_RDONLY) = 4
+18:33:01.978214 read(4, "", 2047)       = 0
+18:33:01.978252 close(4)                = 0
+18:33:01.978306 stat("/proc/57", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.978349 openat(AT_FDCWD, "/proc/57/status", O_RDONLY) = 4
+18:33:01.978390 read(4, "Name:\tnetns\nUmask:\t0000\nState:\tI (idle)\nTgid:\t57\nNgid:\t0\nPid:\t57\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t57\nNSpid:\t57\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk:"..., 2048) = 938
+18:33:01.978445 close(4)                = 0
+18:33:01.978484 openat(AT_FDCWD, "/proc/57/cmdline", O_RDONLY) = 4
+18:33:01.978524 read(4, "", 2047)       = 0
+18:33:01.978566 close(4)                = 0
+18:33:01.978605 stat("/proc/71", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.978645 openat(AT_FDCWD, "/proc/71/status", O_RDONLY) = 4
+18:33:01.978684 read(4, "Name:\tkworker/3:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t71\nNgid:\t0\nPid:\t71\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t71\nNSpid:\t71\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 944
+18:33:01.978739 close(4)                = 0
+18:33:01.978777 openat(AT_FDCWD, "/proc/71/cmdline", O_RDONLY) = 4
+18:33:01.978816 read(4, "", 2047)       = 0
+18:33:01.978855 close(4)                = 0
+18:33:01.978892 stat("/proc/75", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.978934 openat(AT_FDCWD, "/proc/75/status", O_RDONLY) = 4
+18:33:01.978976 read(4, "Name:\tkworker/6:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t75\nNgid:\t0\nPid:\t75\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t75\nNSpid:\t75\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 945
+18:33:01.979031 close(4)                = 0
+18:33:01.979069 openat(AT_FDCWD, "/proc/75/cmdline", O_RDONLY) = 4
+18:33:01.979109 read(4, "", 2047)       = 0
+18:33:01.979148 close(4)                = 0
+18:33:01.979186 stat("/proc/246", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.979227 openat(AT_FDCWD, "/proc/246/status", O_RDONLY) = 4
+18:33:01.979266 read(4, "Name:\tkhungtaskd\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t246\nNgid:\t0\nPid:\t246\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t246\nNSpid:\t246\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000"..., 2048) = 952
+18:33:01.979321 close(4)                = 0
+18:33:01.979361 openat(AT_FDCWD, "/proc/246/cmdline", O_RDONLY) = 4
+18:33:01.979401 read(4, "", 2047)       = 0
+18:33:01.979439 close(4)                = 0
+18:33:01.979477 stat("/proc/253", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.979518 openat(AT_FDCWD, "/proc/253/status", O_RDONLY) = 4
+18:33:01.979560 read(4, "Name:\toom_reaper\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t253\nNgid:\t0\nPid:\t253\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t253\nNSpid:\t253\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000"..., 2048) = 951
+18:33:01.979618 close(4)                = 0
+18:33:01.979661 openat(AT_FDCWD, "/proc/253/cmdline", O_RDONLY) = 4
+18:33:01.979703 read(4, "", 2047)       = 0
+18:33:01.979742 close(4)                = 0
+18:33:01.979780 stat("/proc/254", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.979821 openat(AT_FDCWD, "/proc/254/status", O_RDONLY) = 4
+18:33:01.979861 read(4, "Name:\twriteback\nUmask:\t0000\nState:\tI (idle)\nTgid:\t254\nNgid:\t0\nPid:\t254\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t254\nNSpid:\t254\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000"..., 2048) = 946
+18:33:01.979917 close(4)                = 0
+18:33:01.979956 openat(AT_FDCWD, "/proc/254/cmdline", O_RDONLY) = 4
+18:33:01.979997 read(4, "", 2047)       = 0
+18:33:01.980036 close(4)                = 0
+18:33:01.980074 stat("/proc/256", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.980116 openat(AT_FDCWD, "/proc/256/status", O_RDONLY) = 4
+18:33:01.980155 read(4, "Name:\tkcompactd0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t256\nNgid:\t0\nPid:\t256\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t256\nNSpid:\t256\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000"..., 2048) = 951
+18:33:01.980211 close(4)                = 0
+18:33:01.980250 openat(AT_FDCWD, "/proc/256/cmdline", O_RDONLY) = 4
+18:33:01.980290 read(4, "", 2047)       = 0
+18:33:01.980330 close(4)                = 0
+18:33:01.980368 stat("/proc/257", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.980409 openat(AT_FDCWD, "/proc/257/status", O_RDONLY) = 4
+18:33:01.980450 read(4, "Name:\tksmd\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t257\nNgid:\t0\nPid:\t257\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t257\nNSpid:\t257\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 945
+18:33:01.980505 close(4)                = 0
+18:33:01.980544 openat(AT_FDCWD, "/proc/257/cmdline", O_RDONLY) = 4
+18:33:01.980584 read(4, "", 2047)       = 0
+18:33:01.980623 close(4)                = 0
+18:33:01.980684 stat("/proc/258", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.980729 openat(AT_FDCWD, "/proc/258/status", O_RDONLY) = 4
+18:33:01.980785 read(4, "Name:\tkhugepaged\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t258\nNgid:\t0\nPid:\t258\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t258\nNSpid:\t258\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000"..., 2048) = 953
+18:33:01.980840 close(4)                = 0
+18:33:01.980880 openat(AT_FDCWD, "/proc/258/cmdline", O_RDONLY) = 4
+18:33:01.980920 read(4, "", 2047)       = 0
+18:33:01.980959 close(4)                = 0
+18:33:01.980997 stat("/proc/259", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.981038 openat(AT_FDCWD, "/proc/259/status", O_RDONLY) = 4
+18:33:01.981077 read(4, "Name:\tcrypto\nUmask:\t0000\nState:\tI (idle)\nTgid:\t259\nNgid:\t0\nPid:\t259\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t259\nNSpid:\t259\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSi"..., 2048) = 943
+18:33:01.981132 close(4)                = 0
+18:33:01.981170 openat(AT_FDCWD, "/proc/259/cmdline", O_RDONLY) = 4
+18:33:01.981211 read(4, "", 2047)       = 0
+18:33:01.981250 close(4)                = 0
+18:33:01.981288 stat("/proc/260", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.981329 openat(AT_FDCWD, "/proc/260/status", O_RDONLY) = 4
+18:33:01.981368 read(4, "Name:\tkintegrityd\nUmask:\t0000\nState:\tI (idle)\nTgid:\t260\nNgid:\t0\nPid:\t260\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t260\nNSpid:\t260\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 948
+18:33:01.981424 close(4)                = 0
+18:33:01.981463 openat(AT_FDCWD, "/proc/260/cmdline", O_RDONLY) = 4
+18:33:01.981503 read(4, "", 2047)       = 0
+18:33:01.981541 close(4)                = 0
+18:33:01.981580 stat("/proc/262", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.981621 openat(AT_FDCWD, "/proc/262/status", O_RDONLY) = 4
+18:33:01.981661 read(4, "Name:\tkblockd\nUmask:\t0000\nState:\tI (idle)\nTgid:\t262\nNgid:\t0\nPid:\t262\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t262\nNSpid:\t262\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 944
+18:33:01.981716 close(4)                = 0
+18:33:01.981754 openat(AT_FDCWD, "/proc/262/cmdline", O_RDONLY) = 4
+18:33:01.981794 read(4, "", 2047)       = 0
+18:33:01.981833 close(4)                = 0
+18:33:01.981871 stat("/proc/377", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.981913 openat(AT_FDCWD, "/proc/377/status", O_RDONLY) = 4
+18:33:01.981953 read(4, "Name:\tmd\nUmask:\t0000\nState:\tI (idle)\nTgid:\t377\nNgid:\t0\nPid:\t377\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t377\nNSpid:\t377\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSigBlk"..., 2048) = 939
+18:33:01.982008 close(4)                = 0
+18:33:01.982046 openat(AT_FDCWD, "/proc/377/cmdline", O_RDONLY) = 4
+18:33:01.982086 read(4, "", 2047)       = 0
+18:33:01.982125 close(4)                = 0
+18:33:01.982163 stat("/proc/381", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.982203 openat(AT_FDCWD, "/proc/381/status", O_RDONLY) = 4
+18:33:01.982242 read(4, "Name:\tedac-poller\nUmask:\t0000\nState:\tI (idle)\nTgid:\t381\nNgid:\t0\nPid:\t381\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t381\nNSpid:\t381\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 948
+18:33:01.982298 close(4)                = 0
+18:33:01.982338 openat(AT_FDCWD, "/proc/381/cmdline", O_RDONLY) = 4
+18:33:01.982377 read(4, "", 2047)       = 0
+18:33:01.982416 close(4)                = 0
+18:33:01.982454 stat("/proc/386", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.982498 openat(AT_FDCWD, "/proc/386/status", O_RDONLY) = 4
+18:33:01.982538 read(4, "Name:\twatchdogd\nUmask:\t0000\nState:\tI (idle)\nTgid:\t386\nNgid:\t0\nPid:\t386\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t386\nNSpid:\t386\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000"..., 2048) = 946
+18:33:01.982593 close(4)                = 0
+18:33:01.982632 openat(AT_FDCWD, "/proc/386/cmdline", O_RDONLY) = 4
+18:33:01.982672 read(4, "", 2047)       = 0
+18:33:01.982710 close(4)                = 0
+18:33:01.982748 stat("/proc/531", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.982790 openat(AT_FDCWD, "/proc/531/status", O_RDONLY) = 4
+18:33:01.982829 read(4, "Name:\tkauditd\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t531\nNgid:\t0\nPid:\t531\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t531\nNSpid:\t531\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 950
+18:33:01.982886 close(4)                = 0
+18:33:01.982925 openat(AT_FDCWD, "/proc/531/cmdline", O_RDONLY) = 4
+18:33:01.982965 read(4, "", 2047)       = 0
+18:33:01.983003 close(4)                = 0
+18:33:01.983041 stat("/proc/537", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.983082 openat(AT_FDCWD, "/proc/537/status", O_RDONLY) = 4
+18:33:01.983121 read(4, "Name:\tkswapd0\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t537\nNgid:\t0\nPid:\t537\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t537\nNSpid:\t537\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 948
+18:33:01.983178 close(4)                = 0
+18:33:01.983216 openat(AT_FDCWD, "/proc/537/cmdline", O_RDONLY) = 4
+18:33:01.983256 read(4, "", 2047)       = 0
+18:33:01.983294 close(4)                = 0
+18:33:01.983333 stat("/proc/627", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.983373 openat(AT_FDCWD, "/proc/627/status", O_RDONLY) = 4
+18:33:01.983412 read(4, "Name:\txfsalloc\nUmask:\t0000\nState:\tI (idle)\nTgid:\t627\nNgid:\t0\nPid:\t627\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t627\nNSpid:\t627\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 945
+18:33:01.983468 close(4)                = 0
+18:33:01.983506 openat(AT_FDCWD, "/proc/627/cmdline", O_RDONLY) = 4
+18:33:01.983546 read(4, "", 2047)       = 0
+18:33:01.983584 close(4)                = 0
+18:33:01.983622 stat("/proc/628", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.983671 openat(AT_FDCWD, "/proc/628/status", O_RDONLY) = 4
+18:33:01.983713 read(4, "Name:\txfs_mru_cache\nUmask:\t0000\nState:\tI (idle)\nTgid:\t628\nNgid:\t0\nPid:\t628\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t628\nNSpid:\t628\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000"..., 2048) = 950
+18:33:01.983771 close(4)                = 0
+18:33:01.983810 openat(AT_FDCWD, "/proc/628/cmdline", O_RDONLY) = 4
+18:33:01.983851 read(4, "", 2047)       = 0
+18:33:01.983890 close(4)                = 0
+18:33:01.983928 stat("/proc/682", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.983970 openat(AT_FDCWD, "/proc/682/status", O_RDONLY) = 4
+18:33:01.984009 read(4, "Name:\tkthrotld\nUmask:\t0000\nState:\tI (idle)\nTgid:\t682\nNgid:\t0\nPid:\t682\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t682\nNSpid:\t682\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\n"..., 2048) = 945
+18:33:01.984064 close(4)                = 0
+18:33:01.984104 openat(AT_FDCWD, "/proc/682/cmdline", O_RDONLY) = 4
+18:33:01.984143 read(4, "", 2047)       = 0
+18:33:01.984183 close(4)                = 0
+18:33:01.984221 stat("/proc/724", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.984265 openat(AT_FDCWD, "/proc/724/status", O_RDONLY) = 4
+18:33:01.984305 read(4, "Name:\tnvme-wq\nUmask:\t0000\nState:\tI (idle)\nTgid:\t724\nNgid:\t0\nPid:\t724\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t724\nNSpid:\t724\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 944
+18:33:01.984361 close(4)                = 0
+18:33:01.984400 openat(AT_FDCWD, "/proc/724/cmdline", O_RDONLY) = 4
+18:33:01.984440 read(4, "", 2047)       = 0
+18:33:01.984479 close(4)                = 0
+18:33:01.984530 stat("/proc/751", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.984574 openat(AT_FDCWD, "/proc/751/status", O_RDONLY) = 4
+18:33:01.984614 read(4, "Name:\tipv6_addrconf\nUmask:\t0000\nState:\tI (idle)\nTgid:\t751\nNgid:\t0\nPid:\t751\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t751\nNSpid:\t751\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000"..., 2048) = 950
+18:33:01.984683 close(4)                = 0
+18:33:01.984722 openat(AT_FDCWD, "/proc/751/cmdline", O_RDONLY) = 4
+18:33:01.984762 read(4, "", 2047)       = 0
+18:33:01.984800 close(4)                = 0
+18:33:01.984838 stat("/proc/756", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.984878 openat(AT_FDCWD, "/proc/756/status", O_RDONLY) = 4
+18:33:01.984918 read(4, "Name:\tkstrp\nUmask:\t0000\nState:\tI (idle)\nTgid:\t756\nNgid:\t0\nPid:\t756\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t756\nNSpid:\t756\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nSig"..., 2048) = 942
+18:33:01.984974 close(4)                = 0
+18:33:01.985012 openat(AT_FDCWD, "/proc/756/cmdline", O_RDONLY) = 4
+18:33:01.985052 read(4, "", 2047)       = 0
+18:33:01.985090 close(4)                = 0
+18:33:01.985128 stat("/proc/1454", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.985169 openat(AT_FDCWD, "/proc/1454/status", O_RDONLY) = 4
+18:33:01.985208 read(4, "Name:\tkworker/7:2\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1454\nNgid:\t0\nPid:\t1454\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1454\nNSpid:\t1454\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 953
+18:33:01.985264 close(4)                = 0
+18:33:01.985303 openat(AT_FDCWD, "/proc/1454/cmdline", O_RDONLY) = 4
+18:33:01.985342 read(4, "", 2047)       = 0
+18:33:01.985380 close(4)                = 0
+18:33:01.985418 stat("/proc/1479", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.985459 openat(AT_FDCWD, "/proc/1479/status", O_RDONLY) = 4
+18:33:01.985498 read(4, "Name:\txfs-buf/nvme0n1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1479\nNgid:\t0\nPid:\t1479\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1479\nNSpid:\t1479\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.985554 close(4)                = 0
+18:33:01.985593 openat(AT_FDCWD, "/proc/1479/cmdline", O_RDONLY) = 4
+18:33:01.985632 read(4, "", 2047)       = 0
+18:33:01.985671 close(4)                = 0
+18:33:01.985708 stat("/proc/1480", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.985750 openat(AT_FDCWD, "/proc/1480/status", O_RDONLY) = 4
+18:33:01.985788 read(4, "Name:\txfs-data/nvme0n\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1480\nNgid:\t0\nPid:\t1480\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1480\nNSpid:\t1480\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.985844 close(4)                = 0
+18:33:01.985883 openat(AT_FDCWD, "/proc/1480/cmdline", O_RDONLY) = 4
+18:33:01.985922 read(4, "", 2047)       = 0
+18:33:01.985960 close(4)                = 0
+18:33:01.986001 stat("/proc/1481", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.986042 openat(AT_FDCWD, "/proc/1481/status", O_RDONLY) = 4
+18:33:01.986081 read(4, "Name:\txfs-conv/nvme0n\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1481\nNgid:\t0\nPid:\t1481\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1481\nNSpid:\t1481\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.986137 close(4)                = 0
+18:33:01.986176 openat(AT_FDCWD, "/proc/1481/cmdline", O_RDONLY) = 4
+18:33:01.986216 read(4, "", 2047)       = 0
+18:33:01.986254 close(4)                = 0
+18:33:01.986292 stat("/proc/1482", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.986332 openat(AT_FDCWD, "/proc/1482/status", O_RDONLY) = 4
+18:33:01.986371 read(4, "Name:\txfs-cil/nvme0n1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1482\nNgid:\t0\nPid:\t1482\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1482\nNSpid:\t1482\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.986427 close(4)                = 0
+18:33:01.986465 openat(AT_FDCWD, "/proc/1482/cmdline", O_RDONLY) = 4
+18:33:01.986505 read(4, "", 2047)       = 0
+18:33:01.986543 close(4)                = 0
+18:33:01.986580 stat("/proc/1483", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.986621 openat(AT_FDCWD, "/proc/1483/status", O_RDONLY) = 4
+18:33:01.986660 read(4, "Name:\txfs-reclaim/nvm\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1483\nNgid:\t0\nPid:\t1483\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1483\nNSpid:\t1483\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.986715 close(4)                = 0
+18:33:01.986753 openat(AT_FDCWD, "/proc/1483/cmdline", O_RDONLY) = 4
+18:33:01.986793 read(4, "", 2047)       = 0
+18:33:01.986831 close(4)                = 0
+18:33:01.986869 stat("/proc/1484", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.986910 openat(AT_FDCWD, "/proc/1484/status", O_RDONLY) = 4
+18:33:01.986948 read(4, "Name:\txfs-log/nvme0n1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1484\nNgid:\t0\nPid:\t1484\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1484\nNSpid:\t1484\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.987003 close(4)                = 0
+18:33:01.987042 openat(AT_FDCWD, "/proc/1484/cmdline", O_RDONLY) = 4
+18:33:01.987081 read(4, "", 2047)       = 0
+18:33:01.987119 close(4)                = 0
+18:33:01.987157 stat("/proc/1485", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.987198 openat(AT_FDCWD, "/proc/1485/status", O_RDONLY) = 4
+18:33:01.987237 read(4, "Name:\txfs-eofblocks/n\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1485\nNgid:\t0\nPid:\t1485\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1485\nNSpid:\t1485\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000"..., 2048) = 956
+18:33:01.987292 close(4)                = 0
+18:33:01.987331 openat(AT_FDCWD, "/proc/1485/cmdline", O_RDONLY) = 4
+18:33:01.987370 read(4, "", 2047)       = 0
+18:33:01.987409 close(4)                = 0
+18:33:01.987447 stat("/proc/1486", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.987487 openat(AT_FDCWD, "/proc/1486/status", O_RDONLY) = 4
+18:33:01.987527 read(4, "Name:\txfsaild/nvme0n1\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t1486\nNgid:\t0\nPid:\t1486\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1486\nNSpid:\t1486\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00"..., 2048) = 964
+18:33:01.987586 close(4)                = 0
+18:33:01.987625 openat(AT_FDCWD, "/proc/1486/cmdline", O_RDONLY) = 4
+18:33:01.987673 read(4, "", 2047)       = 0
+18:33:01.987712 close(4)                = 0
+18:33:01.987750 stat("/proc/1491", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.987792 openat(AT_FDCWD, "/proc/1491/status", O_RDONLY) = 4
+18:33:01.987832 read(4, "Name:\tkworker/6:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t1491\nNgid:\t0\nPid:\t1491\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1491\nNSpid:\t1491\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:01.987887 close(4)                = 0
+18:33:01.987926 openat(AT_FDCWD, "/proc/1491/cmdline", O_RDONLY) = 4
+18:33:01.987965 read(4, "", 2047)       = 0
+18:33:01.988004 close(4)                = 0
+18:33:01.988042 stat("/proc/1552", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.988084 openat(AT_FDCWD, "/proc/1552/status", O_RDONLY) = 4
+18:33:01.988124 read(4, "Name:\tsystemd-journal\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1552\nNgid:\t0\nPid:\t1552\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1552\nNSpid:\t1552\nNSpgid:\t1552\nNSsid:\t1552\nVmPeak:\t   63520 kB\nVmSize:\t   55444 kB\nVmLck:\t       0"..., 2048) = 1308
+18:33:01.988181 close(4)                = 0
+18:33:01.988231 openat(AT_FDCWD, "/proc/1552/cmdline", O_RDONLY) = 4
+18:33:01.988273 read(4, "/usr/lib/systemd/systemd-journald\0", 2047) = 34
+18:33:01.988312 close(4)                = 0
+18:33:01.988351 stat("/proc/1679", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.988392 openat(AT_FDCWD, "/proc/1679/status", O_RDONLY) = 4
+18:33:01.988433 read(4, "Name:\tlvmetad\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1679\nNgid:\t0\nPid:\t1679\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1679\nNSpid:\t1679\nNSpgid:\t1679\nNSsid:\t1679\nVmPeak:\t  182244 kB\nVmSize:\t  116708 kB\nVmLck:\t       0 kB\nVmPi"..., 2048) = 1298
+18:33:01.988491 close(4)                = 0
+18:33:01.988540 openat(AT_FDCWD, "/proc/1679/cmdline", O_RDONLY) = 4
+18:33:01.988581 read(4, "/usr/sbin/lvmetad\0-f\0", 2047) = 21
+18:33:01.988621 close(4)                = 0
+18:33:01.988699 stat("/proc/1682", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.988743 openat(AT_FDCWD, "/proc/1682/status", O_RDONLY) = 4
+18:33:01.988783 read(4, "Name:\tsystemd-udevd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t1682\nNgid:\t0\nPid:\t1682\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t1682\nNSpid:\t1682\nNSpgid:\t1682\nNSsid:\t1682\nVmPeak:\t   46240 kB\nVmSize:\t   46236 kB\nVmLck:\t       0 k"..., 2048) = 1307
+18:33:01.988839 close(4)                = 0
+18:33:01.988888 openat(AT_FDCWD, "/proc/1682/cmdline", O_RDONLY) = 4
+18:33:01.988928 read(4, "/usr/lib/systemd/systemd-udevd\0", 2047) = 31
+18:33:01.988978 close(4)                = 0
+18:33:01.989016 stat("/proc/2142", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.989057 openat(AT_FDCWD, "/proc/2142/status", O_RDONLY) = 4
+18:33:01.989096 read(4, "Name:\tkworker/0:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2142\nNgid:\t0\nPid:\t2142\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2142\nNSpid:\t2142\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:01.989152 close(4)                = 0
+18:33:01.989190 openat(AT_FDCWD, "/proc/2142/cmdline", O_RDONLY) = 4
+18:33:01.989229 read(4, "", 2047)       = 0
+18:33:01.989267 close(4)                = 0
+18:33:01.989306 stat("/proc/2194", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.989347 openat(AT_FDCWD, "/proc/2194/status", O_RDONLY) = 4
+18:33:01.989385 read(4, "Name:\tkworker/1:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2194\nNgid:\t0\nPid:\t2194\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2194\nNSpid:\t2194\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:01.989444 close(4)                = 0
+18:33:01.989483 openat(AT_FDCWD, "/proc/2194/cmdline", O_RDONLY) = 4
+18:33:01.989523 read(4, "", 2047)       = 0
+18:33:01.989561 close(4)                = 0
+18:33:01.989598 stat("/proc/2202", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.989639 openat(AT_FDCWD, "/proc/2202/status", O_RDONLY) = 4
+18:33:01.989678 read(4, "Name:\tena\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2202\nNgid:\t0\nPid:\t2202\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2202\nNSpid:\t2202\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000000000\nS"..., 2048) = 944
+18:33:01.989733 close(4)                = 0
+18:33:01.989772 openat(AT_FDCWD, "/proc/2202/cmdline", O_RDONLY) = 4
+18:33:01.989811 read(4, "", 2047)       = 0
+18:33:01.989850 close(4)                = 0
+18:33:01.989888 stat("/proc/2404", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.989928 openat(AT_FDCWD, "/proc/2404/status", O_RDONLY) = 4
+18:33:01.989967 read(4, "Name:\trpciod\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2404\nNgid:\t0\nPid:\t2404\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2404\nNSpid:\t2404\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000000000"..., 2048) = 947
+18:33:01.990023 close(4)                = 0
+18:33:01.990062 openat(AT_FDCWD, "/proc/2404/cmdline", O_RDONLY) = 4
+18:33:01.990102 read(4, "", 2047)       = 0
+18:33:01.990141 close(4)                = 0
+18:33:01.990179 stat("/proc/2405", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.990219 openat(AT_FDCWD, "/proc/2405/status", O_RDONLY) = 4
+18:33:01.990259 read(4, "Name:\txprtiod\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2405\nNgid:\t0\nPid:\t2405\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2405\nNSpid:\t2405\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000000000"..., 2048) = 948
+18:33:01.990314 close(4)                = 0
+18:33:01.990352 openat(AT_FDCWD, "/proc/2405/cmdline", O_RDONLY) = 4
+18:33:01.990391 read(4, "", 2047)       = 0
+18:33:01.990429 close(4)                = 0
+18:33:01.990468 stat("/proc/2409", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.990507 openat(AT_FDCWD, "/proc/2409/status", O_RDONLY) = 4
+18:33:01.990547 read(4, "Name:\tauditd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2409\nNgid:\t0\nPid:\t2409\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2409\nNSpid:\t2409\nNSpgid:\t2409\nNSsid:\t2409\nVmPeak:\t   59736 kB\nVmSize:\t   59736 kB\nVmLck:\t       0 kB\nVmPin"..., 2048) = 1299
+18:33:01.990605 close(4)                = 0
+18:33:01.990644 openat(AT_FDCWD, "/proc/2409/cmdline", O_RDONLY) = 4
+18:33:01.990685 read(4, "/sbin/auditd\0", 2047) = 13
+18:33:01.990736 close(4)                = 0
+18:33:01.990775 stat("/proc/2433", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.990816 openat(AT_FDCWD, "/proc/2433/status", O_RDONLY) = 4
+18:33:01.990856 read(4, "Name:\tsystemd-logind\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2433\nNgid:\t0\nPid:\t2433\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2433\nNSpid:\t2433\nNSpgid:\t2433\nNSsid:\t2433\nVmPeak:\t   28508 kB\nVmSize:\t   28472 kB\nVmLck:\t       0 "..., 2048) = 1307
+18:33:01.990913 close(4)                = 0
+18:33:01.990952 openat(AT_FDCWD, "/proc/2433/cmdline", O_RDONLY) = 4
+18:33:01.990991 read(4, "/usr/lib/systemd/systemd-logind\0", 2047) = 32
+18:33:01.991030 close(4)                = 0
+18:33:01.991068 stat("/proc/2434", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.991109 openat(AT_FDCWD, "/proc/2434/status", O_RDONLY) = 4
+18:33:01.991148 read(4, "Name:\tdbus-daemon\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2434\nNgid:\t0\nPid:\t2434\nPPid:\t1\nTracerPid:\t0\nUid:\t81\t81\t81\t81\nGid:\t81\t81\t81\t81\nFDSize:\t64\nGroups:\t \nNStgid:\t2434\nNSpid:\t2434\nNSpgid:\t2434\nNSsid:\t2434\nVmPeak:\t   58744 kB\nVmSize:\t   58736 kB\nVmLck:\t    "..., 2048) = 1313
+18:33:01.991209 close(4)                = 0
+18:33:01.991257 openat(AT_FDCWD, "/proc/2434/cmdline", O_RDONLY) = 4
+18:33:01.991298 read(4, "/usr/bin/dbus-daemon\0--system\0--address=systemd:\0--nofork\0--nopidfile\0--systemd-activation\0", 2047) = 91
+18:33:01.991337 close(4)                = 0
+18:33:01.991375 stat("/proc/2435", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.991416 openat(AT_FDCWD, "/proc/2435/status", O_RDONLY) = 4
+18:33:01.991456 read(4, "Name:\trpcbind\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2435\nNgid:\t0\nPid:\t2435\nPPid:\t1\nTracerPid:\t0\nUid:\t32\t32\t32\t32\nGid:\t32\t32\t32\t32\nFDSize:\t64\nGroups:\t \nNStgid:\t2435\nNSpid:\t2435\nNSpgid:\t2435\nNSsid:\t2435\nVmPeak:\t   67300 kB\nVmSize:\t   67256 kB\nVmLck:\t       0"..., 2048) = 1307
+18:33:01.991513 close(4)                = 0
+18:33:01.991551 openat(AT_FDCWD, "/proc/2435/cmdline", O_RDONLY) = 4
+18:33:01.991590 read(4, "/sbin/rpcbind\0-w\0", 2047) = 17
+18:33:01.991643 close(4)                = 0
+18:33:01.991691 stat("/proc/2437", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.991734 openat(AT_FDCWD, "/proc/2437/status", O_RDONLY) = 4
+18:33:01.991774 read(4, "Name:\tlsmd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2437\nNgid:\t0\nPid:\t2437\nPPid:\t1\nTracerPid:\t0\nUid:\t999\t999\t999\t999\nGid:\t997\t997\t997\t997\nFDSize:\t64\nGroups:\t997 \nNStgid:\t2437\nNSpid:\t2437\nNSpgid:\t2437\nNSsid:\t2437\nVmPeak:\t   12672 kB\nVmSize:\t   12628 kB\nVmLck:\t"..., 2048) = 1316
+18:33:01.991832 close(4)                = 0
+18:33:01.991881 openat(AT_FDCWD, "/proc/2437/cmdline", O_RDONLY) = 4
+18:33:01.991923 read(4, "/usr/bin/lsmd\0-d\0", 2047) = 17
+18:33:01.991963 close(4)                = 0
+18:33:01.992002 stat("/proc/2446", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.992044 openat(AT_FDCWD, "/proc/2446/status", O_RDONLY) = 4
+18:33:01.992083 read(4, "Name:\tavahi-daemon\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2446\nNgid:\t0\nPid:\t2446\nPPid:\t1\nTracerPid:\t0\nUid:\t70\t70\t70\t70\nGid:\t70\t70\t70\t70\nFDSize:\t64\nGroups:\t70 \nNStgid:\t2446\nNSpid:\t2446\nNSpgid:\t2446\nNSsid:\t2446\nVmPeak:\t   62300 kB\nVmSize:\t   60320 kB\nVmLck:\t "..., 2048) = 1315
+18:33:01.992141 close(4)                = 0
+18:33:01.992190 openat(AT_FDCWD, "/proc/2446/cmdline", O_RDONLY) = 4
+18:33:01.992231 read(4, "avahi-daemon: running [ip-172-31-64-80.local]\0", 2047) = 46
+18:33:01.992283 close(4)                = 0
+18:33:01.992322 stat("/proc/2448", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.992364 openat(AT_FDCWD, "/proc/2448/status", O_RDONLY) = 4
+18:33:01.992403 read(4, "Name:\tirqbalance\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2448\nNgid:\t0\nPid:\t2448\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2448\nNSpid:\t2448\nNSpgid:\t2448\nNSsid:\t2448\nVmPeak:\t  167456 kB\nVmSize:\t  101920 kB\nVmLck:\t       0 kB\nV"..., 2048) = 1303
+18:33:01.992460 close(4)                = 0
+18:33:01.992499 openat(AT_FDCWD, "/proc/2448/cmdline", O_RDONLY) = 4
+18:33:01.992539 read(4, "/usr/sbin/irqbalance\0--foreground\0", 2047) = 34
+18:33:01.992578 close(4)                = 0
+18:33:01.992617 stat("/proc/2449", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.992694 openat(AT_FDCWD, "/proc/2449/status", O_RDONLY) = 4
+18:33:01.992735 read(4, "Name:\taccounts-daemon\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2449\nNgid:\t0\nPid:\t2449\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2449\nNSpid:\t2449\nNSpgid:\t2449\nNSsid:\t2449\nVmPeak:\t  415956 kB\nVmSize:\t  409440 kB\nVmLck:\t       0"..., 2048) = 1308
+18:33:01.992792 close(4)                = 0
+18:33:01.992840 openat(AT_FDCWD, "/proc/2449/cmdline", O_RDONLY) = 4
+18:33:01.992882 read(4, "/usr/libexec/accounts-daemon\0", 2047) = 29
+18:33:01.992922 close(4)                = 0
+18:33:01.992960 stat("/proc/2452", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.993000 openat(AT_FDCWD, "/proc/2452/status", O_RDONLY) = 4
+18:33:01.993043 read(4, "Name:\tchronyd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2452\nNgid:\t0\nPid:\t2452\nPPid:\t1\nTracerPid:\t0\nUid:\t997\t997\t997\t997\nGid:\t995\t995\t995\t995\nFDSize:\t64\nGroups:\t \nNStgid:\t2452\nNSpid:\t2452\nNSpgid:\t2451\nNSsid:\t2451\nVmPeak:\t  164096 kB\nVmSize:\t  122248 kB\nVmLck:\t"..., 2048) = 1321
+18:33:01.993102 close(4)                = 0
+18:33:01.993140 openat(AT_FDCWD, "/proc/2452/cmdline", O_RDONLY) = 4
+18:33:01.993180 read(4, "/usr/sbin/chronyd\0-F\0002\0", 2047) = 23
+18:33:01.993220 close(4)                = 0
+18:33:01.993258 stat("/proc/2455", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.993300 openat(AT_FDCWD, "/proc/2455/status", O_RDONLY) = 4
+18:33:01.993339 read(4, "Name:\tudisksd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2455\nNgid:\t0\nPid:\t2455\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2455\nNSpid:\t2455\nNSpgid:\t2455\nNSsid:\t2455\nVmPeak:\t  592504 kB\nVmSize:\t  526968 kB\nVmLck:\t       0 kB\nVmPi"..., 2048) = 1300
+18:33:01.993395 close(4)                = 0
+18:33:01.993433 openat(AT_FDCWD, "/proc/2455/cmdline", O_RDONLY) = 4
+18:33:01.993473 read(4, "/usr/libexec/udisks2/udisksd\0", 2047) = 29
+18:33:01.993525 close(4)                = 0
+18:33:01.993563 stat("/proc/2460", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.993604 openat(AT_FDCWD, "/proc/2460/status", O_RDONLY) = 4
+18:33:01.993644 read(4, "Name:\tavahi-daemon\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2460\nNgid:\t0\nPid:\t2460\nPPid:\t2446\nTracerPid:\t0\nUid:\t70\t70\t70\t70\nGid:\t70\t70\t70\t70\nFDSize:\t64\nGroups:\t70 \nNStgid:\t2460\nNSpid:\t2460\nNSpgid:\t2446\nNSsid:\t2446\nVmPeak:\t   60192 kB\nVmSize:\t   60192 kB\nVmLck"..., 2048) = 1316
+18:33:01.993700 close(4)                = 0
+18:33:01.993739 openat(AT_FDCWD, "/proc/2460/cmdline", O_RDONLY) = 4
+18:33:01.993780 read(4, "avahi-daemon: chroot helper\0", 2047) = 28
+18:33:01.993832 close(4)                = 0
+18:33:01.993870 stat("/proc/2462", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.993911 openat(AT_FDCWD, "/proc/2462/status", O_RDONLY) = 4
+18:33:01.993950 read(4, "Name:\tgssproxy\nUmask:\t0177\nState:\tS (sleeping)\nTgid:\t2462\nNgid:\t0\nPid:\t2462\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2462\nNSpid:\t2462\nNSpgid:\t2462\nNSsid:\t2462\nVmPeak:\t  211992 kB\nVmSize:\t  211992 kB\nVmLck:\t       0 kB\nVmP"..., 2048) = 1299
+18:33:01.994007 close(4)                = 0
+18:33:01.994045 openat(AT_FDCWD, "/proc/2462/cmdline", O_RDONLY) = 4
+18:33:01.994085 read(4, "/usr/sbin/gssproxy\0-D\0", 2047) = 22
+18:33:01.994137 close(4)                = 0
+18:33:01.994176 stat("/proc/2472", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.994217 openat(AT_FDCWD, "/proc/2472/status", O_RDONLY) = 4
+18:33:01.994256 read(4, "Name:\trngd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2472\nNgid:\t0\nPid:\t2472\nPPid:\t1\nTracerPid:\t0\nUid:\t998\t998\t998\t998\nGid:\t996\t996\t996\t996\nFDSize:\t64\nGroups:\t996 \nNStgid:\t2472\nNSpid:\t2472\nNSpgid:\t2472\nNSsid:\t2472\nVmPeak:\t   94224 kB\nVmSize:\t   94224 kB\nVmLck:\t"..., 2048) = 1315
+18:33:01.994312 close(4)                = 0
+18:33:01.994360 openat(AT_FDCWD, "/proc/2472/cmdline", O_RDONLY) = 4
+18:33:01.994402 read(4, "/sbin/rngd\0-f\0--fill-watermark=0\0--exclude=jitter\0", 2047) = 50
+18:33:01.994442 close(4)                = 0
+18:33:01.994480 stat("/proc/2491", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.994521 openat(AT_FDCWD, "/proc/2491/status", O_RDONLY) = 4
+18:33:01.994560 read(4, "Name:\tpolkitd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2491\nNgid:\t0\nPid:\t2491\nPPid:\t1\nTracerPid:\t0\nUid:\t995\t995\t995\t995\nGid:\t993\t993\t993\t993\nFDSize:\t64\nGroups:\t993 \nNStgid:\t2491\nNSpid:\t2491\nNSpgid:\t2491\nNSsid:\t2491\nVmPeak:\t  692900 kB\nVmSize:\t  628208 kB\nVmLc"..., 2048) = 1319
+18:33:01.994617 close(4)                = 0
+18:33:01.994665 openat(AT_FDCWD, "/proc/2491/cmdline", O_RDONLY) = 4
+18:33:01.994707 read(4, "/usr/lib/polkit-1/polkitd\0--no-debug\0", 2047) = 37
+18:33:01.994761 close(4)                = 0
+18:33:01.994800 stat("/proc/2702", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.994841 openat(AT_FDCWD, "/proc/2702/status", O_RDONLY) = 4
+18:33:01.994880 read(4, "Name:\tdhclient\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2702\nNgid:\t0\nPid:\t2702\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2702\nNSpid:\t2702\nNSpgid:\t2702\nNSsid:\t2702\nVmPeak:\t   98676 kB\nVmSize:\t   98676 kB\nVmLck:\t       0 kB\nVmP"..., 2048) = 1299
+18:33:01.994937 close(4)                = 0
+18:33:01.994985 openat(AT_FDCWD, "/proc/2702/cmdline", O_RDONLY) = 4
+18:33:01.995026 read(4, "/sbin/dhclient\0-q\0-lf\0/var/lib/dhclient/dhclient--eth0.lease\0-pf\0/var/run/dhclient-eth0.pid\0-H\0ip-172-31-64-80\0eth0\0", 2047) = 116
+18:33:01.995077 close(4)                = 0
+18:33:01.995116 stat("/proc/2748", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.995157 openat(AT_FDCWD, "/proc/2748/status", O_RDONLY) = 4
+18:33:01.995195 read(4, "Name:\tdhclient\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2748\nNgid:\t0\nPid:\t2748\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2748\nNSpid:\t2748\nNSpgid:\t2748\nNSsid:\t2748\nVmPeak:\t   98676 kB\nVmSize:\t   98676 kB\nVmLck:\t       0 kB\nVmP"..., 2048) = 1300
+18:33:01.995252 close(4)                = 0
+18:33:01.995291 openat(AT_FDCWD, "/proc/2748/cmdline", O_RDONLY) = 4
+18:33:01.995330 read(4, "/sbin/dhclient\0-6\0-nw\0-lf\0/var/lib/dhclient/dhclient6--eth0.lease\0-pf\0/var/run/dhclient6-eth0.pid\0eth0\0-H\0ip-172-31-64-80\0", 2047) = 122
+18:33:01.995382 close(4)                = 0
+18:33:01.995420 stat("/proc/2873", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.995461 openat(AT_FDCWD, "/proc/2873/status", O_RDONLY) = 4
+18:33:01.995500 read(4, "Name:\tmaster\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t2873\nNgid:\t0\nPid:\t2873\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t128\nGroups:\t0 \nNStgid:\t2873\nNSpid:\t2873\nNSpgid:\t2873\nNSsid:\t2873\nVmPeak:\t   90312 kB\nVmSize:\t   90308 kB\nVmLck:\t       0 kB\nVmP"..., 2048) = 1301
+18:33:01.995557 close(4)                = 0
+18:33:01.995596 openat(AT_FDCWD, "/proc/2873/cmdline", O_RDONLY) = 4
+18:33:01.995636 read(4, "/usr/libexec/postfix/master\0-w\0", 2047) = 31
+18:33:01.995696 close(4)                = 0
+18:33:01.995736 stat("/proc/2874", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.995778 openat(AT_FDCWD, "/proc/2874/status", O_RDONLY) = 4
+18:33:01.995818 read(4, "Name:\tpickup\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t2874\nNgid:\t0\nPid:\t2874\nPPid:\t2873\nTracerPid:\t0\nUid:\t89\t89\t89\t89\nGid:\t89\t89\t89\t89\nFDSize:\t128\nGroups:\t12 89 \nNStgid:\t2874\nNSpid:\t2874\nNSpgid:\t2873\nNSsid:\t2873\nVmPeak:\t   90428 kB\nVmSize:\t   90396 kB\nVmLck:\t"..., 2048) = 1315
+18:33:01.995876 close(4)                = 0
+18:33:01.995926 openat(AT_FDCWD, "/proc/2874/cmdline", O_RDONLY) = 4
+18:33:01.995967 read(4, "pickup\0-l\0-t\0unix\0-u\0", 2047) = 21
+18:33:01.996018 close(4)                = 0
+18:33:01.996056 stat("/proc/2875", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.996098 openat(AT_FDCWD, "/proc/2875/status", O_RDONLY) = 4
+18:33:01.996137 read(4, "Name:\tqmgr\nUmask:\t0077\nState:\tS (sleeping)\nTgid:\t2875\nNgid:\t0\nPid:\t2875\nPPid:\t2873\nTracerPid:\t0\nUid:\t89\t89\t89\t89\nGid:\t89\t89\t89\t89\nFDSize:\t128\nGroups:\t12 89 \nNStgid:\t2875\nNSpid:\t2875\nNSpgid:\t2873\nNSsid:\t2873\nVmPeak:\t   90500 kB\nVmSize:\t   90468 kB\nVmLck:\t  "..., 2048) = 1313
+18:33:01.996195 close(4)                = 0
+18:33:01.996233 openat(AT_FDCWD, "/proc/2875/cmdline", O_RDONLY) = 4
+18:33:01.996273 read(4, "qmgr\0-l\0-t\0unix\0-u\0", 2047) = 19
+18:33:01.996313 close(4)                = 0
+18:33:01.996351 stat("/proc/2897", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.996393 openat(AT_FDCWD, "/proc/2897/status", O_RDONLY) = 4
+18:33:01.996433 read(4, "Name:\tkworker/2:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t2897\nNgid:\t0\nPid:\t2897\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2897\nNSpid:\t2897\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:01.996492 close(4)                = 0
+18:33:01.996531 openat(AT_FDCWD, "/proc/2897/cmdline", O_RDONLY) = 4
+18:33:01.996572 read(4, "", 2047)       = 0
+18:33:01.996610 close(4)                = 0
+18:33:01.996666 stat("/proc/2935", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.996720 openat(AT_FDCWD, "/proc/2935/status", O_RDONLY) = 4
+18:33:01.996760 read(4, "Name:\tamazon-ssm-agen\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2935\nNgid:\t0\nPid:\t2935\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2935\nNSpid:\t2935\nNSpgid:\t2935\nNSsid:\t2935\nVmPeak:\t  725584 kB\nVmSize:\t  725584 kB\nVmLck:\t       0"..., 2048) = 1309
+18:33:01.996818 close(4)                = 0
+18:33:01.996867 openat(AT_FDCWD, "/proc/2935/cmdline", O_RDONLY) = 4
+18:33:01.996908 read(4, "/usr/bin/amazon-ssm-agent\0", 2047) = 26
+18:33:01.996948 close(4)                = 0
+18:33:01.996985 stat("/proc/2942", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.997026 openat(AT_FDCWD, "/proc/2942/status", O_RDONLY) = 4
+18:33:01.997065 read(4, "Name:\trsyslogd\nUmask:\t0066\nState:\tS (sleeping)\nTgid:\t2942\nNgid:\t0\nPid:\t2942\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2942\nNSpid:\t2942\nNSpgid:\t2942\nNSsid:\t2942\nVmPeak:\t  306624 kB\nVmSize:\t  249280 kB\nVmLck:\t       0 kB\nVmP"..., 2048) = 1300
+18:33:01.997122 close(4)                = 0
+18:33:01.997161 openat(AT_FDCWD, "/proc/2942/cmdline", O_RDONLY) = 4
+18:33:01.997201 read(4, "/usr/sbin/rsyslogd\0-n\0", 2047) = 22
+18:33:01.997240 close(4)                = 0
+18:33:01.997278 stat("/proc/2947", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.997319 openat(AT_FDCWD, "/proc/2947/status", O_RDONLY) = 4
+18:33:01.997358 read(4, "Name:\txrdp-sesman\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2947\nNgid:\t0\nPid:\t2947\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2947\nNSpid:\t2947\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  209844 kB\nVmSize:\t  209712 kB\nVmLck:\t       0 kB\n"..., 2048) = 1303
+18:33:01.997416 close(4)                = 0
+18:33:01.997454 openat(AT_FDCWD, "/proc/2947/cmdline", O_RDONLY) = 4
+18:33:01.997494 read(4, "/usr/sbin/xrdp-sesman\0--nodaemon\0", 2047) = 33
+18:33:01.997546 close(4)                = 0
+18:33:01.997585 stat("/proc/2949", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.997626 openat(AT_FDCWD, "/proc/2949/status", O_RDONLY) = 4
+18:33:01.997665 read(4, "Name:\txrdp\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2949\nNgid:\t0\nPid:\t2949\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2949\nNSpid:\t2949\nNSpgid:\t2949\nNSsid:\t2949\nVmPeak:\t  181056 kB\nVmSize:\t  181056 kB\nVmLck:\t       0 kB\nVmPin:\t"..., 2048) = 1296
+18:33:01.997722 close(4)                = 0
+18:33:01.997761 openat(AT_FDCWD, "/proc/2949/cmdline", O_RDONLY) = 4
+18:33:01.997801 read(4, "/usr/sbin/xrdp\0--nodaemon\0", 2047) = 26
+18:33:01.997841 close(4)                = 0
+18:33:01.997879 stat("/proc/2951", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.997921 openat(AT_FDCWD, "/proc/2951/status", O_RDONLY) = 4
+18:33:01.997960 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2951\nNgid:\t0\nPid:\t2951\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2951\nNSpid:\t2951\nNSpgid:\t2951\nNSsid:\t2951\nVmPeak:\t  110892 kB\nVmSize:\t  110848 kB\nVmLck:\t       0 kB\nVmPin:\t"..., 2048) = 1296
+18:33:01.998017 close(4)                = 0
+18:33:01.998056 openat(AT_FDCWD, "/proc/2951/cmdline", O_RDONLY) = 4
+18:33:01.998095 read(4, "/usr/sbin/sshd\0-D\0", 2047) = 18
+18:33:01.998134 close(4)                = 0
+18:33:01.998172 stat("/proc/2960", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.998217 openat(AT_FDCWD, "/proc/2960/status", O_RDONLY) = 4
+18:33:01.998256 read(4, "Name:\tcrond\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2960\nNgid:\t0\nPid:\t2960\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2960\nNSpid:\t2960\nNSpgid:\t2960\nNSsid:\t2960\nVmPeak:\t  135128 kB\nVmSize:\t  135084 kB\nVmLck:\t       0 kB\nVmPin:"..., 2048) = 1297
+18:33:01.998313 close(4)                = 0
+18:33:01.998352 openat(AT_FDCWD, "/proc/2960/cmdline", O_RDONLY) = 4
+18:33:01.998391 read(4, "/usr/sbin/crond\0-n\0", 2047) = 19
+18:33:01.998430 close(4)                = 0
+18:33:01.998469 stat("/proc/2962", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.998510 openat(AT_FDCWD, "/proc/2962/status", O_RDONLY) = 4
+18:33:01.998551 read(4, "Name:\tatd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2962\nNgid:\t0\nPid:\t2962\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2962\nNSpid:\t2962\nNSpgid:\t2962\nNSsid:\t2962\nVmPeak:\t   27928 kB\nVmSize:\t   27884 kB\nVmLck:\t       0 kB\nVmPin:\t "..., 2048) = 1294
+18:33:01.998608 close(4)                = 0
+18:33:01.998658 openat(AT_FDCWD, "/proc/2962/cmdline", O_RDONLY) = 4
+18:33:01.998699 read(4, "/usr/sbin/atd\0-f\0", 2047) = 17
+18:33:01.998750 close(4)                = 0
+18:33:01.998789 stat("/proc/2980", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.998831 openat(AT_FDCWD, "/proc/2980/status", O_RDONLY) = 4
+18:33:01.998870 read(4, "Name:\tagetty\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2980\nNgid:\t0\nPid:\t2980\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2980\nNSpid:\t2980\nNSpgid:\t2980\nNSsid:\t2980\nVmPeak:\t  121000 kB\nVmSize:\t  120956 kB\nVmLck:\t       0 kB\nVmPin"..., 2048) = 1297
+18:33:01.998927 close(4)                = 0
+18:33:01.998966 openat(AT_FDCWD, "/proc/2980/cmdline", O_RDONLY) = 4
+18:33:01.999006 read(4, "/sbin/agetty\0--keep-baud\000115200,38400,9600\0ttyS0\0vt220\0", 2047) = 55
+18:33:01.999046 close(4)                = 0
+18:33:01.999084 stat("/proc/2981", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.999125 openat(AT_FDCWD, "/proc/2981/status", O_RDONLY) = 4
+18:33:01.999164 read(4, "Name:\tagetty\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t2981\nNgid:\t0\nPid:\t2981\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t2981\nNSpid:\t2981\nNSpgid:\t2981\nNSsid:\t2981\nVmPeak:\t  121308 kB\nVmSize:\t  121308 kB\nVmLck:\t       0 kB\nVmPin"..., 2048) = 1297
+18:33:01.999221 close(4)                = 0
+18:33:01.999260 openat(AT_FDCWD, "/proc/2981/cmdline", O_RDONLY) = 4
+18:33:01.999299 read(4, "/sbin/agetty\0--noclear\0tty1\0linux\0", 2047) = 34
+18:33:01.999339 close(4)                = 0
+18:33:01.999377 stat("/proc/3013", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.999418 openat(AT_FDCWD, "/proc/3013/status", O_RDONLY) = 4
+18:33:01.999457 read(4, "Name:\tacpid\nUmask:\t0000\nState:\tS (sleeping)\nTgid:\t3013\nNgid:\t0\nPid:\t3013\nPPid:\t1\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3013\nNSpid:\t3013\nNSpgid:\t3013\nNSsid:\t3013\nVmPeak:\t    4268 kB\nVmSize:\t    4268 kB\nVmLck:\t       0 kB\nVmPin:"..., 2048) = 1296
+18:33:01.999513 close(4)                = 0
+18:33:01.999552 openat(AT_FDCWD, "/proc/3013/cmdline", O_RDONLY) = 4
+18:33:01.999592 read(4, "/usr/sbin/acpid\0", 2047) = 16
+18:33:01.999632 close(4)                = 0
+18:33:01.999674 stat("/proc/3020", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:01.999718 openat(AT_FDCWD, "/proc/3020/status", O_RDONLY) = 4
+18:33:01.999758 read(4, "Name:\tkworker/4:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3020\nNgid:\t0\nPid:\t3020\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3020\nNSpid:\t3020\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:01.999813 close(4)                = 0
+18:33:01.999853 openat(AT_FDCWD, "/proc/3020/cmdline", O_RDONLY) = 4
+18:33:01.999895 read(4, "", 2047)       = 0
+18:33:01.999934 close(4)                = 0
+18:33:01.999972 stat("/proc/3033", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.000013 openat(AT_FDCWD, "/proc/3033/status", O_RDONLY) = 4
+18:33:02.000052 read(4, "Name:\tkworker/5:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3033\nNgid:\t0\nPid:\t3033\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3033\nNSpid:\t3033\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:02.000109 close(4)                = 0
+18:33:02.000148 openat(AT_FDCWD, "/proc/3033/cmdline", O_RDONLY) = 4
+18:33:02.000188 read(4, "", 2047)       = 0
+18:33:02.000227 close(4)                = 0
+18:33:02.000265 stat("/proc/3034", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.000306 openat(AT_FDCWD, "/proc/3034/status", O_RDONLY) = 4
+18:33:02.000346 read(4, "Name:\tkworker/3:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3034\nNgid:\t0\nPid:\t3034\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3034\nNSpid:\t3034\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:02.000403 close(4)                = 0
+18:33:02.000442 openat(AT_FDCWD, "/proc/3034/cmdline", O_RDONLY) = 4
+18:33:02.000482 read(4, "", 2047)       = 0
+18:33:02.000520 close(4)                = 0
+18:33:02.000558 stat("/proc/3035", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.000599 openat(AT_FDCWD, "/proc/3035/status", O_RDONLY) = 4
+18:33:02.000669 read(4, "Name:\tkworker/7:1H\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3035\nNgid:\t0\nPid:\t3035\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3035\nNSpid:\t3035\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t000000000"..., 2048) = 953
+18:33:02.000727 close(4)                = 0
+18:33:02.000765 openat(AT_FDCWD, "/proc/3035/cmdline", O_RDONLY) = 4
+18:33:02.000805 read(4, "", 2047)       = 0
+18:33:02.000845 close(4)                = 0
+18:33:02.000882 stat("/proc/3506", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.000923 openat(AT_FDCWD, "/proc/3506/status", O_RDONLY) = 4
+18:33:02.000974 read(4, "Name:\tkworker/5:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3506\nNgid:\t0\nPid:\t3506\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3506\nNSpid:\t3506\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.001029 close(4)                = 0
+18:33:02.001067 openat(AT_FDCWD, "/proc/3506/cmdline", O_RDONLY) = 4
+18:33:02.001119 read(4, "", 2047)       = 0
+18:33:02.001159 close(4)                = 0
+18:33:02.001197 stat("/proc/3942", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.001238 openat(AT_FDCWD, "/proc/3942/status", O_RDONLY) = 4
+18:33:02.001277 read(4, "Name:\tkworker/4:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t3942\nNgid:\t0\nPid:\t3942\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t3942\nNSpid:\t3942\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.001331 close(4)                = 0
+18:33:02.001371 openat(AT_FDCWD, "/proc/3942/cmdline", O_RDONLY) = 4
+18:33:02.001422 read(4, "", 2047)       = 0
+18:33:02.001461 close(4)                = 0
+18:33:02.001499 stat("/proc/4168", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.001540 openat(AT_FDCWD, "/proc/4168/status", O_RDONLY) = 4
+18:33:02.001579 read(4, "Name:\tkworker/2:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t4168\nNgid:\t0\nPid:\t4168\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t4168\nNSpid:\t4168\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 953
+18:33:02.001640 close(4)                = 0
+18:33:02.001679 openat(AT_FDCWD, "/proc/4168/cmdline", O_RDONLY) = 4
+18:33:02.001719 read(4, "", 2047)       = 0
+18:33:02.001757 close(4)                = 0
+18:33:02.001794 stat("/proc/4369", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.001835 openat(AT_FDCWD, "/proc/4369/status", O_RDONLY) = 4
+18:33:02.001875 read(4, "Name:\tkworker/0:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t4369\nNgid:\t0\nPid:\t4369\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t4369\nNSpid:\t4369\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 953
+18:33:02.001930 close(4)                = 0
+18:33:02.001969 openat(AT_FDCWD, "/proc/4369/cmdline", O_RDONLY) = 4
+18:33:02.002009 read(4, "", 2047)       = 0
+18:33:02.002046 close(4)                = 0
+18:33:02.002084 stat("/proc/4372", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.002125 openat(AT_FDCWD, "/proc/4372/status", O_RDONLY) = 4
+18:33:02.002164 read(4, "Name:\tkworker/0:3\nUmask:\t0000\nState:\tI (idle)\nTgid:\t4372\nNgid:\t0\nPid:\t4372\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t4372\nNSpid:\t4372\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.002219 close(4)                = 0
+18:33:02.002258 openat(AT_FDCWD, "/proc/4372/cmdline", O_RDONLY) = 4
+18:33:02.002298 read(4, "", 2047)       = 0
+18:33:02.002336 close(4)                = 0
+18:33:02.002374 stat("/proc/4373", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.002415 openat(AT_FDCWD, "/proc/4373/status", O_RDONLY) = 4
+18:33:02.002455 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t4373\nNgid:\t0\nPid:\t4373\nPPid:\t2951\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t4373\nNSpid:\t4373\nNSpgid:\t4373\nNSsid:\t4373\nVmPeak:\t  152692 kB\nVmSize:\t  152692 kB\nVmLck:\t       0 kB\nVmPi"..., 2048) = 1299
+18:33:02.002511 close(4)                = 0
+18:33:02.002560 openat(AT_FDCWD, "/proc/4373/cmdline", O_RDONLY) = 4
+18:33:02.002602 read(4, "sshd: ec2-user [priv]\0", 2047) = 22
+18:33:02.002655 close(4)                = 0
+18:33:02.002693 stat("/proc/4390", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.002735 openat(AT_FDCWD, "/proc/4390/status", O_RDONLY) = 4
+18:33:02.002774 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t4390\nNgid:\t0\nPid:\t4390\nPPid:\t4373\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t4 10 190 1000 \nNStgid:\t4390\nNSpid:\t4390\nNSpgid:\t4373\nNSsid:\t4373\nVmPeak:\t  152692 kB\nVmSize"..., 2048) = 1336
+18:33:02.002831 close(4)                = 0
+18:33:02.002881 openat(AT_FDCWD, "/proc/4390/cmdline", O_RDONLY) = 4
+18:33:02.002922 read(4, "sshd: ec2-user@pts/0\0", 2047) = 21
+18:33:02.002972 close(4)                = 0
+18:33:02.003010 stat("/proc/4391", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.003051 openat(AT_FDCWD, "/proc/4391/status", O_RDONLY) = 4
+18:33:02.003102 read(4, "Name:\tbash\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t4391\nNgid:\t0\nPid:\t4391\nPPid:\t4390\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t256\nGroups:\t4 10 190 1000 \nNStgid:\t4391\nNSpid:\t4391\nNSpgid:\t4391\nNSsid:\t4391\nVmPeak:\t  124736 kB\nVmSiz"..., 2048) = 1337
+18:33:02.003159 close(4)                = 0
+18:33:02.003207 openat(AT_FDCWD, "/proc/4391/cmdline", O_RDONLY) = 4
+18:33:02.003249 read(4, "-bash\0", 2047) = 6
+18:33:02.003288 close(4)                = 0
+18:33:02.003326 stat("/proc/4412", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.003367 openat(AT_FDCWD, "/proc/4412/status", O_RDONLY) = 4
+18:33:02.003405 read(4, "Name:\tsudo\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t4412\nNgid:\t0\nPid:\t4412\nPPid:\t4391\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t256\nGroups:\t0 \nNStgid:\t4412\nNSpid:\t4412\nNSpgid:\t4412\nNSsid:\t4391\nVmPeak:\t  239808 kB\nVmSize:\t  239808 kB\nVmLck:\t       0 kB\nVm"..., 2048) = 1301
+18:33:02.003466 close(4)                = 0
+18:33:02.003505 openat(AT_FDCWD, "/proc/4412/cmdline", O_RDONLY) = 4
+18:33:02.003544 read(4, "sudo\0su\0", 2047) = 8
+18:33:02.003597 close(4)                = 0
+18:33:02.003640 stat("/proc/4413", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.003690 openat(AT_FDCWD, "/proc/4413/status", O_RDONLY) = 4
+18:33:02.003731 read(4, "Name:\tsu\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t4413\nNgid:\t0\nPid:\t4413\nPPid:\t4412\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t0 \nNStgid:\t4413\nNSpid:\t4413\nNSpgid:\t4412\nNSsid:\t4391\nVmPeak:\t  190468 kB\nVmSize:\t  190468 kB\nVmLck:\t       0 kB\nVmPin"..., 2048) = 1298
+18:33:02.003789 close(4)                = 0
+18:33:02.003829 openat(AT_FDCWD, "/proc/4413/cmdline", O_RDONLY) = 4
+18:33:02.003870 read(4, "su\0", 2047)   = 3
+18:33:02.003910 close(4)                = 0
+18:33:02.003949 stat("/proc/4414", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.003991 openat(AT_FDCWD, "/proc/4414/status", O_RDONLY) = 4
+18:33:02.004032 read(4, "Name:\tbash\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t4414\nNgid:\t0\nPid:\t4414\nPPid:\t4413\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t256\nGroups:\t0 \nNStgid:\t4414\nNSpid:\t4414\nNSpgid:\t4414\nNSsid:\t4391\nVmPeak:\t  124872 kB\nVmSize:\t  124872 kB\nVmLck:\t       0 kB\nVm"..., 2048) = 1301
+18:33:02.004090 close(4)                = 0
+18:33:02.004129 openat(AT_FDCWD, "/proc/4414/cmdline", O_RDONLY) = 4
+18:33:02.004180 read(4, "bash\0", 2047) = 5
+18:33:02.004220 close(4)                = 0
+18:33:02.004258 stat("/proc/5457", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.004301 openat(AT_FDCWD, "/proc/5457/status", O_RDONLY) = 4
+18:33:02.004340 read(4, "Name:\tkworker/4:2\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5457\nNgid:\t0\nPid:\t5457\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5457\nNSpid:\t5457\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.004395 close(4)                = 0
+18:33:02.004434 openat(AT_FDCWD, "/proc/5457/cmdline", O_RDONLY) = 4
+18:33:02.004485 read(4, "", 2047)       = 0
+18:33:02.004524 close(4)                = 0
+18:33:02.004563 stat("/proc/5459", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.004604 openat(AT_FDCWD, "/proc/5459/status", O_RDONLY) = 4
+18:33:02.004663 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5459\nNgid:\t0\nPid:\t5459\nPPid:\t2951\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5459\nNSpid:\t5459\nNSpgid:\t5459\nNSsid:\t5459\nVmPeak:\t  152692 kB\nVmSize:\t  152692 kB\nVmLck:\t       0 kB\nVmPi"..., 2048) = 1299
+18:33:02.004726 close(4)                = 0
+18:33:02.004774 openat(AT_FDCWD, "/proc/5459/cmdline", O_RDONLY) = 4
+18:33:02.004816 read(4, "sshd: ec2-user [priv]\0", 2047) = 22
+18:33:02.004868 close(4)                = 0
+18:33:02.004907 stat("/proc/5476", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.004949 openat(AT_FDCWD, "/proc/5476/status", O_RDONLY) = 4
+18:33:02.005001 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5476\nNgid:\t0\nPid:\t5476\nPPid:\t5459\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t4 10 190 1000 \nNStgid:\t5476\nNSpid:\t5476\nNSpgid:\t5459\nNSsid:\t5459\nVmPeak:\t  152692 kB\nVmSize"..., 2048) = 1338
+18:33:02.005058 close(4)                = 0
+18:33:02.005098 openat(AT_FDCWD, "/proc/5476/cmdline", O_RDONLY) = 4
+18:33:02.005138 read(4, "sshd: ec2-user@pts/2\0", 2047) = 21
+18:33:02.005191 close(4)                = 0
+18:33:02.005230 stat("/proc/5477", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.005272 openat(AT_FDCWD, "/proc/5477/status", O_RDONLY) = 4
+18:33:02.005324 read(4, "Name:\tbash\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5477\nNgid:\t0\nPid:\t5477\nPPid:\t5476\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t256\nGroups:\t4 10 190 1000 \nNStgid:\t5477\nNSpid:\t5477\nNSpgid:\t5477\nNSsid:\t5477\nVmPeak:\t  124868 kB\nVmSiz"..., 2048) = 1338
+18:33:02.005383 close(4)                = 0
+18:33:02.005433 openat(AT_FDCWD, "/proc/5477/cmdline", O_RDONLY) = 4
+18:33:02.005475 read(4, "-bash\0", 2047) = 6
+18:33:02.005514 close(4)                = 0
+18:33:02.005553 stat("/proc/5511", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.005597 openat(AT_FDCWD, "/proc/5511/status", O_RDONLY) = 4
+18:33:02.005651 read(4, "Name:\tkworker/6:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5511\nNgid:\t0\nPid:\t5511\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5511\nNSpid:\t5511\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.005705 close(4)                = 0
+18:33:02.005744 openat(AT_FDCWD, "/proc/5511/cmdline", O_RDONLY) = 4
+18:33:02.005796 read(4, "", 2047)       = 0
+18:33:02.005836 close(4)                = 0
+18:33:02.005874 stat("/proc/5574", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.005915 openat(AT_FDCWD, "/proc/5574/status", O_RDONLY) = 4
+18:33:02.005956 read(4, "Name:\tkworker/u16:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5574\nNgid:\t0\nPid:\t5574\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5574\nNSpid:\t5574\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000"..., 2048) = 957
+18:33:02.006010 close(4)                = 0
+18:33:02.006049 openat(AT_FDCWD, "/proc/5574/cmdline", O_RDONLY) = 4
+18:33:02.006088 read(4, "", 2047)       = 0
+18:33:02.006126 close(4)                = 0
+18:33:02.006164 stat("/proc/5581", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.006205 openat(AT_FDCWD, "/proc/5581/status", O_RDONLY) = 4
+18:33:02.006244 read(4, "Name:\tkworker/7:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5581\nNgid:\t0\nPid:\t5581\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5581\nNSpid:\t5581\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.006300 close(4)                = 0
+18:33:02.006338 openat(AT_FDCWD, "/proc/5581/cmdline", O_RDONLY) = 4
+18:33:02.006378 read(4, "", 2047)       = 0
+18:33:02.006416 close(4)                = 0
+18:33:02.006454 stat("/proc/5666", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.006494 openat(AT_FDCWD, "/proc/5666/status", O_RDONLY) = 4
+18:33:02.006533 read(4, "Name:\tkworker/3:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5666\nNgid:\t0\nPid:\t5666\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5666\nNSpid:\t5666\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.006589 close(4)                = 0
+18:33:02.006628 openat(AT_FDCWD, "/proc/5666/cmdline", O_RDONLY) = 4
+18:33:02.006678 read(4, "", 2047)       = 0
+18:33:02.006718 close(4)                = 0
+18:33:02.006756 stat("/proc/5671", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.006797 openat(AT_FDCWD, "/proc/5671/status", O_RDONLY) = 4
+18:33:02.006837 read(4, "Name:\tkworker/u16:2\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5671\nNgid:\t0\nPid:\t5671\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5671\nNSpid:\t5671\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000"..., 2048) = 957
+18:33:02.006892 close(4)                = 0
+18:33:02.006931 openat(AT_FDCWD, "/proc/5671/cmdline", O_RDONLY) = 4
+18:33:02.006970 read(4, "", 2047)       = 0
+18:33:02.007008 close(4)                = 0
+18:33:02.007046 stat("/proc/5672", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.007087 openat(AT_FDCWD, "/proc/5672/status", O_RDONLY) = 4
+18:33:02.007126 read(4, "Name:\tkworker/1:2\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5672\nNgid:\t0\nPid:\t5672\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5672\nNSpid:\t5672\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.007184 close(4)                = 0
+18:33:02.007223 openat(AT_FDCWD, "/proc/5672/cmdline", O_RDONLY) = 4
+18:33:02.007263 read(4, "", 2047)       = 0
+18:33:02.007301 close(4)                = 0
+18:33:02.007339 stat("/proc/5675", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.007380 openat(AT_FDCWD, "/proc/5675/status", O_RDONLY) = 4
+18:33:02.007419 read(4, "Name:\txrdp-sesman\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5675\nNgid:\t0\nPid:\t5675\nPPid:\t2947\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5675\nNSpid:\t5675\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  209864 kB\nVmSize:\t  209864 kB\nVmLck:\t       0 "..., 2048) = 1306
+18:33:02.007476 close(4)                = 0
+18:33:02.007515 openat(AT_FDCWD, "/proc/5675/cmdline", O_RDONLY) = 4
+18:33:02.007554 read(4, "/usr/sbin/xrdp-sesman\0--nodaemon\0", 2047) = 33
+18:33:02.007606 close(4)                = 0
+18:33:02.007644 stat("/proc/5676", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.007703 openat(AT_FDCWD, "/proc/5676/status", O_RDONLY) = 4
+18:33:02.007744 read(4, "Name:\tmate-session\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5676\nNgid:\t0\nPid:\t5676\nPPid:\t5675\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t256\nGroups:\t1001 \nNStgid:\t5676\nNSpid:\t5676\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t 1211880 kB\nVmSize"..., 2048) = 1338
+18:33:02.007802 close(4)                = 0
+18:33:02.007851 openat(AT_FDCWD, "/proc/5676/cmdline", O_RDONLY) = 4
+18:33:02.007893 read(4, "/usr/bin/mate-session\0", 2047) = 22
+18:33:02.007934 close(4)                = 0
+18:33:02.007972 stat("/proc/5677", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.008013 openat(AT_FDCWD, "/proc/5677/status", O_RDONLY) = 4
+18:33:02.008052 read(4, "Name:\tXvnc\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5677\nNgid:\t0\nPid:\t5677\nPPid:\t5675\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5677\nNSpid:\t5677\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  826468 kB\nVmSize:\t  82620"..., 2048) = 1331
+18:33:02.008111 close(4)                = 0
+18:33:02.008160 openat(AT_FDCWD, "/proc/5677/cmdline", O_RDONLY) = 4
+18:33:02.008202 read(4, "Xvnc\0:10\0-auth\0.Xauthority\0-geometry\000592x440\0-depth\00032\0-rfbauth\0/home/newuser/.vnc/sesman_passwd-newuser@ip-172-31-64-80.ec2.internal:10\0-bs\0-nolisten\0tcp\0-localhost\0-dpi\096\0", 2047) = 174
+18:33:02.008243 close(4)                = 0
+18:33:02.008281 stat("/proc/5679", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.008323 openat(AT_FDCWD, "/proc/5679/status", O_RDONLY) = 4
+18:33:02.008363 read(4, "Name:\txrdp-chansrv\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5679\nNgid:\t0\nPid:\t5679\nPPid:\t5675\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5679\nNSpid:\t5679\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  310748 kB\nVmSize:"..., 2048) = 1335
+18:33:02.008421 close(4)                = 0
+18:33:02.008460 openat(AT_FDCWD, "/proc/5679/cmdline", O_RDONLY) = 4
+18:33:02.008501 read(4, "/usr/sbin/xrdp-chansrv\0", 2047) = 23
+18:33:02.008553 close(4)                = 0
+18:33:02.008592 stat("/proc/5724", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.008634 openat(AT_FDCWD, "/proc/5724/status", O_RDONLY) = 4
+18:33:02.008688 read(4, "Name:\tdbus-launch\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5724\nNgid:\t0\nPid:\t5724\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5724\nNSpid:\t5724\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t   58984 kB\nVmSize:\t   "..., 2048) = 1330
+18:33:02.008744 close(4)                = 0
+18:33:02.008793 openat(AT_FDCWD, "/proc/5724/cmdline", O_RDONLY) = 4
+18:33:02.008834 read(4, "dbus-launch\0--sh-syntax\0--exit-with-session\0", 2047) = 44
+18:33:02.008888 close(4)                = 0
+18:33:02.008927 stat("/proc/5726", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.008968 openat(AT_FDCWD, "/proc/5726/status", O_RDONLY) = 4
+18:33:02.009007 read(4, "Name:\tdbus-daemon\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5726\nNgid:\t0\nPid:\t5726\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5726\nNSpid:\t5726\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t   58368 kB\nVmSize:\t   "..., 2048) = 1333
+18:33:02.009063 close(4)                = 0
+18:33:02.009102 openat(AT_FDCWD, "/proc/5726/cmdline", O_RDONLY) = 4
+18:33:02.009142 read(4, "/usr/bin/dbus-daemon\0--fork\0--print-pid\0005\0--print-address\0007\0--session\0", 2047) = 70
+18:33:02.009182 close(4)                = 0
+18:33:02.009220 stat("/proc/5755", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.009261 openat(AT_FDCWD, "/proc/5755/status", O_RDONLY) = 4
+18:33:02.009314 read(4, "Name:\tssh-agent\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5755\nNgid:\t0\nPid:\t5755\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t99\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5755\nNSpid:\t5755\nNSpgid:\t5755\nNSsid:\t5755\nVmPeak:\t   70184 kB\nVmSize:\t   7"..., 2048) = 1330
+18:33:02.009369 close(4)                = 0
+18:33:02.009417 openat(AT_FDCWD, "/proc/5755/cmdline", O_RDONLY) = 4
+18:33:02.009459 read(4, "/usr/bin/ssh-agent\0/etc/X11/xinit/Xclients\0", 2047) = 43
+18:33:02.009498 close(4)                = 0
+18:33:02.009536 stat("/proc/5767", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.009577 openat(AT_FDCWD, "/proc/5767/status", O_RDONLY) = 4
+18:33:02.009621 read(4, "Name:\tat-spi-bus-laun\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5767\nNgid:\t0\nPid:\t5767\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5767\nNSpid:\t5767\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  420324 kB\nVmSize:"..., 2048) = 1335
+18:33:02.009678 close(4)                = 0
+18:33:02.009717 openat(AT_FDCWD, "/proc/5767/cmdline", O_RDONLY) = 4
+18:33:02.009756 read(4, "/usr/libexec/at-spi-bus-launcher\0", 2047) = 33
+18:33:02.009806 close(4)                = 0
+18:33:02.009845 stat("/proc/5772", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.009886 openat(AT_FDCWD, "/proc/5772/status", O_RDONLY) = 4
+18:33:02.009926 read(4, "Name:\tdbus-daemon\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5772\nNgid:\t0\nPid:\t5772\nPPid:\t5767\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5772\nNSpid:\t5772\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t   58256 kB\nVmSize:\t"..., 2048) = 1335
+18:33:02.009984 close(4)                = 0
+18:33:02.010033 openat(AT_FDCWD, "/proc/5772/cmdline", O_RDONLY) = 4
+18:33:02.010075 read(4, "/bin/dbus-daemon\0--config-file=/usr/share/defaults/at-spi2/accessibility.conf\0--nofork\0--print-address\0003\0", 2047) = 105
+18:33:02.010127 close(4)                = 0
+18:33:02.010166 stat("/proc/5775", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.010207 openat(AT_FDCWD, "/proc/5775/status", O_RDONLY) = 4
+18:33:02.010247 read(4, "Name:\tat-spi2-registr\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5775\nNgid:\t0\nPid:\t5775\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5775\nNSpid:\t5775\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  300832 kB\nVmSize:"..., 2048) = 1336
+18:33:02.010305 close(4)                = 0
+18:33:02.010353 openat(AT_FDCWD, "/proc/5775/cmdline", O_RDONLY) = 4
+18:33:02.010394 read(4, "/usr/libexec/at-spi2-registryd\0--use-gnome-session\0", 2047) = 51
+18:33:02.010445 close(4)                = 0
+18:33:02.010483 stat("/proc/5786", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.010524 openat(AT_FDCWD, "/proc/5786/status", O_RDONLY) = 4
+18:33:02.010576 read(4, "Name:\tgvfsd\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5786\nNgid:\t0\nPid:\t5786\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5786\nNSpid:\t5786\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  403496 kB\nVmSize:\t  403464 "..., 2048) = 1325
+18:33:02.010634 close(4)                = 0
+18:33:02.010682 openat(AT_FDCWD, "/proc/5786/cmdline", O_RDONLY) = 4
+18:33:02.010723 read(4, "/usr/libexec/gvfsd\0", 2047) = 19
+18:33:02.010762 close(4)                = 0
+18:33:02.010800 stat("/proc/5807", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.010840 openat(AT_FDCWD, "/proc/5807/status", O_RDONLY) = 4
+18:33:02.010879 read(4, "Name:\tdconf-service\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5807\nNgid:\t0\nPid:\t5807\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5807\nNSpid:\t5807\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  258992 kB\nVmSize:\t "..., 2048) = 1334
+18:33:02.010936 close(4)                = 0
+18:33:02.010974 openat(AT_FDCWD, "/proc/5807/cmdline", O_RDONLY) = 4
+18:33:02.011015 read(4, "/usr/libexec/dconf-service\0", 2047) = 27
+18:33:02.011054 close(4)                = 0
+18:33:02.011091 stat("/proc/5815", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.011132 openat(AT_FDCWD, "/proc/5815/status", O_RDONLY) = 4
+18:33:02.011172 read(4, "Name:\tgnome-keyring-d\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5815\nNgid:\t0\nPid:\t5815\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5815\nNSpid:\t5815\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  391620 kB\nVmSize:"..., 2048) = 1335
+18:33:02.011228 close(4)                = 0
+18:33:02.011267 openat(AT_FDCWD, "/proc/5815/cmdline", O_RDONLY) = 4
+18:33:02.011306 read(4, "gnome-keyring-daemon\0--start\0", 2047) = 29
+18:33:02.011357 close(4)                = 0
+18:33:02.011396 stat("/proc/5819", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.011436 openat(AT_FDCWD, "/proc/5819/status", O_RDONLY) = 4
+18:33:02.011487 read(4, "Name:\tmate-settings-d\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5819\nNgid:\t0\nPid:\t5819\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5819\nNSpid:\t5819\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  947356 kB\nVmSi"..., 2048) = 1341
+18:33:02.011543 close(4)                = 0
+18:33:02.011582 openat(AT_FDCWD, "/proc/5819/cmdline", O_RDONLY) = 4
+18:33:02.011627 read(4, "/usr/libexec/mate-settings-daemon\0", 2047) = 34
+18:33:02.011685 close(4)                = 0
+18:33:02.011725 stat("/proc/5829", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.011767 openat(AT_FDCWD, "/proc/5829/status", O_RDONLY) = 4
+18:33:02.011819 read(4, "Name:\tmarco\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5829\nNgid:\t0\nPid:\t5829\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5829\nNSpid:\t5829\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  607992 kB\nVmSize:\t  5599"..., 2048) = 1330
+18:33:02.011876 close(4)                = 0
+18:33:02.011915 openat(AT_FDCWD, "/proc/5829/cmdline", O_RDONLY) = 4
+18:33:02.011956 read(4, "marco\0", 2047) = 6
+18:33:02.011996 close(4)                = 0
+18:33:02.012034 stat("/proc/5833", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.012075 openat(AT_FDCWD, "/proc/5833/status", O_RDONLY) = 4
+18:33:02.012115 read(4, "Name:\tmate-panel\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5833\nNgid:\t0\nPid:\t5833\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5833\nNSpid:\t5833\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  774528 kB\nVmSize:\t "..., 2048) = 1336
+18:33:02.012172 close(4)                = 0
+18:33:02.012211 openat(AT_FDCWD, "/proc/5833/cmdline", O_RDONLY) = 4
+18:33:02.012250 read(4, "mate-panel\0", 2047) = 11
+18:33:02.012290 close(4)                = 0
+18:33:02.012329 stat("/proc/5844", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.012370 openat(AT_FDCWD, "/proc/5844/status", O_RDONLY) = 4
+18:33:02.012412 read(4, "Name:\tcaja\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5844\nNgid:\t0\nPid:\t5844\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5844\nNSpid:\t5844\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  817964 kB\nVmSize:\t  81741"..., 2048) = 1330
+18:33:02.012470 close(4)                = 0
+18:33:02.012509 openat(AT_FDCWD, "/proc/5844/cmdline", O_RDONLY) = 4
+18:33:02.012550 read(4, "caja\0", 2047) = 5
+18:33:02.012590 close(4)                = 0
+18:33:02.012629 stat("/proc/5853", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.012697 openat(AT_FDCWD, "/proc/5853/status", O_RDONLY) = 4
+18:33:02.012748 read(4, "Name:\tpolkit-mate-aut\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5853\nNgid:\t0\nPid:\t5853\nPPid:\t5676\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5853\nNSpid:\t5853\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  510360 kB\nVmSi"..., 2048) = 1339
+18:33:02.012805 close(4)                = 0
+18:33:02.012854 openat(AT_FDCWD, "/proc/5853/cmdline", O_RDONLY) = 4
+18:33:02.012895 read(4, "/usr/libexec/polkit-mate-authentication-agent-1\0", 2047) = 48
+18:33:02.012946 close(4)                = 0
+18:33:02.012984 stat("/proc/5858", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.013026 openat(AT_FDCWD, "/proc/5858/status", O_RDONLY) = 4
+18:33:02.013078 read(4, "Name:\tgvfs-udisks2-vo\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5858\nNgid:\t0\nPid:\t5858\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5858\nNSpid:\t5858\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  494180 kB\nVmSize:"..., 2048) = 1335
+18:33:02.013134 close(4)                = 0
+18:33:02.013182 openat(AT_FDCWD, "/proc/5858/cmdline", O_RDONLY) = 4
+18:33:02.013224 read(4, "/usr/libexec/gvfs-udisks2-volume-monitor\0", 2047) = 41
+18:33:02.013263 close(4)                = 0
+18:33:02.013301 stat("/proc/5866", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.013342 openat(AT_FDCWD, "/proc/5866/status", O_RDONLY) = 4
+18:33:02.013382 read(4, "Name:\tgvfsd-trash\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5866\nNgid:\t0\nPid:\t5866\nPPid:\t5786\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5866\nNSpid:\t5866\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  481516 kB\nVmSize:\t"..., 2048) = 1334
+18:33:02.013439 close(4)                = 0
+18:33:02.013477 openat(AT_FDCWD, "/proc/5866/cmdline", O_RDONLY) = 4
+18:33:02.013518 read(4, "/usr/libexec/gvfsd-trash\0--spawner\0:1.7\0/org/gtk/gvfs/exec_spaw/0\0", 2047) = 66
+18:33:02.013558 close(4)                = 0
+18:33:02.013596 stat("/proc/5869", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.013637 openat(AT_FDCWD, "/proc/5869/status", O_RDONLY) = 4
+18:33:02.013677 read(4, "Name:\twnck-applet\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5869\nNgid:\t0\nPid:\t5869\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5869\nNSpid:\t5869\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  682068 kB\nVmSize:\t  6"..., 2048) = 1333
+18:33:02.013734 close(4)                = 0
+18:33:02.013783 openat(AT_FDCWD, "/proc/5869/cmdline", O_RDONLY) = 4
+18:33:02.013824 read(4, "/usr/libexec/mate-panel/wnck-applet\0", 2047) = 36
+18:33:02.013876 close(4)                = 0
+18:33:02.013925 stat("/proc/5871", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.013968 openat(AT_FDCWD, "/proc/5871/status", O_RDONLY) = 4
+18:33:02.014008 read(4, "Name:\tclock-applet\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5871\nNgid:\t0\nPid:\t5871\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5871\nNSpid:\t5871\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  707508 kB\nVmSize:\t  "..., 2048) = 1334
+18:33:02.014066 close(4)                = 0
+18:33:02.014105 openat(AT_FDCWD, "/proc/5871/cmdline", O_RDONLY) = 4
+18:33:02.014145 read(4, "/usr/libexec/mate-panel/clock-applet\0", 2047) = 37
+18:33:02.014189 close(4)                = 0
+18:33:02.014228 stat("/proc/5893", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.014269 openat(AT_FDCWD, "/proc/5893/status", O_RDONLY) = 4
+18:33:02.014309 read(4, "Name:\tmate-control-ce\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5893\nNgid:\t0\nPid:\t5893\nPPid:\t5833\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5893\nNSpid:\t5893\nNSpgid:\t2947\nNSsid:\t2947\nVmPeak:\t  685716 kB\nVmSi"..., 2048) = 1339
+18:33:02.014366 close(4)                = 0
+18:33:02.014417 openat(AT_FDCWD, "/proc/5893/cmdline", O_RDONLY) = 4
+18:33:02.014458 read(4, "mate-control-center\0", 2047) = 20
+18:33:02.014509 close(4)                = 0
+18:33:02.014547 stat("/proc/5908", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.014589 openat(AT_FDCWD, "/proc/5908/status", O_RDONLY) = 4
+18:33:02.014644 read(4, "Name:\tgvfsd-metadata\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5908\nNgid:\t0\nPid:\t5908\nPPid:\t1\nTracerPid:\t0\nUid:\t1001\t1001\t1001\t1001\nGid:\t1001\t1001\t1001\t1001\nFDSize:\t64\nGroups:\t1001 \nNStgid:\t5908\nNSpid:\t5908\nNSpgid:\t5726\nNSsid:\t5726\nVmPeak:\t  392196 kB\nVmSize:\t"..., 2048) = 1334
+18:33:02.014701 close(4)                = 0
+18:33:02.014740 openat(AT_FDCWD, "/proc/5908/cmdline", O_RDONLY) = 4
+18:33:02.014780 read(4, "/usr/libexec/gvfsd-metadata\0", 2047) = 28
+18:33:02.014820 close(4)                = 0
+18:33:02.014859 stat("/proc/5915", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.014901 openat(AT_FDCWD, "/proc/5915/status", O_RDONLY) = 4
+18:33:02.014953 read(4, "Name:\tkworker/5:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5915\nNgid:\t0\nPid:\t5915\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5915\nNSpid:\t5915\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.015007 close(4)                = 0
+18:33:02.015047 openat(AT_FDCWD, "/proc/5915/cmdline", O_RDONLY) = 4
+18:33:02.015098 read(4, "", 2047)       = 0
+18:33:02.015138 close(4)                = 0
+18:33:02.015176 stat("/proc/5918", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.015217 openat(AT_FDCWD, "/proc/5918/status", O_RDONLY) = 4
+18:33:02.015268 read(4, "Name:\tkworker/2:2\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5918\nNgid:\t0\nPid:\t5918\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5918\nNSpid:\t5918\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.015323 close(4)                = 0
+18:33:02.015361 openat(AT_FDCWD, "/proc/5918/cmdline", O_RDONLY) = 4
+18:33:02.015402 read(4, "", 2047)       = 0
+18:33:02.015441 close(4)                = 0
+18:33:02.015479 stat("/proc/5933", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.015520 openat(AT_FDCWD, "/proc/5933/status", O_RDONLY) = 4
+18:33:02.015559 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5933\nNgid:\t0\nPid:\t5933\nPPid:\t2951\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5933\nNSpid:\t5933\nNSpgid:\t5933\nNSsid:\t5933\nVmPeak:\t  152692 kB\nVmSize:\t  152692 kB\nVmLck:\t       0 kB\nVmPi"..., 2048) = 1299
+18:33:02.015616 close(4)                = 0
+18:33:02.015661 openat(AT_FDCWD, "/proc/5933/cmdline", O_RDONLY) = 4
+18:33:02.015702 read(4, "sshd: ec2-user [priv]\0", 2047) = 22
+18:33:02.015743 close(4)                = 0
+18:33:02.015781 stat("/proc/5950", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.015822 openat(AT_FDCWD, "/proc/5950/status", O_RDONLY) = 4
+18:33:02.015862 read(4, "Name:\tsshd\nUmask:\t0022\nState:\tS (sleeping)\nTgid:\t5950\nNgid:\t0\nPid:\t5950\nPPid:\t5933\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t4 10 190 1000 \nNStgid:\t5950\nNSpid:\t5950\nNSpgid:\t5933\nNSsid:\t5933\nVmPeak:\t  152692 kB\nVmSize"..., 2048) = 1337
+18:33:02.015923 close(4)                = 0
+18:33:02.015962 openat(AT_FDCWD, "/proc/5950/cmdline", O_RDONLY) = 4
+18:33:02.016002 read(4, "sshd: ec2-user@pts/1\0", 2047) = 21
+18:33:02.016043 close(4)                = 0
+18:33:02.016081 stat("/proc/5951", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.016122 openat(AT_FDCWD, "/proc/5951/status", O_RDONLY) = 4
+18:33:02.016162 read(4, "Name:\tbash\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t5951\nNgid:\t0\nPid:\t5951\nPPid:\t5950\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t256\nGroups:\t4 10 190 1000 \nNStgid:\t5951\nNSpid:\t5951\nNSpgid:\t5951\nNSsid:\t5951\nVmPeak:\t  124868 kB\nVmSiz"..., 2048) = 1338
+18:33:02.016219 close(4)                = 0
+18:33:02.016259 openat(AT_FDCWD, "/proc/5951/cmdline", O_RDONLY) = 4
+18:33:02.016300 read(4, "-bash\0", 2047) = 6
+18:33:02.016339 close(4)                = 0
+18:33:02.016377 stat("/proc/5974", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.016417 openat(AT_FDCWD, "/proc/5974/status", O_RDONLY) = 4
+18:33:02.016457 read(4, "Name:\tkworker/1:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t5974\nNgid:\t0\nPid:\t5974\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t5974\nNSpid:\t5974\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 952
+18:33:02.016513 close(4)                = 0
+18:33:02.016552 openat(AT_FDCWD, "/proc/5974/cmdline", O_RDONLY) = 4
+18:33:02.016592 read(4, "", 2047)       = 0
+18:33:02.016631 close(4)                = 0
+18:33:02.016671 stat("/proc/6005", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.016713 openat(AT_FDCWD, "/proc/6005/status", O_RDONLY) = 4
+18:33:02.016766 read(4, "Name:\tkworker/u16:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t6005\nNgid:\t0\nPid:\t6005\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t6005\nNSpid:\t6005\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t00000000"..., 2048) = 954
+18:33:02.016821 close(4)                = 0
+18:33:02.016859 openat(AT_FDCWD, "/proc/6005/cmdline", O_RDONLY) = 4
+18:33:02.016910 read(4, "", 2047)       = 0
+18:33:02.016949 close(4)                = 0
+18:33:02.016987 stat("/proc/6012", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.017028 openat(AT_FDCWD, "/proc/6012/status", O_RDONLY) = 4
+18:33:02.017067 read(4, "Name:\tkworker/2:0\nUmask:\t0000\nState:\tI (idle)\nTgid:\t6012\nNgid:\t0\nPid:\t6012\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t6012\nNSpid:\t6012\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.017123 close(4)                = 0
+18:33:02.017162 openat(AT_FDCWD, "/proc/6012/cmdline", O_RDONLY) = 4
+18:33:02.017213 read(4, "", 2047)       = 0
+18:33:02.017253 close(4)                = 0
+18:33:02.017290 stat("/proc/6013", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.017331 openat(AT_FDCWD, "/proc/6013/status", O_RDONLY) = 4
+18:33:02.017371 read(4, "Name:\tkworker/2:3\nUmask:\t0000\nState:\tI (idle)\nTgid:\t6013\nNgid:\t0\nPid:\t6013\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t6013\nNSpid:\t6013\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 950
+18:33:02.017427 close(4)                = 0
+18:33:02.017465 openat(AT_FDCWD, "/proc/6013/cmdline", O_RDONLY) = 4
+18:33:02.017504 read(4, "", 2047)       = 0
+18:33:02.017543 close(4)                = 0
+18:33:02.017580 stat("/proc/6032", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.017621 openat(AT_FDCWD, "/proc/6032/status", O_RDONLY) = 4
+18:33:02.017660 read(4, "Name:\tkworker/1:1\nUmask:\t0000\nState:\tI (idle)\nTgid:\t6032\nNgid:\t0\nPid:\t6032\nPPid:\t2\nTracerPid:\t0\nUid:\t0\t0\t0\t0\nGid:\t0\t0\t0\t0\nFDSize:\t64\nGroups:\t \nNStgid:\t6032\nNSpid:\t6032\nNSpgid:\t0\nNSsid:\t0\nThreads:\t1\nSigQ:\t0/127139\nSigPnd:\t0000000000000000\nShdPnd:\t0000000000"..., 2048) = 951
+18:33:02.017717 close(4)                = 0
+18:33:02.017756 openat(AT_FDCWD, "/proc/6032/cmdline", O_RDONLY) = 4
+18:33:02.017795 read(4, "", 2047)       = 0
+18:33:02.017834 close(4)                = 0
+18:33:02.017871 stat("/proc/6033", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.017912 openat(AT_FDCWD, "/proc/6033/status", O_RDONLY) = 4
+18:33:02.017951 read(4, "Name:\tstrace\nUmask:\t0002\nState:\tS (sleeping)\nTgid:\t6033\nNgid:\t0\nPid:\t6033\nPPid:\t5951\nTracerPid:\t0\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t256\nGroups:\t4 10 190 1000 \nNStgid:\t6033\nNSpid:\t6033\nNSpgid:\t6033\nNSsid:\t5951\nVmPeak:\t  132940 kB\nVmS"..., 2048) = 1341
+18:33:02.018007 close(4)                = 0
+18:33:02.018046 openat(AT_FDCWD, "/proc/6033/cmdline", O_RDONLY) = 4
+18:33:02.018097 read(4, "strace\0-ff\0-tt\0-s\000256\0-o\0revil_output.txt\0./f864922f947a6bb7d894245b53795b54b9378c0f7633c521240488e86f60c2c5.elf\0--path\0/home/ec2-user/passwords/\0--threads\0005\0", 2047) = 158
+18:33:02.018138 close(4)                = 0
+18:33:02.018186 stat("/proc/6044", {st_mode=S_IFDIR|0555, st_size=0, ...}) = 0
+18:33:02.018229 openat(AT_FDCWD, "/proc/6044/status", O_RDONLY) = 4
+18:33:02.018269 read(4, "Name:\tpkill\nUmask:\t0002\nState:\tR (running)\nTgid:\t6044\nNgid:\t0\nPid:\t6044\nPPid:\t1\nTracerPid:\t6033\nUid:\t1000\t1000\t1000\t1000\nGid:\t1000\t1000\t1000\t1000\nFDSize:\t64\nGroups:\t4 10 190 1000 \nNStgid:\t6044\nNSpid:\t6044\nNSpgid:\t6033\nNSsid:\t5951\nVmPeak:\t  157740 kB\nVmSize"..., 2048) = 1338
+18:33:02.018325 close(4)                = 0
+18:33:02.018363 openat(AT_FDCWD, "/proc/6044/cmdline", O_RDONLY) = 4
+18:33:02.018414 read(4, "pkill\0-9\0vmx-*\0", 2047) = 15
+18:33:02.018455 close(4)                = 0
+18:33:02.018493 getdents(3, /* 0 entries */, 32768) = 0
+18:33:02.018531 close(3)                = 0
+18:33:02.018580 close(1)                = 0
+18:33:02.018620 close(2)                = 0
+18:33:02.018694 exit_group(1)           = ?
+18:33:02.018838 +++ exited with 1 +++

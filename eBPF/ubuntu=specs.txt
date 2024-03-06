@@ -1,0 +1,56 @@
+System
+  OS: Linux 6.2.0-1017-aws #17~22.04.1-Ubuntu SMP Fri Nov 17 21:07:13 UTC 2023
+  Arch: x86_64
+
+Build
+  version: v0.14.0
+  LLVM: 11.1.0
+  ORC: v2
+  foreach_sym: yes
+  unsafe uprobe: no
+  bfd: no
+  bpf_attach_kfunc: yes
+  bcc_usdt_addsem: yes
+  bcc bpf_attach_uprobe refcount: yes
+  bcc library path resolution: yes
+  libbpf: yes
+  libbpf btf dump: yes
+  libbpf btf dump type decl: yes
+  libdw (DWARF support): no
+
+Kernel helpers
+  probe_read: yes
+  probe_read_str: yes
+  probe_read_user: yes
+  probe_read_user_str: yes
+  probe_read_kernel: yes
+  probe_read_kernel_str: yes
+  get_current_cgroup_id: yes
+  send_signal: yes
+  override_return: yes
+  get_boot_ns: yes
+  dpath: yes
+
+Kernel features
+  Instruction limit: 1000000
+  Loop support: yes
+  btf (depends on Build:libbpf): yes
+  map batch (depends on Build:libbpf): yes
+  uprobe refcount (depends on Build:bcc bpf_attach_uprobe refcount): yes
+
+Map types
+  hash: yes
+  percpu hash: yes
+  array: yes
+  percpu array: yes
+  stack_trace: yes
+  perf_event_array: yes
+
+Probe types
+  kprobe: yes
+  tracepoint: yes
+  perf_event: yes
+  kfunc: yes
+  iter:task: yes
+  iter:task_file: yes
+

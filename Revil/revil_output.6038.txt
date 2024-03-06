@@ -1,0 +1,45 @@
+18:33:01.910970 getpid()                = 6038
+18:33:01.911015 rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+18:33:01.911052 rt_sigaction(SIGTSTP, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.911093 rt_sigaction(SIGTTIN, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.911132 rt_sigaction(SIGTTOU, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+18:33:01.911173 rt_sigaction(SIGINT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, 8) = 0
+18:33:01.911216 rt_sigaction(SIGQUIT, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, {sa_handler=SIG_IGN, sa_mask=[], sa_flags=SA_RESTORER, sa_restorer=0x7fd3afc07d10}, 8) = 0
+18:33:01.911248 rt_sigaction(SIGCHLD, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fd3afc07d10}, {sa_handler=0x4404b0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x7fd3afc07d10}, 8) = 0
+18:33:01.911304 execve("/usr/bin/uname", ["uname", "-a"], 0x79f610 /* 21 vars */) = 0
+18:33:01.911468 brk(NULL)               = 0x84f000
+18:33:01.911528 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+18:33:01.911583 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.911629 fstat(3, {st_mode=S_IFREG|0644, st_size=44585, ...}) = 0
+18:33:01.911678 mmap(NULL, 44585, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f170e21b000
+18:33:01.911721 close(3)                = 0
+18:33:01.911761 openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.911806 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\22\2\0\0\0\0\0@\0\0\0\0\0\0\0 \347\36\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0K\0J\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|4\32\0\0\0\0\0|4\32\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0p7\32\0\0\0\0\0p7:\0\0\0\0\0"..., 832) = 832
+18:33:01.911849 fstat(3, {st_mode=S_IFREG|0755, st_size=2030048, ...}) = 0
+18:33:01.911881 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f170e219000
+18:33:01.911933 mmap(NULL, 3852960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f170dc56000
+18:33:01.911976 mprotect(0x7f170ddfa000, 2093056, PROT_NONE) = 0
+18:33:01.912017 mmap(0x7f170dff9000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a3000) = 0x7f170dff9000
+18:33:01.912070 mmap(0x7f170dfff000, 15008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f170dfff000
+18:33:01.912123 close(3)                = 0
+18:33:01.912169 arch_prctl(ARCH_SET_FS, 0x7f170e21a500) = 0
+18:33:01.912229 mprotect(0x7f170dff9000, 16384, PROT_READ) = 0
+18:33:01.912279 mprotect(0x605000, 4096, PROT_READ) = 0
+18:33:01.912330 mprotect(0x7f170e226000, 4096, PROT_READ) = 0
+18:33:01.912370 munmap(0x7f170e21b000, 44585) = 0
+18:33:01.912444 open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.912489 fstat(3, {st_mode=S_IFREG|0644, st_size=113049440, ...}) = 0
+18:33:01.912522 mmap(NULL, 113049440, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1707086000
+18:33:01.912573 close(3)                = 0
+18:33:01.912655 brk(NULL)               = 0x84f000
+18:33:01.912707 brk(0x870000)           = 0x870000
+18:33:01.912747 brk(NULL)               = 0x870000
+18:33:01.912806 uname({sysname="Linux", nodename="ip-172-31-64-80.ec2.internal", ...}) = 0
+18:33:01.912859 fstat(1, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+18:33:01.912901 uname({sysname="Linux", nodename="ip-172-31-64-80.ec2.internal", ...}) = 0
+18:33:01.912933 uname({sysname="Linux", nodename="ip-172-31-64-80.ec2.internal", ...}) = 0
+18:33:01.912978 write(1, "Linux ip-172-31-64-80.ec2.internal 4.14.336-253.554.amzn2.x86_64 #1 SMP Fri Jan 12 09:58:17 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux\n", 132) = 132
+18:33:01.913045 close(1)                = 0
+18:33:01.913084 close(2)                = 0
+18:33:01.913124 exit_group(0)           = ?
+18:33:01.913200 +++ exited with 0 +++

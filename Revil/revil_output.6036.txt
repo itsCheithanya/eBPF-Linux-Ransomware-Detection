@@ -1,0 +1,181 @@
+18:33:01.896524 execve("./f864922f947a6bb7d894245b53795b54b9378c0f7633c521240488e86f60c2c5.elf", ["./f864922f947a6bb7d894245b53795b54b9378c0f7633c521240488e86f60c2c5.elf", "--path", "/home/ec2-user/passwords/", "--threads", "5"], 0x7fffccd360f0 /* 22 vars */) = 0
+18:33:01.896777 brk(NULL)               = 0x12d9000
+18:33:01.896845 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+18:33:01.896930 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.896981 fstat(3, {st_mode=S_IFREG|0644, st_size=44585, ...}) = 0
+18:33:01.897030 mmap(NULL, 44585, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f1bca58b000
+18:33:01.897075 close(3)                = 0
+18:33:01.897119 openat(AT_FDCWD, "/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.897166 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0x\0\0\0\0\0\0@\0\0\0\0\0\0\0\310\215\25\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\"\0!\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0H\353\23\0\0\0\0\0H\353\23\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0`\355\23\0\0\0\0\0`\3553\0\0\0\0\0`\3553\0\0\0\0\0\240\5\0\0\0\0\0\0\250\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0x\355\23\0\0\0\0\0x\3553\0\0\0\0\0x\3553\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:33:01.897212 fstat(3, {st_mode=S_IFREG|0755, st_size=1414728, ...}) = 0
+18:33:01.897256 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1bca589000
+18:33:01.897302 mmap(NULL, 3404552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1bca033000
+18:33:01.897347 mprotect(0x7f1bca172000, 2093056, PROT_NONE) = 0
+18:33:01.897392 mmap(0x7f1bca371000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13e000) = 0x7f1bca371000
+18:33:01.897442 close(3)                = 0
+18:33:01.897488 openat(AT_FDCWD, "/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.897534 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260a\0\0\0\0\0\0@\0\0\0\0\0\0\0\250=\2\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0(\0'\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\370\1\0\0\0\0\0\0\370\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|\177\1\0\0\0\0\0|\177\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\200\213\1\0\0\0\0\0\200\213!\0\0\0\0\0"..., 832) = 832
+18:33:01.897582 fstat(3, {st_mode=S_IFREG|0755, st_size=149416, ...}) = 0
+18:33:01.897629 mmap(NULL, 2217064, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1bc9e15000
+18:33:01.897673 mprotect(0x7f1bc9e2d000, 2097152, PROT_NONE) = 0
+18:33:01.897717 mmap(0x7f1bca02d000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18000) = 0x7f1bca02d000
+18:33:01.897765 mmap(0x7f1bca02f000, 13416, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1bca02f000
+18:33:01.897811 close(3)                = 0
+18:33:01.897856 openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:33:01.897902 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\22\2\0\0\0\0\0@\0\0\0\0\0\0\0 \347\36\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0K\0J\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|4\32\0\0\0\0\0|4\32\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0p7\32\0\0\0\0\0p7:\0\0\0\0\0"..., 832) = 832
+18:33:01.897948 fstat(3, {st_mode=S_IFREG|0755, st_size=2030048, ...}) = 0
+18:33:01.897993 mmap(NULL, 3852960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f1bc9a68000
+18:33:01.898037 mprotect(0x7f1bc9c0c000, 2093056, PROT_NONE) = 0
+18:33:01.898081 mmap(0x7f1bc9e0b000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a3000) = 0x7f1bc9e0b000
+18:33:01.898128 mmap(0x7f1bc9e11000, 15008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f1bc9e11000
+18:33:01.898179 close(3)                = 0
+18:33:01.898231 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1bca586000
+18:33:01.898277 arch_prctl(ARCH_SET_FS, 0x7f1bca586740) = 0
+18:33:01.898343 mprotect(0x7f1bc9e0b000, 16384, PROT_READ) = 0
+18:33:01.898403 mprotect(0x7f1bca02d000, 4096, PROT_READ) = 0
+18:33:01.898459 mprotect(0x7f1bca371000, 4096, PROT_READ) = 0
+18:33:01.898506 mprotect(0x615000, 4096, PROT_READ) = 0
+18:33:01.898550 mprotect(0x7f1bca596000, 4096, PROT_READ) = 0
+18:33:01.898593 munmap(0x7f1bca58b000, 44585) = 0
+18:33:01.898640 set_tid_address(0x7f1bca586a10) = 6036
+18:33:01.898681 set_robust_list(0x7f1bca586a20, 24) = 0
+18:33:01.898725 rt_sigaction(SIGRTMIN, {sa_handler=0x7f1bc9e1ac70, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7f1bc9e268e0}, NULL, 8) = 0
+18:33:01.898773 rt_sigaction(SIGRT_1, {sa_handler=0x7f1bc9e1acf0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7f1bc9e268e0}, NULL, 8) = 0
+18:33:01.898818 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+18:33:01.898862 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=10240*1024, rlim_max=10240*1024}) = 0
+18:33:01.898935 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+18:33:01.899002 brk(NULL)               = 0x12d9000
+18:33:01.899044 brk(0x12fa000)          = 0x12fa000
+18:33:01.899087 brk(NULL)               = 0x12fa000
+18:33:01.899131 write(1, "Path: /home/ec2-user/passwords/ \n", 33) = 33
+18:33:01.899200 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.899354 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.899473 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.899588 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.899708 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.899864 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.899916 read(3, "E\333\340\314\2732\236+\2159\2621\326\2441\240W\fM<#\262\257G\367\26`7\316\344\36\7", 32) = 32
+18:33:01.899961 close(3)                = 0
+18:33:01.901248 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.901369 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.901416 read(3, "\274!\257\376R\242/\2\344/j\335\202\255\226\333\213\225;\207\0270gQ\30\203{m\337\206a\311", 32) = 32
+18:33:01.901459 close(3)                = 0
+18:33:01.903974 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.904022 read(3, "\200\242'\362\250DI\314^\357\314$\270\320\240\f", 16) = 16
+18:33:01.904065 close(3)                = 0
+18:33:01.904113 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.904227 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.904341 pipe2([3, 4], O_CLOEXEC) = 0
+18:33:01.904387 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1bca586a10) = 6037
+18:33:01.904502 close(4)                = 0
+18:33:01.904554 fcntl(3, F_SETFD, 0)    = 0
+18:33:01.904587 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.904680 fstat(3, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+18:33:01.904751 read(3, "Linux ip-172-31-64-80.ec2.internal 4.14.336-253.554.amzn2.x86_64 #1 SMP Fri Jan 12 09:58:17 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux\n", 4096) = 132
+18:33:01.913034 read(3, " | \n", 4096)  = 4
+18:33:01.913554 read(3, "ip-172-31-64-80.ec2.internal\n", 4096) = 29
+18:33:01.917223 read(3, "", 4096)       = 0
+18:33:01.917676 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=6037, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+18:33:01.917699 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.917825 close(3)                = 0
+18:33:01.917869 wait4(6037, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 6037
+18:33:01.917918 pipe2([3, 4], O_CLOEXEC) = 0
+18:33:01.917963 clone(child_stack=NULL, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f1bca586a10) = 6040
+18:33:01.918081 close(4)                = 0
+18:33:01.918141 fcntl(3, F_SETFD, 0)    = 0
+18:33:01.918193 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.918343 fstat(3, {st_mode=S_IFIFO|0600, st_size=0, ...}) = 0
+18:33:01.918408 read(3, "Linux ip-172-31-64-80.ec2.internal 4.14.336-253.554.amzn2.x86_64 #1 SMP Fri Jan 12 09:58:17 UTC 2024 x86_64 x86_64 x86_64 GNU/Linux\n", 4096) = 132
+18:33:01.929785 read(3, " | \n", 4096)  = 4
+18:33:01.930437 read(3, "ip-172-31-64-80.ec2.internal\n", 4096) = 29
+18:33:01.934700 read(3, "", 4096)       = 0
+18:33:01.935271 --- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=6040, si_uid=1000, si_status=0, si_utime=0, si_stime=0} ---
+18:33:01.935296 close(3)                = 0
+18:33:01.935340 wait4(6040, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 6040
+18:33:01.935388 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.935507 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.935620 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.935677 read(3, "?\231\3651\222\273\216\263.\30\225\317D[\0b\324\370\363%\21\311\303\5sv\37\10\361X1\255", 32) = 32
+18:33:01.935724 close(3)                = 0
+18:33:01.938244 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.938296 read(3, "F\216\245\325\254\337?\2\342 7Yt\203\r\244", 16) = 16
+18:33:01.938341 close(3)                = 0
+18:33:01.938399 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.938518 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.938633 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.938746 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.938858 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.938972 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc9067000
+18:33:01.939017 mprotect(0x7f1bc9068000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.939067 clone(child_stack=0x7f1bc9a66fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc9a679d0, tls=0x7f1bc9a67700, child_tidptr=0x7f1bc9a679d0) = 6043
+18:33:01.939162 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.939273 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.939378 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.939499 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc8666000
+18:33:01.939542 mprotect(0x7f1bc8667000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.939591 futex(0x7f1bc9e0fc40, FUTEX_WAIT_PRIVATE, 2, NULL) = -1 EAGAIN (Resource temporarily unavailable)
+18:33:01.939652 futex(0x7f1bc9e0fc40, FUTEX_WAKE_PRIVATE, 1) = 0
+18:33:01.939695 clone(child_stack=0x7f1bc9065fb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc90669d0, tls=0x7f1bc9066700, child_tidptr=0x7f1bc90669d0) = 6045
+18:33:01.939791 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc35ff000
+18:33:01.939826 mprotect(0x7f1bc3600000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.939865 clone(child_stack=0x7f1bc3ffefb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc3fff9d0, tls=0x7f1bc3fff700, child_tidptr=0x7f1bc3fff9d0) = 6046
+18:33:01.939947 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc2bfe000
+18:33:01.939985 mprotect(0x7f1bc2bff000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.940023 clone(child_stack=0x7f1bc35fdfb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc35fe9d0, tls=0x7f1bc35fe700, child_tidptr=0x7f1bc35fe9d0) = 6047
+18:33:01.940108 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc21fd000
+18:33:01.940147 mprotect(0x7f1bc21fe000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.940190 clone(child_stack=0x7f1bc2bfcfb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc2bfd9d0, tls=0x7f1bc2bfd700, child_tidptr=0x7f1bc2bfd9d0) = 6048
+18:33:01.940274 mmap(NULL, 10489856, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_STACK, -1, 0) = 0x7f1bc17fc000
+18:33:01.940313 mprotect(0x7f1bc17fd000, 10485760, PROT_READ|PROT_WRITE) = 0
+18:33:01.940353 clone(child_stack=0x7f1bc21fbfb0, flags=CLONE_VM|CLONE_FS|CLONE_FILES|CLONE_SIGHAND|CLONE_THREAD|CLONE_SYSVSEM|CLONE_SETTLS|CLONE_PARENT_SETTID|CLONE_CHILD_CLEARTID, parent_tidptr=0x7f1bc21fc9d0, tls=0x7f1bc21fc700, child_tidptr=0x7f1bc21fc9d0) = 6049
+18:33:01.940439 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.940559 open("/home/ec2-user/passwords/", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+18:33:01.940601 fstat(3, {st_mode=S_IFDIR|0775, st_size=39, ...}) = 0
+18:33:01.940676 getdents(3, /* 4 entries */, 32768) = 112
+18:33:01.940722 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.940841 futex(0x12da2e8, FUTEX_WAKE_PRIVATE, 2147483647) = 5
+18:33:01.940929 futex(0x12da298, FUTEX_WAKE_PRIVATE, 1) = 0
+18:33:01.940974 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.941094 futex(0x12da298, FUTEX_WAKE_PRIVATE, 1) = 1
+18:33:01.941139 getdents(3, /* 0 entries */, 32768) = 0
+18:33:01.941182 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.941298 openat(AT_FDCWD, "/home/ec2-user/passwords//vemar-readme.txt", O_WRONLY|O_CREAT|O_TRUNC, 0666) = 4
+18:33:01.941358 fstat(4, {st_mode=S_IFREG|0664, st_size=0, ...}) = 0
+18:33:01.941411 write(4, "---=== Welcome. Again. ===---\n\n[-] Whats Happen? [-]\n\nYour files are encrypted, and currently unavailable. You can check it: all files on your system has extension vemar.\nBy the way, everything is possible to recover (restore), but you need to follow our i"..., 2311) = 2311
+18:33:01.941452 close(4)                = 0
+18:33:01.941493 close(3)                = 0
+18:33:01.941531 futex(0x7f1bc90669d0, FUTEX_WAIT, 6045, {tv_sec=1199, tv_nsec=58472000}) = 0
+18:33:01.942875 futex(0x7f1bc2bfd9d0, FUTEX_WAIT, 6048, {tv_sec=1199, tv_nsec=57132000}) = 0
+18:33:01.947078 munmap(0x7f1bc8666000, 10489856) = 0
+18:33:01.947137 munmap(0x7f1bc35ff000, 10489856) = 0
+18:33:01.947176 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947218 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947276 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947328 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947380 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947433 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947484 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947527 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947571 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947620 write(1, "iji iji iji iji ij.-----------.ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947682 write(1, "iji iji iji iji ij| ENCRYPTED |ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947734 write(1, "iji iji iji iji ij|- - - - - -|ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947784 write(1, "iji iji iji iji ij|  00000002 |ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947835 write(1, "iji iji iji iji ij|   FILES   |ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947876 write(1, "iji iji iji iji ij|           |ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.947929 write(1, "iji iji iji iji ij|  00000000 |ji iji iji ifi iji iji\n", 54) = 54
+18:33:01.947981 write(1, "iji iji iji iji ij|    MBs    |ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948032 write(1, "iji iji iji iji ij'___________'ji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948083 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948134 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948186 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948234 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948291 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948347 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948401 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948457 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948514 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948572 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948625 write(1, "iji iji iji iji iji iji tYiji iji iji ifi iji iji iji\n", 54) = 54
+18:33:01.948706 exit_group(0)           = ?
+18:33:01.948837 +++ exited with 0 +++

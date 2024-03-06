@@ -1,0 +1,50 @@
+18:33:01.940423 set_robust_list(0x7f1bc21fc9e0, 24) = 0
+18:33:01.940467 futex(0x12da2e8, FUTEX_WAIT_PRIVATE, 0, NULL) = 0
+18:33:01.940945 futex(0x12da298, FUTEX_WAKE_PRIVATE, 1) = 0
+18:33:01.940988 chmod("/home/ec2-user/passwords//pass1.txt", 0700) = 0
+18:33:01.941033 write(1, "Encrypting [/home/ec2-user/passwords//pass1.txt]\n", 49) = 49
+18:33:01.941105 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.941228 mmap(NULL, 134217728, PROT_NONE, MAP_PRIVATE|MAP_ANONYMOUS|MAP_NORESERVE, -1, 0) = 0x7f1bb97fc000
+18:33:01.941280 munmap(0x7f1bb97fc000, 41959424) = 0
+18:33:01.941330 munmap(0x7f1bc0000000, 25149440) = 0
+18:33:01.941369 mprotect(0x7f1bbc000000, 135168, PROT_READ|PROT_WRITE) = 0
+18:33:01.941423 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 5
+18:33:01.941463 read(5, "dw\354<\221\334\321\5\235\340\206\204\214\20<\307a:\0212\0327\204\351,k\366\232\319\3567", 32) = 32
+18:33:01.941503 close(5)                = 0
+18:33:01.944246 openat(AT_FDCWD, "/dev/urandom", O_RDONLY) = 3
+18:33:01.944290 read(3, "-\270n\376\270\312\253\317", 8) = 8
+18:33:01.944343 close(3)                = 0
+18:33:01.944384 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.944491 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.944607 stat("/home/ec2-user/passwords//pass1.txt.lck", 0x7f1bc21fbd40) = -1 ENOENT (No such file or directory)
+18:33:01.944677 openat(AT_FDCWD, "/home/ec2-user/passwords//pass1.txt.lck", O_RDWR|O_CREAT|O_TRUNC, 0666) = 3
+18:33:01.944740 close(3)                = 0
+18:33:01.944782 openat(AT_FDCWD, "/home/ec2-user/passwords//pass1.txt", O_RDWR) = 3
+18:33:01.944825 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.944933 mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1bca485000
+18:33:01.945265 nanosleep({tv_sec=0, tv_nsec=10000}, NULL) = 0
+18:33:01.945384 mmap(NULL, 1052672, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f1bc824e000
+18:33:01.945704 fstat(3, {st_mode=S_IFREG|0700, st_size=82, ...}) = 0
+18:33:01.945748 fstat(3, {st_mode=S_IFREG|0700, st_size=82, ...}) = 0
+18:33:01.945790 lseek(3, 0, SEEK_SET)   = 0
+18:33:01.945830 read(3, "strace -ff -tt -s 256 -e trace=file,process -o strace_output.txt <executable.elf>\n", 82) = 82
+18:33:01.945870 lseek(3, 82, SEEK_SET)  = 82
+18:33:01.945910 read(3, "", 1044480)    = 0
+18:33:01.945950 lseek(3, 0, SEEK_SET)   = 0
+18:33:01.946082 write(3, "*Q\212m\304\16{\201\375|3\253Kp\35>J\310\227\231\354$g\3119x\225\320\277\234\223\275\246\250H\265D\311\234}\253\200\244\351\v\213D\367\241\5\201\311\nGT\230\322\235h4\0231\214XT\2658<r\v\274C\276m\255ER\223\177\33:\17", 82) = 82
+18:33:01.946128 fstat(3, {st_mode=S_IFREG|0700, st_size=82, ...}) = 0
+18:33:01.946170 lseek(3, 0, SEEK_SET)   = 0
+18:33:01.946207 read(3, "*Q\212m\304\16{\201\375|3\253Kp\35>J\310\227\231\354$g\3119x\225\320\277\234\223\275\246\250H\265D\311\234}\253\200\244\351\v\213D\367\241\5\201\311\nGT\230\322\235h4\0231\214XT\2658<r\v\274C\276m\255ER\223\177\33:\17", 4096) = 82
+18:33:01.946249 fstat(3, {st_mode=S_IFREG|0700, st_size=82, ...}) = 0
+18:33:01.946290 lseek(3, 0, SEEK_SET)   = 0
+18:33:01.946328 read(3, "*Q\212m\304\16{\201\375|3\253Kp\35>J\310\227\231\354$g\3119x\225\320\277\234\223\275\246\250H\265D\311\234}\253\200\244\351\v\213D\367\241\5\201\311\nGT\230\322\235h4\0231\214XT\2658<r\v\274C\276m\255ER\223\177\33:\17", 4096) = 82
+18:33:01.946368 write(3, "J@\356:d\2017\32\372\301\227\354\336\317\366\267\17/\276\320\325\210\36\251\0237\305\273\210N\tY\373\216`\1H\330\204q\222\250\31\366\327wFX/E\241\345:\2\240I7\246\264h\221\t\331\320\30\211\246'\200\242'\362\250DI\314^\357\314$\270\320\240\f\2223[\324\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\225\33l\332|x\356`R;v=\4\22\347\322\266D\235\247!\v\347>\203$\2454\23\313\335\7-\270n\376\270\312\253\317\"\304\3722\0\0\0\0\0\0\0\0\226c\374_", 232) = 232
+18:33:01.946413 close(3)                = 0
+18:33:01.946451 munmap(0x7f1bca485000, 1052672) = 0
+18:33:01.946537 munmap(0x7f1bc824e000, 1052672) = 0
+18:33:01.946677 rename("/home/ec2-user/passwords//pass1.txt", "/home/ec2-user/passwords//pass1.txt.vemar") = 0
+18:33:01.946731 unlink("/home/ec2-user/passwords//pass1.txt.lck") = 0
+18:33:01.946784 write(1, "File [/home/ec2-user/passwords//pass1.txt] was encrypted\n", 57) = 57
+18:33:01.946846 madvise(0x7f1bc17fc000, 10465280, MADV_DONTNEED) = 0
+18:33:01.946896 exit(0)                 = ?
+18:33:01.946935 +++ exited with 0 +++

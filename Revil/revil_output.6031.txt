@@ -1,0 +1,55 @@
+18:32:28.266525 execve("./f864922f947a6bb7d894245b53795b54b9378c0f7633c521240488e86f60c2c5.elf", ["./f864922f947a6bb7d894245b53795b54b9378c0f7633c521240488e86f60c2c5.elf"], 0x7ffc5414b1d0 /* 22 vars */) = 0
+18:32:28.266724 brk(NULL)               = 0xaa4000
+18:32:28.266797 access("/etc/ld.so.preload", R_OK) = -1 ENOENT (No such file or directory)
+18:32:28.266885 openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+18:32:28.266936 fstat(3, {st_mode=S_IFREG|0644, st_size=44585, ...}) = 0
+18:32:28.266985 mmap(NULL, 44585, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7efdb3425000
+18:32:28.267030 close(3)                = 0
+18:32:28.267074 openat(AT_FDCWD, "/lib64/libm.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:32:28.267122 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0x\0\0\0\0\0\0@\0\0\0\0\0\0\0\310\215\25\0\0\0\0\0\0\0\0\0@\08\0\7\0@\0\"\0!\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0H\353\23\0\0\0\0\0H\353\23\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0`\355\23\0\0\0\0\0`\3553\0\0\0\0\0`\3553\0\0\0\0\0\240\5\0\0\0\0\0\0\250\5\0\0\0\0\0\0\0\0 \0\0\0\0\0\2\0\0\0\6\0\0\0x\355\23\0\0\0\0\0x\3553\0\0\0\0\0x\3553\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\4\0\0\0\4\0\0\0\310\1\0\0\0\0\0\0\310\1\0\0\0\0\0\0"..., 832) = 832
+18:32:28.267169 fstat(3, {st_mode=S_IFREG|0755, st_size=1414728, ...}) = 0
+18:32:28.267212 mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdb3423000
+18:32:28.267258 mmap(NULL, 3404552, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efdb2ecd000
+18:32:28.267304 mprotect(0x7efdb300c000, 2093056, PROT_NONE) = 0
+18:32:28.267349 mmap(0x7efdb320b000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x13e000) = 0x7efdb320b000
+18:32:28.267398 close(3)                = 0
+18:32:28.267444 openat(AT_FDCWD, "/lib64/libpthread.so.0", O_RDONLY|O_CLOEXEC) = 3
+18:32:28.267491 read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\260a\0\0\0\0\0\0@\0\0\0\0\0\0\0\250=\2\0\0\0\0\0\0\0\0\0@\08\0\t\0@\0(\0'\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\370\1\0\0\0\0\0\0\370\1\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0 ;\1\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|\177\1\0\0\0\0\0|\177\1\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0\200\213\1\0\0\0\0\0\200\213!\0\0\0\0\0"..., 832) = 832
+18:32:28.267538 fstat(3, {st_mode=S_IFREG|0755, st_size=149416, ...}) = 0
+18:32:28.267582 mmap(NULL, 2217064, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efdb2caf000
+18:32:28.267634 mprotect(0x7efdb2cc7000, 2097152, PROT_NONE) = 0
+18:32:28.267681 mmap(0x7efdb2ec7000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x18000) = 0x7efdb2ec7000
+18:32:28.267730 mmap(0x7efdb2ec9000, 13416, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efdb2ec9000
+18:32:28.267776 close(3)                = 0
+18:32:28.267822 openat(AT_FDCWD, "/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+18:32:28.267870 read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0P\22\2\0\0\0\0\0@\0\0\0\0\0\0\0 \347\36\0\0\0\0\0\0\0\0\0@\08\0\n\0@\0K\0J\0\6\0\0\0\5\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0000\2\0\0\0\0\0\0000\2\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\0\252\27\0\0\0\0\0\34\0\0\0\0\0\0\0\34\0\0\0\0\0\0\0\20\0\0\0\0\0\0\0\1\0\0\0\5\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0|4\32\0\0\0\0\0|4\32\0\0\0\0\0\0\0 \0\0\0\0\0\1\0\0\0\6\0\0\0p7\32\0\0\0\0\0p7:\0\0\0\0\0"..., 832) = 832
+18:32:28.267916 fstat(3, {st_mode=S_IFREG|0755, st_size=2030048, ...}) = 0
+18:32:28.267960 mmap(NULL, 3852960, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7efdb2902000
+18:32:28.268005 mprotect(0x7efdb2aa6000, 2093056, PROT_NONE) = 0
+18:32:28.268049 mmap(0x7efdb2ca5000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1a3000) = 0x7efdb2ca5000
+18:32:28.268097 mmap(0x7efdb2cab000, 15008, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7efdb2cab000
+18:32:28.268149 close(3)                = 0
+18:32:28.268202 mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7efdb3420000
+18:32:28.268248 arch_prctl(ARCH_SET_FS, 0x7efdb3420740) = 0
+18:32:28.268317 mprotect(0x7efdb2ca5000, 16384, PROT_READ) = 0
+18:32:28.268377 mprotect(0x7efdb2ec7000, 4096, PROT_READ) = 0
+18:32:28.268432 mprotect(0x7efdb320b000, 4096, PROT_READ) = 0
+18:32:28.268479 mprotect(0x615000, 4096, PROT_READ) = 0
+18:32:28.268524 mprotect(0x7efdb3430000, 4096, PROT_READ) = 0
+18:32:28.268567 munmap(0x7efdb3425000, 44585) = 0
+18:32:28.268615 set_tid_address(0x7efdb3420a10) = 6031
+18:32:28.268687 set_robust_list(0x7efdb3420a20, 24) = 0
+18:32:28.268741 rt_sigaction(SIGRTMIN, {sa_handler=0x7efdb2cb4c70, sa_mask=[], sa_flags=SA_RESTORER|SA_SIGINFO, sa_restorer=0x7efdb2cc08e0}, NULL, 8) = 0
+18:32:28.268800 rt_sigaction(SIGRT_1, {sa_handler=0x7efdb2cb4cf0, sa_mask=[], sa_flags=SA_RESTORER|SA_RESTART|SA_SIGINFO, sa_restorer=0x7efdb2cc08e0}, NULL, 8) = 0
+18:32:28.268845 rt_sigprocmask(SIG_UNBLOCK, [RTMIN RT_1], NULL, 8) = 0
+18:32:28.268892 prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=10240*1024, rlim_max=10240*1024}) = 0
+18:32:28.268959 fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x1), ...}) = 0
+18:32:28.269025 brk(NULL)               = 0xaa4000
+18:32:28.269067 brk(0xac5000)           = 0xac5000
+18:32:28.269110 brk(NULL)               = 0xac5000
+18:32:28.269155 write(1, "Revix 1.2a \r\n", 13) = 13
+18:32:28.269211 write(1, "Usage example: elf.exe --path /vmfs/ --threads 5\r\n", 50) = 50
+18:32:28.269284 write(1, "--silent (-s) use for not stoping VMs mode\r\n", 44) = 44
+18:32:28.269349 write(1, "!!!BY DEFAULT THIS SOFTWARE USES 50 THREADS!!!\r\n", 48) = 48
+18:32:28.269425 exit_group(0)           = ?
+18:32:28.269514 +++ exited with 0 +++

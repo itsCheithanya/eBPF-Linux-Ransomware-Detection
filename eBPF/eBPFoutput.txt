@@ -1,0 +1,235 @@
+ubuntu@ip-172-31-75-177:~/take2/libbpf-bootstrap/examples/c$ sudo ./monitor 
+PID: 1800
+Process Name: 
+Read Amount: 3413819137
+Write Amount: 3
+File Open Count: 0
+File Create Count: 1816107168
+File Unlink Count: 3293489321
+File Rename Count: 54801
+-------------------------
+PID: 1
+Process Name: systemd
+Read Amount: 1929692289
+Write Amount: 104294476
+File Open Count: 0
+File Create Count: 1962404992
+File Unlink Count: 1445276980
+File Rename Count: 1096020
+-------------------------
+PID: 1264
+Process Name: systemd
+Read Amount: 1164793965
+Write Amount: 2986559183
+File Open Count: 0
+File Create Count: 490601248
+File Unlink Count: 3582544717
+File Rename Count: 274005
+-------------------------
+PID: 820
+Process Name: systemd
+Read Amount: 1892299532
+Write Amount: 1708402572
+File Open Count: 0
+File Create Count: 1962404992
+File Unlink Count: 1445276980
+File Rename Count: 1096020
+-------------------------
+PID: 0
+Process Name: systemd
+Read Amount: 1911772272
+Write Amount: 1576095688
+File Open Count: 0
+File Create Count: 1643955456
+File Unlink Count: 578110792
+File Rename Count: 438408
+-------------------------
+PID: 1800
+Process Name: systemd
+Read Amount: 2532670978
+Write Amount: 164512646
+File Open Count: 0
+File Create Count: 3632214336
+File Unlink Count: 2292011346
+File Rename Count: 109602
+-------------------------
+PID: 1
+Process Name: systemd
+Read Amount: 1664105585
+Write Amount: 1585311212
+File Open Count: 0
+File Create Count: 3606360448
+File Unlink Count: 2023387772
+File Rename Count: 1534428
+-------------------------
+PID: 1264
+Process Name: systemd
+Read Amount: 3697464943
+Write Amount: 551351525
+File Open Count: 0
+File Create Count: 4122815584
+File Unlink Count: 1579588767
+File Rename Count: 383607
+-------------------------
+PID: 820
+Process Name: systemd
+Read Amount: 130003214
+Write Amount: 3477023314
+File Open Count: 0
+File Create Count: 1299652032
+File Unlink Count: 3737288326
+File Rename Count: 1205622
+-------------------------
+PID: 0
+Process Name: systemd
+Read Amount: 1911772272
+Write Amount: 1576095688
+File Open Count: 0
+File Create Count: 1643955456
+File Unlink Count: 578110792
+File Rename Count: 438408
+-------------------------
+PID: 1800
+Process Name: systemd
+Read Amount: 770374660
+Write Amount: 1151588492
+File Open Count: 0
+File Create Count: 2969461376
+File Unlink Count: 289055396
+File Rename Count: 219204
+-------------------------
+PID: 1
+Process Name: systemd
+Read Amount: 1776521412
+Write Amount: 3646717336
+File Open Count: 0
+File Create Count: 1437124352
+File Unlink Count: 2724089496
+File Rename Count: 11837016
+-------------------------
+PID: 1264
+Process Name: systemd
+Read Amount: 172872307
+Write Amount: 3398187009
+File Open Count: 0
+File Create Count: 2797309664
+File Unlink Count: 1868644163
+File Rename Count: 602811
+-------------------------
+PID: 820
+Process Name: systemd
+Read Amount: 4236187911
+Write Amount: 1834185798
+File Open Count: 0
+File Create Count: 1247944256
+File Unlink Count: 3200041178
+File Rename Count: 4055274
+-------------------------
+PID: 0
+Process Name: systemd
+Read Amount: 1896775721
+Write Amount: 1020009276
+File Open Count: 0
+File Create Count: 1592247680
+File Unlink Count: 40863644
+File Rename Count: 3288060
+-------------------------
+PID: 1800
+Process Name: systemd
+Read Amount: 1540749320
+Write Amount: 3125740184
+File Open Count: 0
+File Create Count: 1643955456
+File Unlink Count: 578110792
+File Rename Count: 438408
+-------------------------
+PID: 1
+Process Name: systemd
+Read Amount: 2810348799
+Write Amount: 639450190
+File Open Count: 0
+File Create Count: 93967424
+File Unlink Count: 388204618
+File Rename Count: 31236570
+-------------------------
+PID: 1264
+Process Name: systemd
+Read Amount: 1713621627
+Write Amount: 3924206889
+File Open Count: 0
+File Create Count: 146297824
+File Unlink Count: 2446754955
+File Rename Count: 1041219
+-------------------------
+PID: 820
+Process Name: systemd
+Read Amount: 3523268355
+Write Amount: 2035196022
+File Open Count: 0
+File Create Count: 670955840
+File Unlink Count: 3941606546
+File Rename Count: 17645922
+-------------------------
+PID: 0
+Process Name: systemd
+Read Amount: 2936600293
+Write Amount: 3911878700
+File Open Count: 0
+File Create Count: 1015259264
+File Unlink Count: 782429012
+File Rename Count: 16878708
+-------------------------
+PID: 1800
+Process Name: systemd
+Read Amount: 3081498640
+Write Amount: 2779076272
+File Open Count: 0
+File Create Count: 3287910912
+File Unlink Count: 1156221584
+File Rename Count: 876816
+-------------------------
+PID: 1
+Process Name: systemd
+Read Amount: 3894111651
+Write Amount: 731597512
+File Open Count: 0
+File Create Count: 1736677632
+File Unlink Count: 2218676328
+File Rename Count: 86366376
+-------------------------
+^CPID: 1264
+Process Name: systemd
+Read Amount: 500152971
+Write Amount: 4103562857
+File Open Count: 0
+File Create Count: 3434208736
+File Unlink Count: 3602976539
+File Rename Count: 1918035
+-------------------------
+^CPID: 820
+Process Name: systemd
+Read Amount: 2692806338
+Write Amount: 2049163524
+File Open Count: 0
+File Create Count: 1031665024
+File Unlink Count: 364762908
+File Rename Count: 52389756
+-------------------------
+^CPID: 0
+Process Name: systemd
+Read Amount: 3858882404
+Write Amount: 2321738106
+File Open Count: 0
+File Create Count: 1375968448
+File Unlink Count: 1500552670
+File Rename Count: 51622542
+-------------------------
+^CPID: 1800
+Process Name: systemd
+Read Amount: 1868029984
+Write Amount: 2085748448
+File Open Count: 0
+File Create Count: 2280854528
+File Unlink Count: 2312443168
+File Rename Count: 1753632
+-------------------------
