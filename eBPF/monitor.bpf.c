@@ -5,6 +5,7 @@
 #include "monitor.h"
 
 
+
 //pid_t min_pid=0; //minimum pid value
 typedef enum event_type {
     T_OPEN = 0,
@@ -21,27 +22,36 @@ typedef enum event_type {
 struct {
 	__uint(type, BPF_MAP_TYPE_HASH);
 	__uint(max_entries, 8192);
-	__type(key, pid_t);
+	__type(key, int);
 	__type(value, process_data_t);
 } output SEC(".maps");
+
+struct  {
+   __uint(type, BPF_MAP_TYPE_HASH);
+   __type(key, u64);
+  __type(value, u32);
+   __uint(max_entries, 8192);
+}inode_map SEC(".maps")  ;
+
 
 struct {
 	__uint(type, BPF_MAP_TYPE_HASH);
 	__uint(max_entries, 8192);
-	__type(key, pid_t);
-	__type(value, pid_t);
+	__type(key, int);
+	__type(value, int);
 } process_tree SEC(".maps");
 
 struct {
 	__uint(type, BPF_MAP_TYPE_HASH);
 	__uint(max_entries, 8192);
-	__type(key, pid_t);
+	__type(key, int);
 	__type(value, process_data_t);
 } output_final_map SEC(".maps");
 
 
 static inline int capture_data(const char *file_name, int amount,event_type_t event) {
-    process_data_t data = {};
+    process_data_t data;
+    __builtin_memset(&data,0,sizeof(data));
     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
 
     // Capture PID, PPID, and process name
@@ -64,11 +74,15 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
              old_data=bpf_map_lookup_elem(&output,&pid);
               if (old_data == NULL) {
                  data.read_amount_bytes=amount;
+                data.file_read_count=1;
+
               }else{
                  if(old_data->read_amount_bytes){
                     data.read_amount_bytes=old_data->read_amount_bytes+amount;
+                    data.file_read_count=old_data->file_read_count+1;
                   }else{
                     data.read_amount_bytes=amount;
+                    data.file_read_count=1;
                   }
               }
                 
@@ -78,11 +92,15 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
              old_data=bpf_map_lookup_elem(&output,&pid);
              if(old_data==NULL){
                     data.write_amount_bytes=amount;
+                    data.file_write_count=1;
              }else{
                   if(old_data->write_amount_bytes){
                 data.write_amount_bytes=old_data->write_amount_bytes+amount;
+                data.file_write_count=old_data->file_write_count+1;
                 }else{
                 data.write_amount_bytes=amount;
+                data.file_write_count=1;
+
                }
              }
           
@@ -131,8 +149,9 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
                 data.file_unlink_count=1;
             }
              }
+       }
            
-        }
+        
            if(event==5){
             //rename
             process_data_t *old_data;
@@ -149,6 +168,9 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
         
         }
     }
+// bpf_printk("Event ENTRY pid = %d, ppid = %d, tgid = %d, process_name = %s, read_amount_bytes = %d, file_read_count = %d, write_amount_bytes = %d, file_write_count = %d, file_open_count = %d, file_creat_count = %d, file_unlink_count = %d, file_rename_count = %d\n",
+//            pid, data.ppid, data.tgid, data.process_name, data.read_amount_bytes, data.file_read_count, data.write_amount_bytes, data.file_write_count, data.file_open_count, data.file_creat_count, data.file_unlink_count, data.file_rename_count);
+
     bpf_map_update_elem(&output, &pid, &data, BPF_ANY);
     bpf_map_update_elem(&process_tree, &pid, &ppid, BPF_ANY);
     
@@ -156,148 +178,137 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
     return 0;
 }
 
-// struct my_kprobe_vfs_read_write {
-//     unsigned short common_type;
-//     unsigned char common_flags;
-//     unsigned char common_preempt_count;
-//     int common_pid;
-//     const char *file_name;
-//     int amount;
-// };
 
-struct my_syscalls_enter_rw {
-    unsigned short common_type;
-    unsigned char common_flags;
-    unsigned char common_preempt_count;
-    int common_pid;
-    int __syscall_nr;
-    unsigned int fd;
-    char *buf;
-    size_t count;
-};
+// extern ssize_t vfs_read(struct file *, char __user *, size_t, loff_t *);
+// extern ssize_t vfs_write(struct file *, const char __user *, size_t, loff_t *);
+SEC("kprobe/vfs_read")
+int kprobe__vfs_read(struct pt_regs *ctx) {
+    int amount = (int)PT_REGS_RC(ctx);
+    struct file *file = (struct file *)PT_REGS_PARM1(ctx);
+    struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
+    u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-SEC("tp/syscalls/sys_enter_write")
-int tp_sys_enter_write(struct my_syscalls_enter_rw *ctx) {
- 
-    int amount=(int)ctx->count;
-    char filename[]="samplefile";
-    event_type_t event = T_WRITE;
-    return capture_data( filename, amount, event);
-
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    if (inode_exists) {
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE read ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
+        return capture_data(filename, amount, T_READ);
+    }
 
     return 0;
 }
-SEC("tp/syscalls/sys_enter_read")
-int tp_sys_enter_read(struct my_syscalls_enter_rw *ctx) {
-  
-    int amount=(int)ctx->count;
-     char filename[]="samplefile";
-    event_type_t event = T_READ;
-    return capture_data( filename, amount, event);
+SEC("kprobe/vfs_write")
+int kprobe__vfs_write(struct pt_regs *ctx) {
+    int amount = (int)PT_REGS_RC(ctx);
+    struct file *file = (struct file *)PT_REGS_PARM1(ctx);
+    struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
+    u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    if (inode_exists) {
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE write ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
+        return capture_data(filename, amount, T_WRITE);
+    }
 
     return 0;
 }
 
+//Kprobe for file creation operations
+SEC("kprobe/vfs_create")
+int kprobe__vfs_create(struct pt_regs *ctx) {
+    struct inode *inode = (struct inode *)PT_REGS_PARM2(ctx);
+    struct dentry *dentry = (struct dentry *)PT_REGS_PARM3(ctx);
+    u64 inode_number = BPF_CORE_READ(inode, i_ino);
+
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE create ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
+        return capture_data(filename, 0, T_CREATE);
 
 
-// SEC("kprobe/vfs_read")
-// int kprobe__vfs_read(struct my_kprobe_vfs_read_write *ctx) {
-//     // Extract file name and amount from the context
-//     const char *file_name = ctx->file_name;
-//     int amount = ctx->amount;
+}
+// int vfs_create(struct mnt_idmap *, struct inode *,
+// 	       struct dentry *, umode_t, bool);
 
-//     // Add your logic here
+//Kprobe for file deletion operations
+SEC("kprobe/vfs_unlink")
+int unlink(struct pt_regs *ctx) {
+    struct dentry *dentry=(void *)PT_REGS_PARM3(ctx);
+    u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-//     // Call capture_data with file name and amount
-//     event_type_t event = T_READ;
-//     return capture_data( file_name, amount, event);
+    // Check if the inode is in the watch list
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    if (inode_exists) {
+        // The inode is in the watch list, proceed with capturing data
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE unlink ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
+        event_type_t event = T_UNLINK;
+        return capture_data(filename, 0, event);
+    }
+
+    return 0; // Not in the watch list, do nothing
+
+}
+
+
+// Kprobe for file renaming operations
+SEC("kprobe/vfs_rename")
+int kprobe__vfs_rename(struct pt_regs *ctx) {
+    struct renamedata *rd = (struct renamedata *)PT_REGS_PARM1(ctx);
+    struct dentry *old_dentry = BPF_CORE_READ(rd, old_dentry);
+    u64 old_inode_number = BPF_CORE_READ(old_dentry, d_inode, i_ino);
+
+    // Check if the old inode is in the watch list
+    u32 *old_inode_exists = bpf_map_lookup_elem(&inode_map, &old_inode_number);
+    if (old_inode_exists) {
+        const char *old_filename = (const char *)BPF_CORE_READ(old_dentry, d_name.name);
+        bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
+        capture_data(old_filename, 0, T_RENAME);
+    }
+     return 0;
+}
+
+SEC("kprobe/vfs_open")
+int bpf_prog1(struct pt_regs *ctx) {
+    struct path *path = (struct path *)PT_REGS_PARM1(ctx);
+    struct file *file = (struct file *)PT_REGS_PARM2(ctx);
+        struct dentry *dentry = BPF_CORE_READ(path, dentry);
+    u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    if (inode_exists) {
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE open  inode number= %llu, filename = %s\n", inode_number, filename);
+        return capture_data(filename, 0, T_OPEN);
+    }
+
+    return 0;
+}
+// /**
+//  * vfs_open - open the file at the given path
+//  * @path: path to open
+//  * @file: newly allocated file with f_flag initialized
+//  * @cred: credentials to use
+//  */
+// int vfs_open(const struct path *path, struct file *file,
+// 	     const struct cred *cred)
+// {
+// 	struct inode *inode = vfs_select_inode(path->dentry, file->f_flags);
+
+// 	if (IS_ERR(inode))
+// 		return PTR_ERR(inode);
+
+// 	file->f_path = *path;
+// 	retur do_dentry_open(file, inode, NULL, cred);
 // }
 
 
-// SEC("kprobe/vfs_write")
-// int kprobe__vfs_write(struct my_kprobe_vfs_read_write *ctx) {
-//     // Extract file name and amount from the context
-//     const char *file_name = ctx->file_name;
-//     int amount = ctx->amount;
-
-//     // Add your logic here
-
-//     // Call capture_data with file name and amount
-//     event_type_t event = T_WRITE;
-//     return capture_data( file_name, amount, event);
-// }
-// // Kprobe for file write operations
-// SEC("kprobe/vfs_write")
-// int kprobe__vfs_write(struct pt_regs *ctx) {
-//     const char *file_name = NULL;
-//     int amount = 0;
-//     event_type_t event;
-
-//     // Get file name and amount
-//     bpf_probe_read(&file_name, sizeof(file_name), PT_REGS_PARM2(ctx));
-//     amount = (int)PT_REGS_PARM3(ctx);
-//     event=T_WRITE;
-//     return capture_data(ctx, file_name, amount,event);
-// }
-
-// // Kprobe for file read operations
-// SEC("kprobe/vfs_read")
-// int kprobe__vfs_read(struct pt_regs *ctx) {
-//     const char *file_name = NULL;
-//     int amount = 0;
-//     event_type_t event;
-
-//     // Get file name and amount
-//     bpf_probe_read(&file_name, sizeof(file_name), PT_REGS_PARM2(ctx));
-//     amount = (int)PT_REGS_PARM3(ctx);
-//     event=T_READ;
-
-//     return capture_data(ctx, file_name, amount,event);
-// }
-
-// // Kprobe for file deletion operations
-// SEC("kprobe/vfs_unlink")
-// int kprobe__vfs_unlink(struct pt_regs *ctx) {
-//     const char *file_name = NULL;
-//     event_type_t event;
-//     // Get file name
-//     bpf_probe_read(&file_name, sizeof(file_name), PT_REGS_PARM1(ctx));
-//     event=T_UNLINK;
-
-//     return capture_data(ctx, file_name, 0,event);
-// }
-
-// // Kprobe for file renaming operations
-// SEC("kprobe/vfs_rename")
-// int kprobe__vfs_rename(struct pt_regs *ctx) {
-//     const char *old_file_name = NULL;
-//     const char *new_file_name = NULL;
-//     event_type_t event;
-
-//     // Get old file name
-//     bpf_probe_read(&old_file_name, sizeof(old_file_name), PT_REGS_PARM1(ctx));
-//     // Get new file name
-//     bpf_probe_read(&new_file_name, sizeof(new_file_name), PT_REGS_PARM2(ctx));
-
-//     event=T_RENAME;
-//     return capture_data(ctx, old_file_name, 0,event);
-    
-// }
-
-// // Kprobe for file opening operations
-// SEC("kprobe/vfs_open")
-// int kprobe__vfs_open(struct pt_regs *ctx) {
-//     struct file *file = (struct file *)PT_REGS_RC(ctx);
-//     struct dentry *dentry;
-//     char file_name[MAX_FILENAME_LEN];
-//     event_type_t event;
-
-//     // Get file name
-//     dentry = file->f_path.dentry;
-//     bpf_probe_read(&file_name, sizeof(file_name), dentry->d_iname);
-//     event=T_OPEN;
-
-//     return capture_data(ctx, file_name, 0,event);
-// }
 
 char LICENSE[] SEC("license") = "Dual BSD/GPL";
+
+
+
+
+
+
+
