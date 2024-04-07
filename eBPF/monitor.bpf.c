@@ -181,6 +181,10 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
 
 // extern ssize_t vfs_read(struct file *, char __user *, size_t, loff_t *);
 // extern ssize_t vfs_write(struct file *, const char __user *, size_t, loff_t *);
+// ssize_t vfs_iter_read(struct file *file, struct iov_iter *iter, loff_t *ppos,
+// 		rwf_t flags);
+// ssize_t vfs_iter_write(struct file *file, struct iov_iter *iter, loff_t *ppos,
+// 		rwf_t flags);
 SEC("kprobe/vfs_read")
 int kprobe__vfs_read(struct pt_regs *ctx) {
     int amount = (int)PT_REGS_RC(ctx);
@@ -188,7 +192,12 @@ int kprobe__vfs_read(struct pt_regs *ctx) {
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE read ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
@@ -204,16 +213,165 @@ int kprobe__vfs_write(struct pt_regs *ctx) {
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+    // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
-        bpf_printk("KPROBE write ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
+        bpf_printk("KPROBE write ENTRY   inode number= %llu, fpid = %d, filename = %s\n",inode_number, bpf_get_current_pid_tgid() >> 32, filename);
+        return capture_data(filename, amount, T_WRITE);
+    }
+
+    return 0;
+}
+SEC("kprobe/vfs_iter_write")
+int kprobe__vfs_iter_write(struct pt_regs *ctx) {
+    int amount = (int)PT_REGS_RC(ctx);
+    struct file *file = (struct file *)PT_REGS_PARM1(ctx);
+    struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
+    u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
+
+ // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
+    if (inode_exists) {
+        const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
+        bpf_printk("KPROBE write ENTRY   inode number= %llu, fpid = %d, filename = %s\n",inode_number, bpf_get_current_pid_tgid() >> 32, filename);
         return capture_data(filename, amount, T_WRITE);
     }
 
     return 0;
 }
 
+// struct my_syscalls_enter_write {
+// unsigned short common_type;
+// unsigned char common_flags;
+// unsigned char common_preempt_count;
+// int common_pid;
+// int __syscall_nr;
+// 	unsigned int fd;	
+// 	const char * buf;	
+// 	size_t count;
+// };
+
+// SEC("tp/syscalls/sys_enter_write")
+// int handle_tp(struct my_syscalls_enter_write *ctx) {
+//     char buf[255];
+//     bpf_probe_read_user(&buf, sizeof(buf), (void *)ctx->buf);
+
+//     unsigned int fd;
+//     int count;
+//     bpf_probe_read_user(&fd, sizeof(fd), &ctx->fd);
+//     bpf_probe_read_user(&count, sizeof(count), &ctx->count);
+
+//    // Attempt to get the current task structure
+//     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
+//     if (!task) {
+//         return 0; // Task not found, skip
+//     }
+
+//     struct files_struct *files = task->files;
+    
+//     // Access the file descriptor table
+//     struct fdtable* fdt;
+//     bpf_probe_read(&fdt, sizeof(fdt), (void*)&files->fdt);
+//     if (!fdt) {
+//         return 0; // File descriptor table not found, skip
+//     }
+
+//     // Attempt to get the file structure from the file descriptor
+//     struct file** fdd;
+//     int ret = bpf_probe_read(&fdd, sizeof(fdd), (void*)&fdt->fd); 
+//     if (ret) {
+//         bpf_trace_printk("bpf_probe_read failed: %d\\n", ret);
+//         return 0;
+//     } 
+//     struct file *file;
+//     bpf_probe_read(&file, sizeof(file), (void*)&fdd[fd]);
+//     if (!file) {
+//         return 0; // File not found, skip
+//     }
+
+//     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
+//     if (!dentry) {
+//         return 0; // Dentry not found, skip
+//     }
+
+//     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
+
+//     u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+//     if (inode_exists) {
+//         const  char *filename = (const char*)BPF_CORE_READ(dentry, d_name.name);
+
+//         bpf_printk("TRACEPOINT write ENTRY inode number= %llu, fpid = %d, filename = %s\n",
+//                    inode_number, bpf_get_current_pid_tgid() >> 32, filename);
+
+//         capture_data(filename, count, T_WRITE); 
+//     }
+//     return 0;
+// }
+
+// SEC("tp_btf/sys_enter_write")
+// int handle_tp(struct trace_event_raw_sys_enter_write *ctx) {
+//     unsigned int fd;
+//     int count;
+//     bpf_probe_read_user(&fd, sizeof(fd), &ctx->fd);
+//     bpf_probe_read_user(&count, sizeof(count), &ctx->count);
+
+    
+//    // Attempt to get the current task structure
+//     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
+//     if (!task) {
+//         return 0; // Task not found, skip
+//     }
+
+//     struct files_struct *files = task->files;
+    
+//     // Access the file descriptor table
+//     struct fdtable* fdt;
+//     bpf_probe_read(&fdt, sizeof(fdt), (void*)&files->fdt);
+//     if (!fdt) {
+//         return 0; // File descriptor table not found, skip
+//     }
+
+//     // Attempt to get the file structure from the file descriptor
+//     struct file** fdd;
+//     int ret = bpf_probe_read(&fdd, sizeof(fdd), (void*)&fdt->fd); 
+//     if (ret) {
+//         bpf_trace_printk("bpf_probe_read failed: %d\\n", ret);
+//         return 0;
+//     } 
+//     struct file *file;
+//     bpf_probe_read(&file, sizeof(file), (void*)&fdd[fd]);
+//     if (!file) {
+//         return 0; // File not found, skip
+//     }
+
+//     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
+//     if (!dentry) {
+//         return 0; // Dentry not found, skip
+//     }
+
+
+//     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
+
+//     u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+//     if (inode_exists) {
+//         const char *filename = BPF_CORE_READ(dentry, d_name.name);
+
+//         bpf_printk("TRACEPOINT write ENTRY inode number= %llu, fpid = %d, filename = %s\n",
+//                    inode_number, bpf_get_current_pid_tgid() >> 32, filename);
+
+//         capture_data(filename, count, T_WRITE); 
+//     }
+//     return 0;
+// }
 //Kprobe for file creation operations
 SEC("kprobe/vfs_create")
 int kprobe__vfs_create(struct pt_regs *ctx) {
@@ -221,11 +379,18 @@ int kprobe__vfs_create(struct pt_regs *ctx) {
     struct dentry *dentry = (struct dentry *)PT_REGS_PARM3(ctx);
     u64 inode_number = BPF_CORE_READ(inode, i_ino);
 
+     // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
+    if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE create ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
         return capture_data(filename, 0, T_CREATE);
-
-
+    }
+return 0;
 }
 // int vfs_create(struct mnt_idmap *, struct inode *,
 // 	       struct dentry *, umode_t, bool);
@@ -236,8 +401,12 @@ int unlink(struct pt_regs *ctx) {
     struct dentry *dentry=(void *)PT_REGS_PARM3(ctx);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-    // Check if the inode is in the watch list
-    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+      // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
     if (inode_exists) {
         // The inode is in the watch list, proceed with capturing data
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
@@ -258,9 +427,13 @@ int kprobe__vfs_rename(struct pt_regs *ctx) {
     struct dentry *old_dentry = BPF_CORE_READ(rd, old_dentry);
     u64 old_inode_number = BPF_CORE_READ(old_dentry, d_inode, i_ino);
 
+   // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(old_dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
     // Check if the old inode is in the watch list
-    u32 *old_inode_exists = bpf_map_lookup_elem(&inode_map, &old_inode_number);
-    if (old_inode_exists) {
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
+        if (inode_exists) {
         const char *old_filename = (const char *)BPF_CORE_READ(old_dentry, d_name.name);
         bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
         capture_data(old_filename, 0, T_RENAME);
@@ -275,7 +448,14 @@ int bpf_prog1(struct pt_regs *ctx) {
         struct dentry *dentry = BPF_CORE_READ(path, dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
+  
+   // Get parent directory inode number
+    struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
+    u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
+    // bpf_printk("Parent inode number: %llu\n", parent_inode_number);
+    // Check if the old inode is in the watch list
+    u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
+
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE open  inode number= %llu, filename = %s\n", inode_number, filename);

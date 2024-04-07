@@ -19,6 +19,7 @@
 #include "monitor.skel.h"
 #include <unistd.h> // For getopt
 #include <stdlib.h> // For exit
+#include <libgen.h>
 
 
 
@@ -57,35 +58,56 @@ int parse_options(int argc, char *argv[]) {
     }
     return 0;
 }
-
+// modify the populate_inode_map function to populate the inode number of the parent directory instead of the inode numbers of the files within the directory
 void populate_inode_map(struct monitor_bpf *skel, const char *directory_path) {
-    DIR *dir;
-    struct dirent *entry;
     struct stat file_stat;
+    char parent_dir[MAX_FILENAME_LEN];
 
-    dir = opendir(directory_path);
-    if (dir == NULL) {
-        fprintf(stderr, "Failed to open directory: %s\n", directory_path);
+    // Get the parent directory path
+    strncpy(parent_dir, directory_path, sizeof(parent_dir));
+    //parent_dir[sizeof(parent_dir) - 1] = '\0'; // Ensure null-termination
+    // char *parent_dir_path = dirname(parent_dir);
+
+    // Get the inode number of the parent directory
+    if (stat(parent_dir_path, &file_stat) == -1) {
+        fprintf(stderr, "Failed to stat parent directory: %s\n", parent_dir_path);
         return;
     }
 
-    while ((entry = readdir(dir)) != NULL) {
-        char file_path[MAX_FILENAME_LEN];
-        snprintf(file_path, sizeof(file_path), "%s/%s", directory_path, entry->d_name);
-        fprintf(stdout, "filename: %s\n", file_path);
-        if (stat(file_path, &file_stat) == -1) {
-            fprintf(stderr, "Failed to stat file: %s\n", file_path);
-            continue;
-        }
-
-        uint64_t inode_number = (uint64_t)file_stat.st_ino; // Use uint64_t instead of u64
-        uint32_t value = 1; // Use uint32_t instead of u32
-        fprintf(stdout, "filename inode number: %lu\n", inode_number);
-        bpf_map_update_elem(bpf_map__fd(skel->maps.inode_map), &inode_number, &value, BPF_ANY);
-    }
-
-    closedir(dir);
+    uint64_t inode_number = (uint64_t)file_stat.st_ino; // Use uint64_t instead of u64
+    uint32_t value = 1; // Use uint32_t instead of u32
+    fprintf(stdout, "Parent directory inode number: %lu\n", inode_number);
+    bpf_map_update_elem(bpf_map__fd(skel->maps.inode_map), &inode_number, &value, BPF_ANY);
 }
+
+// void populate_inode_map(struct monitor_bpf *skel, const char *directory_path) {
+//     DIR *dir;
+//     struct dirent *entry;
+//     struct stat file_stat;
+
+//     dir = opendir(directory_path);
+//     if (dir == NULL) {
+//         fprintf(stderr, "Failed to open directory: %s\n", directory_path);
+//         return;
+//     }
+
+//     while ((entry = readdir(dir)) != NULL) {
+//         char file_path[MAX_FILENAME_LEN];
+//         snprintf(file_path, sizeof(file_path), "%s/%s", directory_path, entry->d_name);
+//         fprintf(stdout, "filename: %s\n", file_path);
+//         if (stat(file_path, &file_stat) == -1) {
+//             fprintf(stderr, "Failed to stat file: %s\n", file_path);
+//             continue;
+//         }
+
+//         uint64_t inode_number = (uint64_t)file_stat.st_ino; // Use uint64_t instead of u64
+//         uint32_t value = 1; // Use uint32_t instead of u32
+//         fprintf(stdout, "filename inode number: %lu\n", inode_number);
+//         bpf_map_update_elem(bpf_map__fd(skel->maps.inode_map), &inode_number, &value, BPF_ANY);
+//     }
+
+//     closedir(dir);
+// }
 
 
 void print_process_data(process_data_t *data) {
