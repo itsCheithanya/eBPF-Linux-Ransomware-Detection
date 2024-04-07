@@ -64,9 +64,9 @@ void populate_inode_map(struct monitor_bpf *skel, const char *directory_path) {
     char parent_dir[MAX_FILENAME_LEN];
 
     // Get the parent directory path
-    strncpy(parent_dir, directory_path, sizeof(parent_dir));
-    //parent_dir[sizeof(parent_dir) - 1] = '\0'; // Ensure null-termination
-    // char *parent_dir_path = dirname(parent_dir);
+    strncpy(parent_dir, directory_path, sizeof(parent_dir) - 1);
+    parent_dir[sizeof(parent_dir) - 1] = '\0'; // Ensure null-termination
+    char *parent_dir_path = dirname(parent_dir);
 
     // Get the inode number of the parent directory
     if (stat(parent_dir_path, &file_stat) == -1) {
