@@ -25,7 +25,7 @@
 
 #define MAX_FILENAME_LEN 256
 #define MAX_PROCESS_NAME_LEN 16
-#define INTERVAL_SEC 10
+#define INTERVAL_SEC 1
 
 // Global variable to store the directory path
 char *directory_path = NULL;
@@ -118,8 +118,11 @@ void print_process_data(process_data_t *data) {
         return;
     }
 
-    // Print to stdout
+    
+
+       printf("Timestamp : %llu\n", data->timestamp);
     printf("PID: %d\n", data->pid);
+    printf("PPID: %d\n", data->ppid);
     printf("Process Name: %s\n", data->process_name);
     printf("Read Amount: %u\n", data->read_amount_bytes);
     printf("Write Amount: %u\n", data->write_amount_bytes);
@@ -132,6 +135,7 @@ void print_process_data(process_data_t *data) {
     printf("-------------------------\n");
 
     // Print to the log file
+    fprintf(logfile,"Timestamp: %llu\n", data->timestamp);
     fprintf(logfile, "PID: %d\n", data->pid);
     fprintf(logfile, "Process Name: %s\n", data->process_name);
     fprintf(logfile, "Read Amount: %u\n", data->read_amount_bytes);
@@ -219,7 +223,9 @@ int main(int argc, char ** argv) {
           //parent process entry does not exist in output_final map
           if (bpf_map_lookup_elem(output_final_map, & key, & new_child_data) == -1) {
             //child process entry doesnt exist in output_final map
-            new_parent_data.pid = child_value.ppid;
+            new_parent_data.timestamp= child_value.timestamp;
+            new_parent_data.pid = child_value.pid;
+            new_parent_data.ppid=child_value.ppid;
             strcpy(new_parent_data.process_name, parent_value.process_name);
             new_parent_data.read_amount_bytes = child_value.read_amount_bytes;
             new_parent_data.write_amount_bytes = child_value.write_amount_bytes;
@@ -232,6 +238,7 @@ int main(int argc, char ** argv) {
             bpf_map_update_elem(output_final_map, & value_process_tree, & new_parent_data, BPF_ANY);
           } else {
             //child process entry exist in output_final map 
+            new_parent_data.timestamp= child_value.timestamp;
             new_parent_data.pid = child_value.ppid;
             strcpy(new_parent_data.process_name, parent_value.process_name);
             new_parent_data.read_amount_bytes = child_value.read_amount_bytes + new_child_data.read_amount_bytes;
@@ -250,7 +257,9 @@ int main(int argc, char ** argv) {
           //parent process entry exist in output_final map
           if (bpf_map_lookup_elem(output_final_map, & key, & new_child_data) == -1 ){//|| key == (__u32)value_process_tree) {
             //child process entry doesnt exist in output_final map
-            new_parent_data.pid = child_value.ppid;
+                        new_parent_data.timestamp= child_value.timestamp;
+            new_parent_data.pid = child_value.pid;
+                        new_parent_data.ppid=child_value.ppid;
             strcpy(new_parent_data.process_name, parent_value.process_name);
             new_parent_data.read_amount_bytes = new_parent_data.read_amount_bytes + child_value.read_amount_bytes;
             new_parent_data.write_amount_bytes = new_parent_data.write_amount_bytes + child_value.write_amount_bytes;
@@ -264,7 +273,9 @@ int main(int argc, char ** argv) {
 
           } else {
             //child process entry exist in output_final map 
-           new_parent_data.pid = child_value.ppid;
+                        new_parent_data.timestamp= child_value.timestamp;
+              new_parent_data.pid = child_value.pid;
+                        new_parent_data.ppid=child_value.ppid;
             strcpy(new_parent_data.process_name, parent_value.process_name);
             new_parent_data.read_amount_bytes = new_parent_data.read_amount_bytes + child_value.read_amount_bytes + new_child_data.read_amount_bytes;
             new_parent_data.write_amount_bytes = new_parent_data.write_amount_bytes + child_value.write_amount_bytes + new_child_data.write_amount_bytes;
@@ -307,7 +318,7 @@ int main(int argc, char ** argv) {
         fprintf(stderr, "Error while reading output_final_map\n" );
         goto cleanup;
       }
-      sleep(INTERVAL_SEC);
+     // sleep(INTERVAL_SEC);
     }
 
   }

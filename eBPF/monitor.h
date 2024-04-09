@@ -1,4 +1,3 @@
-//#include <time.h> 
 #ifndef __MONITOR_H
 #define __MONITOR_H
 
@@ -20,7 +19,7 @@ typedef struct process_data {
  int file_unlink_count;
  int file_rename_count;
  int file_creat_count;
- int timestamp;
+ __u64  timestamp;
 }process_data_t;
 
 

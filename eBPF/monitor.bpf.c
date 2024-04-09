@@ -49,7 +49,7 @@ struct {
 } output_final_map SEC(".maps");
 
 
-static inline int capture_data(const char *file_name, int amount,event_type_t event) {
+static inline int capture_data(int processid,const char *file_name, int amount,event_type_t event) {
     process_data_t data;
     __builtin_memset(&data,0,sizeof(data));
     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
@@ -58,6 +58,7 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
     int pid = task->pid;  // Make a copy of task->pid to 
     data.pid = pid;
     int ppid= task->parent->pid; // Make a copy of task->parent->pid to 
+    bpf_printk("inside capture func pid = %d,PID = %d, PPID=%d,event =%d,amount =%d,filename = %s\n", processid,pid,ppid,event,amount,file_name);
     data.ppid =ppid; 
     data.tgid= task->tgid;
 
@@ -187,7 +188,7 @@ static inline int capture_data(const char *file_name, int amount,event_type_t ev
 // 		rwf_t flags);
 SEC("kprobe/vfs_read")
 int kprobe__vfs_read(struct pt_regs *ctx) {
-    int amount = (int)PT_REGS_RC(ctx);
+    int amount = (int)PT_REGS_PARM3(ctx);
     struct file *file = (struct file *)PT_REGS_PARM1(ctx);
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
@@ -201,14 +202,14 @@ int kprobe__vfs_read(struct pt_regs *ctx) {
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE read ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
-        return capture_data(filename, amount, T_READ);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, amount, T_READ);
     }
 
     return 0;
 }
 SEC("kprobe/vfs_write")
 int kprobe__vfs_write(struct pt_regs *ctx) {
-    int amount = (int)PT_REGS_RC(ctx);
+    int amount = (int)PT_REGS_PARM3(ctx);
     struct file *file = (struct file *)PT_REGS_PARM1(ctx);
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
@@ -222,14 +223,14 @@ int kprobe__vfs_write(struct pt_regs *ctx) {
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE write ENTRY   inode number= %llu, fpid = %d, filename = %s\n",inode_number, bpf_get_current_pid_tgid() >> 32, filename);
-        return capture_data(filename, amount, T_WRITE);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, amount, T_WRITE);
     }
 
     return 0;
 }
 SEC("kprobe/vfs_iter_write")
 int kprobe__vfs_iter_write(struct pt_regs *ctx) {
-    int amount = (int)PT_REGS_RC(ctx);
+    int amount = (int)PT_REGS_PARM3(ctx);
     struct file *file = (struct file *)PT_REGS_PARM1(ctx);
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
@@ -243,7 +244,7 @@ int kprobe__vfs_iter_write(struct pt_regs *ctx) {
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE write ENTRY   inode number= %llu, fpid = %d, filename = %s\n",inode_number, bpf_get_current_pid_tgid() >> 32, filename);
-        return capture_data(filename, amount, T_WRITE);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, amount, T_WRITE);
     }
 
     return 0;
@@ -388,7 +389,7 @@ int kprobe__vfs_create(struct pt_regs *ctx) {
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE create ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
-        return capture_data(filename, 0, T_CREATE);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, 0, T_CREATE);
     }
 return 0;
 }
@@ -412,7 +413,7 @@ int unlink(struct pt_regs *ctx) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE unlink ENTRY pid = %d, filename = %s\n", bpf_get_current_pid_tgid() >> 32, filename);
         event_type_t event = T_UNLINK;
-        return capture_data(filename, 0, event);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, 0, event);
     }
 
     return 0; // Not in the watch list, do nothing
@@ -436,7 +437,7 @@ int kprobe__vfs_rename(struct pt_regs *ctx) {
         if (inode_exists) {
         const char *old_filename = (const char *)BPF_CORE_READ(old_dentry, d_name.name);
         bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
-        capture_data(old_filename, 0, T_RENAME);
+        capture_data(bpf_get_current_pid_tgid() >> 32, old_filename, 0, T_RENAME);
     }
      return 0;
 }
@@ -459,7 +460,7 @@ int bpf_prog1(struct pt_regs *ctx) {
     if (inode_exists) {
         const char *filename = (const char *)BPF_CORE_READ(dentry, d_name.name);
         bpf_printk("KPROBE open  inode number= %llu, filename = %s\n", inode_number, filename);
-        return capture_data(filename, 0, T_OPEN);
+        return capture_data(bpf_get_current_pid_tgid() >> 32, filename, 0, T_OPEN);
     }
 
     return 0;
