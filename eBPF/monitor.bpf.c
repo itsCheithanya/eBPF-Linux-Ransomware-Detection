@@ -230,7 +230,7 @@ int kprobe__vfs_write(struct pt_regs *ctx) {
 }
 SEC("kprobe/vfs_iter_write")
 int kprobe__vfs_iter_write(struct pt_regs *ctx) {
-    int amount = (int)PT_REGS_PARM3(ctx);
+    int amount = 0;
     struct file *file = (struct file *)PT_REGS_PARM1(ctx);
     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
