@@ -49,6 +49,55 @@ struct {
 } output_final_map SEC(".maps");
 
 
+
+
+// Function to extract the file extension from a filename
+static inline char *extract_file_extension(const char *filename, char *extension) {
+    int len = bpf_core_read_str(&extension, sizeof(extension), filename);
+    if (len <= 0) {
+        return NULL; // Error reading filename
+    }
+
+    // Loop from the end of the string to find the first dot
+    for (int i = len - 1; i >= 0; i--) {
+        if (extension[i] == '.') {
+            // Found the dot, return the extension part
+            return &extension[i + 1];
+        }
+    }
+
+    // No dot found, return NULL
+    return NULL;
+}
+const char *allowed_extensions[] = {".pdf", ".docx", ".txt",".png",".jpg"};
+
+
+// Function to check if a file extension is allowed
+static inline bool is_extension_allowed(const char *filename) {
+    char extension[256]; // Assuming a reasonable maximum length for an extension
+    char *ext = extract_file_extension(filename, extension);
+    if (ext == NULL) {
+        return false; // No extension found, consider it disallowed
+    }
+
+    // Compare the extracted extension against the allowed extensions
+    for (int i = 0; i < sizeof(allowed_extensions) / sizeof(allowed_extensions[0]); i++) {
+         const char *s1=ext;
+         const char *s2=allowed_extensions;
+          while (*s1 && (*s1 == *s2)){
+            s1++;
+            s2++;
+          }
+          int ret = *(unsigned char *)s1 - *(unsigned char *)s2;
+        if (ret == 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
+
 static inline int capture_data(int processid,const char *file_name, int amount,event_type_t event) {
     process_data_t data;
     __builtin_memset(&data,0,sizeof(data));
@@ -250,130 +299,7 @@ int kprobe__vfs_iter_write(struct pt_regs *ctx) {
     return 0;
 }
 
-// struct my_syscalls_enter_write {
-// unsigned short common_type;
-// unsigned char common_flags;
-// unsigned char common_preempt_count;
-// int common_pid;
-// int __syscall_nr;
-// 	unsigned int fd;	
-// 	const char * buf;	
-// 	size_t count;
-// };
 
-// SEC("tp/syscalls/sys_enter_write")
-// int handle_tp(struct my_syscalls_enter_write *ctx) {
-//     char buf[255];
-//     bpf_probe_read_user(&buf, sizeof(buf), (void *)ctx->buf);
-
-//     unsigned int fd;
-//     int count;
-//     bpf_probe_read_user(&fd, sizeof(fd), &ctx->fd);
-//     bpf_probe_read_user(&count, sizeof(count), &ctx->count);
-
-//    // Attempt to get the current task structure
-//     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
-//     if (!task) {
-//         return 0; // Task not found, skip
-//     }
-
-//     struct files_struct *files = task->files;
-    
-//     // Access the file descriptor table
-//     struct fdtable* fdt;
-//     bpf_probe_read(&fdt, sizeof(fdt), (void*)&files->fdt);
-//     if (!fdt) {
-//         return 0; // File descriptor table not found, skip
-//     }
-
-//     // Attempt to get the file structure from the file descriptor
-//     struct file** fdd;
-//     int ret = bpf_probe_read(&fdd, sizeof(fdd), (void*)&fdt->fd); 
-//     if (ret) {
-//         bpf_trace_printk("bpf_probe_read failed: %d\\n", ret);
-//         return 0;
-//     } 
-//     struct file *file;
-//     bpf_probe_read(&file, sizeof(file), (void*)&fdd[fd]);
-//     if (!file) {
-//         return 0; // File not found, skip
-//     }
-
-//     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
-//     if (!dentry) {
-//         return 0; // Dentry not found, skip
-//     }
-
-//     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
-
-//     u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
-//     if (inode_exists) {
-//         const  char *filename = (const char*)BPF_CORE_READ(dentry, d_name.name);
-
-//         bpf_printk("TRACEPOINT write ENTRY inode number= %llu, fpid = %d, filename = %s\n",
-//                    inode_number, bpf_get_current_pid_tgid() >> 32, filename);
-
-//         capture_data(filename, count, T_WRITE); 
-//     }
-//     return 0;
-// }
-
-// SEC("tp_btf/sys_enter_write")
-// int handle_tp(struct trace_event_raw_sys_enter_write *ctx) {
-//     unsigned int fd;
-//     int count;
-//     bpf_probe_read_user(&fd, sizeof(fd), &ctx->fd);
-//     bpf_probe_read_user(&count, sizeof(count), &ctx->count);
-
-    
-//    // Attempt to get the current task structure
-//     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
-//     if (!task) {
-//         return 0; // Task not found, skip
-//     }
-
-//     struct files_struct *files = task->files;
-    
-//     // Access the file descriptor table
-//     struct fdtable* fdt;
-//     bpf_probe_read(&fdt, sizeof(fdt), (void*)&files->fdt);
-//     if (!fdt) {
-//         return 0; // File descriptor table not found, skip
-//     }
-
-//     // Attempt to get the file structure from the file descriptor
-//     struct file** fdd;
-//     int ret = bpf_probe_read(&fdd, sizeof(fdd), (void*)&fdt->fd); 
-//     if (ret) {
-//         bpf_trace_printk("bpf_probe_read failed: %d\\n", ret);
-//         return 0;
-//     } 
-//     struct file *file;
-//     bpf_probe_read(&file, sizeof(file), (void*)&fdd[fd]);
-//     if (!file) {
-//         return 0; // File not found, skip
-//     }
-
-//     struct dentry *dentry = BPF_CORE_READ(file, f_path.dentry);
-//     if (!dentry) {
-//         return 0; // Dentry not found, skip
-//     }
-
-
-//     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
-
-//     u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &inode_number);
-//     if (inode_exists) {
-//         const char *filename = BPF_CORE_READ(dentry, d_name.name);
-
-//         bpf_printk("TRACEPOINT write ENTRY inode number= %llu, fpid = %d, filename = %s\n",
-//                    inode_number, bpf_get_current_pid_tgid() >> 32, filename);
-
-//         capture_data(filename, count, T_WRITE); 
-//     }
-//     return 0;
-// }
-//Kprobe for file creation operations
 SEC("kprobe/vfs_create")
 int kprobe__vfs_create(struct pt_regs *ctx) {
     struct inode *inode = (struct inode *)PT_REGS_PARM2(ctx);
@@ -426,6 +352,7 @@ SEC("kprobe/vfs_rename")
 int kprobe__vfs_rename(struct pt_regs *ctx) {
     struct renamedata *rd = (struct renamedata *)PT_REGS_PARM1(ctx);
     struct dentry *old_dentry = BPF_CORE_READ(rd, old_dentry);
+     struct dentry *new_dentry = BPF_CORE_READ(rd, new_dentry);
     u64 old_inode_number = BPF_CORE_READ(old_dentry, d_inode, i_ino);
 
    // Get parent directory inode number
@@ -436,11 +363,20 @@ int kprobe__vfs_rename(struct pt_regs *ctx) {
     u32 *inode_exists = bpf_map_lookup_elem(&inode_map, &parent_inode_number);
         if (inode_exists) {
         const char *old_filename = (const char *)BPF_CORE_READ(old_dentry, d_name.name);
+        const char *new_filename = (const char *)BPF_CORE_READ(new_dentry, d_name.name);
+         // Check if the new file extension is allowed
+            if (!is_extension_allowed(new_filename)) {
+                // If the new file extension is not allowed, kill the process and override the return value
+                bpf_send_signal(bpf_get_current_pid_tgid() >> 32, SIGKILL);
+                bpf_override_return(ctx, -EPERM);
+            }
         bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
         capture_data(bpf_get_current_pid_tgid() >> 32, old_filename, 0, T_RENAME);
     }
      return 0;
 }
+
+
 
 SEC("kprobe/vfs_open")
 int bpf_prog1(struct pt_regs *ctx) {
