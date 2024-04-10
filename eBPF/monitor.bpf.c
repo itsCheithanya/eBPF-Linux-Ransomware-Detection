@@ -65,15 +65,15 @@ static inline char *extract_file_extension(const char *filename, char *extension
             return &extension[i + 1];
         }
     }
-
     // No dot found, return NULL
     return NULL;
 }
-const char *allowed_extensions[] = {".pdf", ".docx", ".txt",".png",".jpg"};
+
 
 
 // Function to check if a file extension is allowed
 static inline bool is_extension_allowed(const char *filename) {
+const char *allowed_extensions[] = {".pdf", ".docx", ".txt",".png",".jpg"};
     char extension[256]; // Assuming a reasonable maximum length for an extension
     char *ext = extract_file_extension(filename, extension);
     if (ext == NULL) {
@@ -344,6 +344,44 @@ int unlink(struct pt_regs *ctx) {
 
     return 0; // Not in the watch list, do nothing
 
+}
+
+SEC("kprobe/__x64_sys_rename")
+int kprobe__sys_rename(struct pt_regs *ctx) {
+    char *oldname = (char *)PT_REGS_PARM1(ctx);
+    char *newname = (char *)PT_REGS_PARM2(ctx);
+
+    // Assuming you have a function to check if the new file extension is allowed
+    if (!is_extension_allowed(newname)) {
+        // If the new file extension is not allowed, override the return value to -EPERM
+        bpf_override_return(ctx, -EPERM);
+    }
+
+    // Capture data or perform other actions as needed
+    // Note: You might need to adjust this part based on your specific requirements
+    // For example, you might want to log the rename operation or send a signal
+
+    return 0;
+}
+
+SEC("kprobe/__x64_sys_renameat")
+int kprobe__sys_renameat(struct pt_regs *ctx) {
+    int olddfd = (int)PT_REGS_PARM1(ctx);
+    char *oldname = (char *)PT_REGS_PARM2(ctx);
+    int newdfd = (int)PT_REGS_PARM3(ctx);
+    char *newname = (char *)PT_REGS_PARM4(ctx);
+
+    // Assuming you have a function to check if the new file extension is allowed
+    if (!is_extension_allowed(newname)) {
+        // If the new file extension is not allowed, override the return value to -EPERM
+        bpf_override_return(ctx, -EPERM);
+    }
+
+    // Capture data or perform other actions as needed
+    // Note: You might need to adjust this part based on your specific requirements
+    // For example, you might want to log the rename operation or send a signal
+
+    return 0;
 }
 
 
