@@ -82,8 +82,8 @@ static inline bool is_extension_allowed(const char *filename) {
 
     // Compare the extracted extension against the allowed extensions
     for (int i = 0; i < sizeof(allowed_extensions) / sizeof(allowed_extensions[0]); i++) {
-         const char *s1=ext;
-         const char *s2=allowed_extensions;
+         const char *s1=&ext;
+         const char *s2=&allowed_extensions[i];
           while (*s1 && (*s1 == *s2)){
             s1++;
             s2++;
@@ -104,11 +104,11 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
     struct task_struct *task = (struct task_struct *)bpf_get_current_task_btf();
 
     // Capture PID, PPID, and process name
-    int pid = task->pid;  // Make a copy of task->pid to 
+    int pid = task->pid;  // Make a copy of task->pid to
     data.pid = pid;
-    int ppid= task->parent->pid; // Make a copy of task->parent->pid to 
+    int ppid= task->parent->pid; // Make a copy of task->parent->pid to
     bpf_printk("inside capture func pid = %d,PID = %d, PPID=%d,event =%d,amount =%d,filename = %s\n", processid,pid,ppid,event,amount,file_name);
-    data.ppid =ppid; 
+    data.ppid =ppid;
     data.tgid= task->tgid;
 
     bpf_probe_read_str(&data.process_name, sizeof(data.process_name), task->comm);
@@ -135,7 +135,7 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
                     data.file_read_count=1;
                   }
               }
-                
+
     }else if(event==3){
         //write event
          process_data_t *old_data;
@@ -153,11 +153,11 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
 
                }
              }
-          
+
     }else{
         //event other than write and read
         if(event==0){
-            //open 
+            //open
              process_data_t *old_data;
              old_data=bpf_map_lookup_elem(&output,&pid);
              if(old_data==NULL){
@@ -169,7 +169,7 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
                 data.file_open_count=1;
                 }
              }
-         
+
         }
            if(event==1){
             //create
@@ -184,7 +184,7 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
                 data.file_creat_count=1;
             }
              }
-          
+
         }
           if(event==4){
             //unlink
@@ -200,8 +200,8 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
             }
              }
        }
-           
-        
+
+
            if(event==5){
             //rename
             process_data_t *old_data;
@@ -215,7 +215,7 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
                 data.file_rename_count=1;
                 }
              }
-        
+
         }
     }
 // bpf_printk("Event ENTRY pid = %d, ppid = %d, tgid = %d, process_name = %s, read_amount_bytes = %d, file_read_count = %d, write_amount_bytes = %d, file_write_count = %d, file_open_count = %d, file_creat_count = %d, file_unlink_count = %d, file_rename_count = %d\n",
@@ -223,8 +223,8 @@ static inline int capture_data(int processid,const char *file_name, int amount,e
 
     bpf_map_update_elem(&output, &pid, &data, BPF_ANY);
     bpf_map_update_elem(&process_tree, &pid, &ppid, BPF_ANY);
-    
-    
+
+
     return 0;
 }
 
@@ -367,8 +367,10 @@ int kprobe__vfs_rename(struct pt_regs *ctx) {
          // Check if the new file extension is allowed
             if (!is_extension_allowed(new_filename)) {
                 // If the new file extension is not allowed, kill the process and override the return value
-                bpf_send_signal(bpf_get_current_pid_tgid() >> 32, SIGKILL);
-                bpf_override_return(ctx, -EPERM);
+//                bpf_send_signal(bpf_get_current_pid_tgid() >> 32, SIGKILL);
+                  // Send signal. 9 == SIGKILL
+                bpf_send_signal(9);
+                 //bpf_override_return(ctx, -EPERM);
             }
         bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
         capture_data(bpf_get_current_pid_tgid() >> 32, old_filename, 0, T_RENAME);
@@ -385,7 +387,7 @@ int bpf_prog1(struct pt_regs *ctx) {
         struct dentry *dentry = BPF_CORE_READ(path, dentry);
     u64 inode_number = BPF_CORE_READ(dentry, d_inode, i_ino);
 
-  
+
    // Get parent directory inode number
     struct dentry *parent_dentry = BPF_CORE_READ(dentry, d_parent);
     u64 parent_inode_number = BPF_CORE_READ(parent_dentry, d_inode, i_ino);
