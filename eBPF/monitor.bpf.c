@@ -50,78 +50,6 @@ struct {
 
 
 
-static inline void extract_file_extension(const char *filename, char* extension) {
-    int len = bpf_core_read_str(extension, EXT_LEN, filename);
-    if (len <= 0 || len >= EXT_LEN) {
-        // Handle error or set a default value for extension
-        return;
-    }
-
-    // Find the last dot in the filename
-    int dot_index = -1;
-    int i = len - 1;
-    while (i >= 0) {
-        char c;
-        if (bpf_probe_read_kernel(&c, sizeof(c), (void *)(filename + i))) {
-            // Handle error or break the loop
-            break;
-        }
-        if (c == '.') {
-            dot_index = i;
-            break;
-        }
-        i--;
-    }
-
-    if (dot_index != -1) {
-        // Found the dot, manually move the extension part to the beginning of the buffer
-        int ext_len = len - dot_index - 1;
-        for (int j = 0; j < ext_len; j++) {
-            char c;
-            if (bpf_probe_read_kernel(&c, sizeof(c), (void *)(filename + dot_index + 1 + j))) {
-                // Handle error or break the loop
-                break;
-            }
-            extension[j] = c;
-        }
-        extension[ext_len] = '\0'; // Null-terminate the extension
-    } else {
-        // No dot found, set a default value for extension
-        extension[0] = '\0';
-    }
-}
-
-// Helper function to compare two strings
-static inline bool str_equals(const char *s1, const char *s2) {
-    // while (*s1 && (*s1 == *s2)) {
-    //     s1++;
-    //     s2++;
-    // }
-    // return *s1 == *s2;
-    return false;
-}
-
-// Function to check if a file extension is allowed
-static inline bool is_extension_allowed(const char *filename) {
-    const char *allowed_extensions[] = {"txt", "png", "jpg","jpeg","docx","html","svg"};
-    char extension[EXT_LEN]; // Assuming a reasonable maximum length for an extension
-
-    // Extract the file extension into the extension buffer
-    extract_file_extension(filename, extension);
-    bpf_printk("new file name extension:%s", extension);
-
-    // Compare the extracted extension against the allowed extensions
-    for (int i = 0; i < 3; i++) {
-        if (str_equals(extension, allowed_extensions[i])) {
-                bpf_printk("inside compare extension value is true");
-            return true;
-        }
-    }
-     bpf_printk("inside compare extension value is false");
-    return false;
-}
-
-
 
 
 
@@ -429,15 +357,7 @@ int kprobe__vfs_rename(struct pt_regs *ctx) {
         if (inode_exists) {
         const char *old_filename = (const char *)BPF_CORE_READ(old_dentry, d_name.name);
         const char *new_filename = (const char *)BPF_CORE_READ(new_dentry, d_name.name);
-         // Check if the new file extension is allowed
-            if(!is_extension_allowed(new_filename)){
-                // If the new file extension is not allowed, kill the process and override the return value
-//                bpf_send_signal(bpf_get_current_pid_tgid() >> 32, SIGKILL);
-                  // Send signal. 9 == SIGKILL
-                   bpf_printk("im inside to kill");
-               bpf_send_signal(9);
-                 //bpf_override_return(ctx, -EPERM);
-            }
+         
         bpf_printk("KPROBE rename old inode number= %llu, filename = %s\n", old_inode_number, old_filename);
         capture_data(bpf_get_current_pid_tgid() >> 32, old_filename, 0, T_RENAME);
     }
