@@ -1,17 +1,15 @@
 import os
 import random
-import string
 import time
-import ctypes
 import logging
-import csv
 import sys  # Import sys module
 from PIL import Image, ImageDraw
+import csv
 
 # Setup logging
 logging.basicConfig(filename='monitor.log', level=logging.INFO, format='%(asctime)s - %(message)s')
 
-def monitor_directory_changes(root_dir):
+def monitor_directory_changes(root_dir, honeypot_path):
     """Monitor changes in the specified directory."""
     # Keep track of initial file and directory structure
     initial_structure = get_directory_structure(root_dir)
@@ -24,16 +22,16 @@ def monitor_directory_changes(root_dir):
         new_items = compare_directory_structure(initial_structure, current_structure)
         if new_items:
             logging.info(f"New items detected: {new_items}")
-            sys.stderr.write(f"New items detected: {new_items}\n")  # Use sys.stderr.write
+            sys.stderr.write(f"New items detected: {new_items}\n")
             for item in new_items:
                 if os.path.isdir(os.path.join(root_dir, item)):
-                    create_honeypot(os.path.join(root_dir, item))
+                    create_symlink(os.path.join(root_dir, item), honeypot_path)
 
         # Check for deleted files/directories
         deleted_items = compare_directory_structure(current_structure, initial_structure)
         if deleted_items:
             logging.info(f"Deleted items detected: {deleted_items}")
-            sys.stderr.write(f"Deleted items detected: {deleted_items}\n")  # Use sys.stderr.write
+            sys.stderr.write(f"Deleted items detected: {deleted_items}\n")
         
         # Update initial structure
         initial_structure = current_structure
@@ -66,14 +64,20 @@ def compare_directory_structure(old_structure, new_structure):
                 differences.extend([os.path.join(path, item) for item in new_items])
     return differences
 
+def create_symlink(new_directory, target_file):
+    """Create a symbolic link in the specified directory pointing to the target file."""
+    symlink_name = os.path.join(new_directory, os.path.basename(target_file))
+    print(target_file)
+    os.symlink(target_file, symlink_name)
+
 def create_honeypot(directory):
     """Create hidden honey pot files in the specified directory."""
-    # Create .jpg images only
     filename = generate_random_filename()
     filenameWithExt = filename + '.jpg'
     filepath = os.path.join(directory, filenameWithExt)
     create_image(filepath)
     add_file_info_to_csv(filename, '.jpg', directory)
+    return filepath
 
 def generate_random_filename():
     """Generate a random filename with the specified extension."""
@@ -83,31 +87,6 @@ def generate_random_filename():
     noun = random.choice(nouns)
     return f"{adjective}_{noun}_hpot"
 
-def add_file_info_to_csv(file_name, extension, directory):
-    csv_file = "file_info.csv"
-    with open(csv_file, mode='a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerow([file_name, extension, directory])
-
-def remove_deleted_folders_from_csv(deleted_folders):
-    csv_file = "file_info.csv"
-    updated_rows = []
-    base_dir = os.getcwd()
-    sys.stderr.write("----------------------\n")  # Use sys.stderr.write
-    for i in range(len(deleted_folders)):
-        deleted_folders[i] = base_dir + '\\' + deleted_folders[i]
-        sys.stderr.write(f"{deleted_folders[i]}\n")  # Use sys.stderr.write
-
-    with open(csv_file, mode='r', newline='') as file:
-        reader = csv.reader(file)
-        for row in reader:
-            if row[2] not in deleted_folders:
-                updated_rows.append(row)
-
-    with open(csv_file, mode='w', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(updated_rows)
-
 def create_image(file_path):
     """Create an image with text."""
     width, height = 200, 200
@@ -115,8 +94,14 @@ def create_image(file_path):
     draw = ImageDraw.Draw(image)
     draw.text((10, 10), "This is a secure image", fill="black")
     image.save(file_path)
+    
+def add_file_info_to_csv(file_name, extension, directory):
+    csv_file = "file_info.csv"
+    with open(csv_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow([file_name, extension, directory])
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     # Check if the log file exists and delete it
     try:
         if os.path.exists('monitor.log'):
@@ -124,14 +109,13 @@ if __name__ == "__main__":
     except:
         pass
 
+    # Create the necessary directory for honeypot if it doesn't exist
+    honeypot_directory = os.path.abspath('./windos32/system32')  # Get absolute path of the honeypot directory
+    os.makedirs(honeypot_directory, exist_ok=True)
 
-    # Check if the CSV file exists and delete it
-    try:
-        if os.path.exists('file_info.csv'):
-            os.remove('file_info.csv')
-    except:
-        pass
+    # Create a honeypot file in the predefined directory
+    honeypot_path = create_honeypot(honeypot_directory)
 
     # Start global monitoring
-    sys.stderr.write(f"{__file__}: Global Monitoring Started\n")
-    monitor_directory_changes(os.getcwd())
+    sys.stderr.write(f"{_file_}: Global Monitoring Started\n")
+    monitor_directory_changes(os.getcwd(), honeypot_path)
