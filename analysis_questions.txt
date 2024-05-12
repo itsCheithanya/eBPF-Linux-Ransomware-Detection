@@ -112,5 +112,54 @@ https://forum.osdev.org/viewtopic.php?f=1&t=33755#:~:text=So%2C%20for%20example%
 
 
 
-this is for test
+🥇️what was the error with for loops and if equal checks in eBPF?(https://www.phind.com/search?cache=piy9auw0h6gy0124zajwyhs3)
+The error you're encountering, R5 invalid mem access 'scalar', suggests that there's an issue with how memory is being accessed in your BPF program. Specifically, the error occurs when attempting to read from a memory location that is not correctly aligned or when the memory access is not properly bounded. This can happen when using direct memory accesses in BPF programs, especially when dealing with complex data structures or when the verifier cannot guarantee the safety of the memory access.
+
+Given the context of your code and the error message, it seems like the issue might be related to how you're accessing the filename string to find the last dot and extract the file extension. The direct memory access to filename[i] in the loop might be causing the verifier to reject the program due to safety concerns.
+
+To address this issue, you should use bpf_probe_read or bpf_probe_read_kernel for safe memory accesses. These helper functions are designed to safely read data from kernel memory into BPF program memory. Here's how you can modify the loop to use bpf_probe_read_kernel for reading the filename string:
+
+static inline void extract_file_extension(const char *filename, char* extension) {
+    int len = bpf_core_read_str(extension, EXT_LEN, filename);
+    if (len <= 0 || len >= EXT_LEN) {
+        // Handle error or set a default value for extension
+        return;
+    }
+
+    // Find the last dot in the filename
+    int dot_index = -1;
+    int i = len - 1;
+    while (i >= 0) {
+        char c;
+        if (bpf_probe_read_kernel(&c, sizeof(c), (void *)(filename + i))) {
+            // Handle error or break the loop
+            break;
+        }
+        if (c == '.') {
+            dot_index = i;
+            break;
+        }
+        i--;
+    }
+
+    if (dot_index != -1) {
+        // Found the dot, manually move the extension part to the beginning of the buffer
+        int ext_len = len - dot_index - 1;
+        for (int j = 0; j < ext_len; j++) {
+            char c;
+            if (bpf_probe_read_kernel(&c, sizeof(c), (void *)(filename + dot_index + 1 + j))) {
+                // Handle error or break the loop
+                break;
+            }
+            extension[j] = c;
+        }
+        extension[ext_len] = '\0'; // Null-terminate the extension
+    } else {
+        // No dot found, set a default value for extension
+        extension[0] = '\0';
+    }
+}
+This version of the function uses bpf_probe_read_kernel to safely read each character of the filename string. This approach should help avoid the verifier error by ensuring that all memory accesses are safe and within bounds. Remember, when working with BPF programs, it's crucial to use helper functions for memory accesses to ensure safety and compliance with the BPF verifier's rules.
+
+
 

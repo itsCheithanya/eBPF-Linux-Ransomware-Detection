@@ -1,15 +1,12 @@
+import notify2
 import csv
+import sys
 import time
 import hashlib
 import os
 from PIL import Image
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
-from win10toast import ToastNotifier
-import win32gui
-import win32con
-import time
-import sys
 
 # Function to calculate the hash of an image
 def calculate_hash(image_path):
@@ -34,22 +31,8 @@ class ImageChangeHandler(FileSystemEventHandler):
                     sys.stderr.write("600 Alert\n")
                     time.sleep(3)
                     sys.stderr.write(f"Image {image_path} has been modified!\n")
-                    #toaster = ToastNotifier()
-                    #toaster.show_toast("Image Modification Detected", "Image has been modified!")
                     # Notify user here (e.g., send email, display notification, etc.)
                 self.last_hashes[self.image_paths.index(image_path)] = calculate_hash(image_path)
-
-class FlashWindow:
-    def __init__(self, title):
-        self.title = title
-        self.hwnd = None
-
-    def flash(self):
-        self.hwnd = win32gui.FindWindow(None, self.title)
-        if self.hwnd:
-            for _ in range(5):  # Flash for 5 times
-                win32gui.FlashWindow(self.hwnd, True)
-                time.sleep(0.5)
 
 # Main function to monitor images for changes
 def monitor_images(image_paths):
@@ -64,7 +47,7 @@ def monitor_images(image_paths):
             time.sleep(1)
     except KeyboardInterrupt:
         observer.stop()
-    observer.join()
+        observer.join()
 
 # Function to read CSV file and monitor images
 def monitor_images_from_csv(csv_file):
@@ -80,13 +63,9 @@ def monitor_images_from_csv(csv_file):
                         image_paths.append(image_path)
         if image_paths:
             monitor_images(image_paths)
-    except KeyboardInterrupt:
-        pass
     except Exception as e:
         print("Error:", e)
 
 if __name__ == "__main__":
-    sys.stderr.write("Honeypot monitoring started\n")
     csv_file = "file_info.csv"
     monitor_images_from_csv(csv_file)
-
