@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Layout, Row, Col, Card, Typography, Button, Spin, Input } from "antd";
 import { io } from 'socket.io-client';
+import App1 from "./Honeypot";
 
 const { Content } = Layout;
 const { TextArea } = Input;
@@ -22,7 +23,7 @@ function App() {
     const newSocket = io('http://localhost:5000');
     setSocket(newSocket);
     newSocket.on("message", (event) => {
-      setEbpfdata(...ebpfdata,event);
+      setEbpfdata((ebpfdata)=>[...ebpfdata,event]);
     });
     newSocket.on("model", (event) => {
       setModeldata(...modeldata,event);
@@ -58,6 +59,7 @@ function App() {
     <Layout>
       <Content style={{ padding: "20px" }}>
         <Title>eBPF based Linux Ransomware Detection using AI</Title>
+        <App1/>
         <Row gutter={16}>
           <Col span={12}>
             <Card title="Stage 1: eBPF Logs" bordered={false}>

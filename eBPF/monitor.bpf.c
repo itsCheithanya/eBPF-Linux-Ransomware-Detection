@@ -92,13 +92,25 @@ static inline void extract_file_extension(const char *filename, char* extension)
 }
 
 // Helper function to compare two strings
-static inline bool str_equals(const char *s1, const char *s2) {
-    // while (*s1 && (*s1 == *s2)) {
-    //     s1++;
-    //     s2++;
-    // }
-    // return *s1 == *s2;
-    return false;
+// static inline bool str_equals(const char *s1, const char *s2) {
+//     // while (*s1 && (*s1 == *s2)) {
+//     //     s1++;
+//     //     s2++;
+//     // }
+//     // return *s1 == *s2;
+//     return false;
+// }
+static inline int str_equals(const char *cs, const char *ct, int size)
+{
+    int len = 0;
+    unsigned char c1, c2;
+    for (len = 0; len < (size & 0xff); len++) {
+        c1 = *cs++;
+        c2 = *ct++;
+        if (c1 != c2) return c1 < c2 ? -1 : 1;
+        if (!c1) break;
+     }
+     return 0;
 }
 
 // Function to check if a file extension is allowed
@@ -111,8 +123,14 @@ static inline bool is_extension_allowed(const char *filename) {
     bpf_printk("new file name extension:%s", extension);
 
     // Compare the extracted extension against the allowed extensions
-    for (int i = 0; i < 3; i++) {
-        if (str_equals(extension, allowed_extensions[i])) {
+    // char extensionstring[EXT_LEN];
+    // int len = bpf_core_read_str(extensionstring, EXT_LEN, extension);
+    // if (len <= 0 || len >= EXT_LEN) {
+    //     // Handle error or set a default value for extension
+    //     return false;
+    // }
+    for (int i = 0; i < (7 & 0xff); i++) {
+        if (!str_equals(extension, allowed_extensions[i],4)) {
                 bpf_printk("inside compare extension value is true");
             return true;
         }
