@@ -1,0 +1,110 @@
+.content-body{
+    background-color: #313846;
+    width: 100%;
+    height: 100%;
+    
+    padding-top: 7rem;
+    padding-right: 4rem;
+    padding-left: 4rem;
+}
+
+
+.bhuvan-section{
+    display: flex;
+}
+
+.monitoringSection {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #20232a; /* Matching dark background for sections */
+    border-radius: 15px;
+}
+
+.diff-header {
+    color: #61dafb; /* Light blue for a vibrant contrast */
+    text-align: center;
+    font-size: 24px; /* Larger font size for better readability */
+    background-color: #20232a;
+}
+
+.button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #61dafb; /* Consistent vibrant light blue background */
+    color: #282c34; /* Dark text for contrast */
+    border: none;
+    border-radius: 5px; /* Subtle rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth background and transform transitions */
+}
+  
+.button:hover {
+    background-color: #4fa1c7; /* A darker shade of blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.buttonDisabled {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: not-allowed;
+    background-color: #aaa; /* Grayed out background for disabled state */
+    color: #666; /* Darker text to indicate disabled state */
+    border: none;
+    border-radius: 5px;
+}
+
+
+.logs {
+    color: turquoise;
+    background-color: #20232a; /* Darker shade for differentiation */
+    
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.logMessage {
+    color: #ccc; /* Light grey text for better readability */
+    border-bottom: 1px solid #333; /* Subtle separation */
+    padding: 10px;
+
+}
+
+.scrollableWin {
+    border-radius: 15px;
+    max-height: 200px;
+    overflow: scroll;
+    overflow-x: hidden;
+
+    /* Styles for the scrollbar track */
+    scrollbar-width: thin; /* for Firefox */
+    scrollbar-color: turquoise #20232a; /* for Firefox: thumb and track color */
+
+    /* Styles for Webkit browsers like Chrome, Safari */
+    &::-webkit-scrollbar {
+        width: 8px; /* width of the entire scrollbar */
+        border-radius: 15px; /* radius of the scrollbar itself */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #20232a; /* color of the track */
+        border-radius: 15px; /* radius of the track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: turquoise; /* color of the thumb */
+        border-radius: 10px; /* radius of the thumb */
+        border: 3px solid #20232a; /* creates padding around the thumb */
+    }
+}
+
+.buttonWrapper{
+    background-color: #20232a;
+}
+  
+  
+
+
