@@ -139,7 +139,7 @@ io.on('connection', (socket) => {
     // Global Monitoring Handlers
     socket.on('run-script', () => {
         if (globalMonitoringProcess == null) {
-            globalMonitoringProcess = spawn('python3', [path.join(__dirname, './globalMonitoring.py')]);
+            globalMonitoringProcess = spawn('python', [path.join(__dirname, './globalMonitoring.py')]);
             socket.emit('process-id', `${globalMonitoringProcess.pid}`);
 
             globalMonitoringProcess.stdout.on('data', (data) => {
@@ -167,8 +167,10 @@ io.on('connection', (socket) => {
 
     // Honey Pot Monitoring Handlers
     socket.on('run-honeypot', () => {
+        
         if (honeyPotProcess == null) {
-            honeyPotProcess = spawn('python3', [path.join(__dirname, './honeyPotMonitoring.py')]);
+            honeyPotProcess = spawn('python', [path.join(__dirname, './honeyPotMonitoring.py')]);
+            console.log("encountered")
             socket.emit('honeypot-process-id', `${honeyPotProcess.pid}`);
 
             honeyPotProcess.stdout.on('data', (data) => {

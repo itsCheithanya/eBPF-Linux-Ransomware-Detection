@@ -7,7 +7,7 @@ const { Content } = Layout;
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
 
-function CSection() {
+function CSection({ setIsMonitoringActive }) {
   const [dataPath, setDataPath] = useState("");
   const [eBPFLogs, setEBPFLogs] = useState("Awaiting logs...");
   const [modelOutput, setModelOutput] = useState("Awaiting model output...");
@@ -15,17 +15,17 @@ function CSection() {
   const [loading, setLoading] = useState(false);
   const [socket, setSocket] = useState(null);
   const [deployed, setDeployed] = useState(false);
-  const [ebpfdata,setEbpfdata]=useState("");
-  const [modeldata,setModeldata]=useState("");
+  const [ebpfdata, setEbpfdata] = useState("");
+  const [modeldata, setModeldata] = useState("");
 
   useEffect(() => {
     const newSocket = io('http://localhost:5000');
     setSocket(newSocket);
     newSocket.on("message", (event) => {
-      setEbpfdata((ebpfdata)=>[...ebpfdata,event]);
+      setEbpfdata((ebpfdata) => [...ebpfdata, event]);
     });
     newSocket.on("model", (event) => {
-      setModeldata(...modeldata,event);
+      setModeldata(...modeldata, event);
     });
     newSocket.on("open", () => {
       console.log("Connected to WebSocket");
@@ -46,22 +46,23 @@ function CSection() {
 
   const deployEBPFAndRunModel = () => {
     setLoading(true);
-    if (!socket ||!dataPath) {
+    if (!socket || !dataPath) {
       console.error("Socket not connected or no path provided.");
       setLoading(false);
       return;
     }
+    setIsMonitoringActive(true);
     socket.emit("deployRequest", { path: dataPath });
   };
 
   return (
-    <Layout style={{background: '#20232a', borderRadius: '15px'}}>
-      <Content style={{ padding: "20px"}}>
+    <Layout style={{ background: '#20232a', borderRadius: '15px' }}>
+      <Content style={{ padding: "20px" }}>
         <Row gutter={16}>
           <Col span={12}>
-            <Card bordered={false}  style={{background: '#20232a'}}>
-                <div style={{color: '#61dafb', fontSize: '18px', fontWeight: 'bolder'}}>Stage 1: eBPF Logs</div>
-              <Paragraph style={{color: 'aquamarine'}}>Enter the path to the data to be monitored:</Paragraph>
+            <Card bordered={false} style={{ background: '#20232a' }}>
+              <div style={{ color: '#61dafb', fontSize: '18px', fontWeight: 'bolder' }}>Stage 1: eBPF Logs</div>
+              <Paragraph style={{ color: 'aquamarine' }}>Enter the path to the data to be monitored:</Paragraph>
               <Input
                 placeholder="/path/to/data"
                 value={dataPath}
@@ -71,7 +72,7 @@ function CSection() {
               <Button
                 type="primary"
                 onClick={deployEBPFAndRunModel}
-                disabled={loading} style={{background: '#4fa1c7'}}
+                disabled={loading} style={{ background: '#4fa1c7' }}
               >
                 Deploy eBPF Program & Run Analysis
               </Button>
@@ -94,9 +95,9 @@ function CSection() {
             </Card>
           </Col>
           <Col span={12}>
-            <Card bordered={false}  style={{background: '#20232a'}}>
-            <div style={{color: '#61dafb', fontSize: '18px', fontWeight: 'bolder'}}>Stage 1: eBPF Logs</div>
-               <div
+            <Card bordered={false} style={{ background: '#20232a' }}>
+              <div style={{ color: '#61dafb', fontSize: '18px', fontWeight: 'bolder' }}>AI Model Output</div>
+              <div
                 style={{
                   background: "#000",
                   color: "#fff",
@@ -113,11 +114,10 @@ function CSection() {
               </div>
             </Card>
           </Col>
-       
         </Row>
       </Content>
     </Layout>
   );
 }
 
-export default CSection;
+export default CSection

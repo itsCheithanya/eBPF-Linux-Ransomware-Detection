@@ -1,4 +1,4 @@
-.header{
+.header {
     width: 100%;
     height: 6rem;
     background-color: #20232a;
@@ -9,31 +9,70 @@
     display: flex;
     flex-direction: column;
     z-index: 10000;
-}
-
-.header-title{
+  }
+  
+  .header-title {
     flex: 1;
     padding: 10px;
     display: flex;
     flex-direction: row;
-}
-
-.title{
+  }
+  
+  .title {
     color: aquamarine;
     font-size: 1.6rem;
     flex: 1;
     margin: auto;
-    margin-left: 17rem;
-}
-
-.status-bar{
+    margin-left: 7rem;
+    font-weight: bolder;
+  }
+  
+  .status-bar {
     flex: 1;
-}
-
-.break-line{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
+    padding-left: 15px;
+    color: white;
+    font-weight: bold;
+    font-size: large;
+  }
+  
+  .ransomware-monitoring, .ransomware-detected, .system-state {
+    flex: 1;
+  }
+  
+  .break-line {
     width: 75%;
     height: 2px;
     margin: auto;
     border-radius: 50%;
     background-color: white;
-}
+  }
+  
+  .status-on {
+    color: rgb(2, 198, 2);
+  }
+  
+  .status-off {
+    color: red;
+  }
+  
+  .status-safe {
+    color: rgb(2, 198, 2);
+  }
+  
+  .status-danger {
+    color: red;
+  }
+  
+  .blinking {
+    animation: blink 1s step-end 3;
+  }
+  
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+  
