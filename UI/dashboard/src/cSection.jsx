@@ -7,7 +7,7 @@ const { Content } = Layout;
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
 
-function CSection({ setIsMonitoringActive }) {
+function CSection() {
   const [dataPath, setDataPath] = useState("");
   const [eBPFLogs, setEBPFLogs] = useState("Awaiting logs...");
   const [modelOutput, setModelOutput] = useState("Awaiting model output...");
@@ -25,7 +25,10 @@ function CSection({ setIsMonitoringActive }) {
       setEbpfdata((ebpfdata) => [...ebpfdata, event]);
     });
     newSocket.on("model", (event) => {
-      setModeldata(...modeldata, event);
+      if (event.trim() === "600 Alert") {
+        
+      }
+      setModeldata((modeldata)=>[...modeldata, event]);
     });
     newSocket.on("open", () => {
       console.log("Connected to WebSocket");
@@ -51,7 +54,7 @@ function CSection({ setIsMonitoringActive }) {
       setLoading(false);
       return;
     }
-    setIsMonitoringActive(true);
+    // setIsMonitoringActive(true);
     socket.emit("deployRequest", { path: dataPath });
   };
 

@@ -97,7 +97,7 @@ function Body({ setMonitoringStatus, setRansomwareDetected, setSystemState, setB
   return (
     <div className='content-body'>
       <div className='cheithanya-section'>
-        <CSection />
+        <CSection setMonitoringStatus={setMonitoringStatus} se/>
       </div>
       <div className='bhuvan-section'>
         <div className='monitoringSection'>

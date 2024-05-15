@@ -51,7 +51,7 @@ try:
 except InconsistentVersionWarning as w:
     print(w.original_sklearn_version)
 
-with open('/home/cheithanya/Desktop/Finalyearproject/eBPF/libbpf-bootstrap/examples/c/model_output.txt', "w") as f:
+with open('/home/cheithanya/Desktop/Finalyearproject/eBPF/libbpf-bootstrap/examples/c/process_monitor_log.txt', "w") as f:
     f.truncate(0)
 
 while True:
@@ -85,7 +85,9 @@ while True:
                 ransomware_pids.append(pid)
                 try:
                     print(f"PID {pid} terminated RANSOMWARE",file=sys.stderr)
+                    print("600 Alert",file=sys.stderr)
                     os.kill(pid, signal.SIGTERM)
+
                     
                 except :
                     print(f"PID {pid} does not exist",file=sys.stderr)

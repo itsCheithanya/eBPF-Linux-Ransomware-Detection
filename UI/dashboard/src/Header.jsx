@@ -10,9 +10,9 @@ function Header({ monitoringStatus, ransomwareDetected, systemState, blinking })
   return (
     <div className="header">
       <div className='header-title'>
-        <div><img style={{height:30,width:95,margin:"10", paddingLeft: '30px', paddingTop: '3px'}} src={"https://ebpf.foundation/wp-content/uploads/sites/9/2023/02/ebpf_logo_monochrome_on_dark-300x106.png"} alt="" /></div>
+        <div><img style={{height:40,width:140,margin:"10", paddingLeft: '30px', paddingTop: '3px'}} src={"https://upload.wikimedia.org/wikipedia/commons/b/b0/EBPF_logo.png"} alt="" /></div>
         <div className='title'>Multistage Ransomware Detection using eBPF and Honeypot</div>
-        <div> <img  style={{height:25,width:140,margin:"10 ", paddingRight: '30px', paddingTop: '3px'}}  src="https://nats.io/img/logos/cncf-white.png" alt="" /></div>
+        <div> <img  style={{height:40,width:210,margin:"10 ", paddingRight: '30px', paddingTop: '3px'}}  src="https://www.cncf.io/wp-content/uploads/2023/04/cncf-main-site-logo.svg"  alt="" /></div>
       </div>
       <div className='break-line'></div>
       <div className='status-bar'>
