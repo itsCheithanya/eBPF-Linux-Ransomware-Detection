@@ -7,7 +7,7 @@ const { Content } = Layout;
 const { TextArea } = Input;
 const { Title, Paragraph } = Typography;
 
-function CSection() {
+function CSection({ handleRansomwareAlert }) { // Receive the prop
   const [dataPath, setDataPath] = useState("");
   const [eBPFLogs, setEBPFLogs] = useState("Awaiting logs...");
   const [modelOutput, setModelOutput] = useState("Awaiting model output...");
@@ -26,9 +26,9 @@ function CSection() {
     });
     newSocket.on("model", (event) => {
       if (event.trim() === "600 Alert") {
-        
+        handleRansomwareAlert(); // Call the alert handler
       }
-      setModeldata((modeldata)=>[...modeldata, event]);
+      setModeldata((modeldata) => [...modeldata, event]);
     });
     newSocket.on("open", () => {
       console.log("Connected to WebSocket");
@@ -41,11 +41,10 @@ function CSection() {
     });
     newSocket.on("deployError", (errorMessage) => {
       console.error(errorMessage);
-      // Handle error appropriately, e.g., show an error message to the user
     });
 
     return () => newSocket.disconnect();
-  }, []);
+  }, [handleRansomwareAlert]); // Include the handler in dependencies
 
   const deployEBPFAndRunModel = () => {
     setLoading(true);
@@ -54,7 +53,6 @@ function CSection() {
       setLoading(false);
       return;
     }
-    // setIsMonitoringActive(true);
     socket.emit("deployRequest", { path: dataPath });
   };
 
@@ -123,4 +121,4 @@ function CSection() {
   );
 }
 
-export default CSection
+export default CSection;

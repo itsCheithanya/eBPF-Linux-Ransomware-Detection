@@ -90,7 +90,7 @@ while True:
 
                     
                 except :
-                    print(f"PID {pid} does not exist",file=sys.stderr)
+                    pass
             
 
             # Check if any prediction is ransomware

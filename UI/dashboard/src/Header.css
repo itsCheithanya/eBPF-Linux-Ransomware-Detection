@@ -47,7 +47,8 @@
     height: 2px;
     margin: auto;
     border-radius: 50%;
-    background-color: white;
+    background-color: black;
+    z-index: 20000;
   }
   
   .status-on {
